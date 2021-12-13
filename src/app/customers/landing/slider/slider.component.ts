@@ -22,9 +22,10 @@ export class SliderComponent implements OnInit {
     mouseDrag: true,
     touchDrag: false,
     margin:0,
-    autoplayMouseleaveTimeout:1000,
-    dots: false,
-    navSpeed: 1000,
+    autoplayMouseleaveTimeout:2000,
+    dots:false,
+    navSpeed: true,
+    autoplaySpeed:3000,
     navText: ['<', '>'],
     responsive: {
       0: {
