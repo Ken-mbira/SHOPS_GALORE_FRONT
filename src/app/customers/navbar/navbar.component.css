@@ -1,0 +1,13 @@
+.btn-outline {
+    background: none;
+    color: white;
+    border-radius: 0;
+    border-color: #E86105;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+    background-color: #E86105;
+    color: #2B2A38;
+}
