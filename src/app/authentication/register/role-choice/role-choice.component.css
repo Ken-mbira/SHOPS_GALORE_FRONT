@@ -1,0 +1,14 @@
+#roles {
+    display: flex;
+    flex-direction: column;
+}
+
+#roles>button {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#roles>button:hover {
+    transform: scale(1.3)
+}
