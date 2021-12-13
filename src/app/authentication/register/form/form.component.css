@@ -21,3 +21,16 @@ input {
 .small-font {
     font-size: 2vmin
 }
+
+#registration_means {
+    display: flex;
+    flex-direction: column;
+}
+
+#registration_means>button {
+    margin-bottom: 20px;
+}
+
+#registration_means>button:hover {
+    transform: scale(1.3)
+}
