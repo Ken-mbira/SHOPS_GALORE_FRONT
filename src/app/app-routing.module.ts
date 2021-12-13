@@ -5,12 +5,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
-  {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
-  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  // {
+  //   path: '',
+  //   redirectTo: '',
+  //   pathMatch: 'full'
+  // },
+  { path: '', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'seller', loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule) },
   { path: 'delivery', loadChildren: () => import('./delivery/delivery.module').then(m => m.DeliveryModule) },
   { path: 'staff', loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule) },
