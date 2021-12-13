@@ -9,6 +9,9 @@ import { CategoryComponent } from './landing/category/category.component';
 import { SliderComponent } from './landing/slider/slider.component';
 
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
+
 @NgModule({
   declarations: [
     CustomersComponent,
@@ -19,6 +22,7 @@ import { SliderComponent } from './landing/slider/slider.component';
   ],
   imports: [
     CommonModule,
+    CarouselModule,
     CustomersRoutingModule
   ]
 })
