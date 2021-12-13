@@ -8,6 +8,9 @@ import { RegisterComponent } from './register/register.component';
 import { RoleChoiceComponent } from './register/role-choice/role-choice.component';
 import { SuccessfullComponent } from './register/successfull/successfull.component';
 import { FormComponent } from './register/form/form.component';
+import { PasswordComponent } from './password/password.component';
+import { ForgotComponent } from './password/forgot/forgot.component';
+import { ResetComponent } from './password/reset/reset.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { FormComponent } from './register/form/form.component';
     RegisterComponent,
     RoleChoiceComponent,
     SuccessfullComponent,
-    FormComponent
+    FormComponent,
+    PasswordComponent,
+    ForgotComponent,
+    ResetComponent
   ],
   imports: [
     CommonModule,
