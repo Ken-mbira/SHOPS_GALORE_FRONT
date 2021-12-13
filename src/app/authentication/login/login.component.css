@@ -1,0 +1,28 @@
+#login {
+    background-color: #2b2a384f;
+    height: 100vh;
+}
+
+input {
+    background-color: #2b2a383a;
+}
+
+.btn-login {
+    color: #fff;
+    background-color: #E86105;
+    border-color: #E86105;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+    width: 100%;
+}
+
+.btn-login:hover,
+.btn-login:active,
+.btn-login:focus {
+    background-color: #c7611d;
+    border-color: #c7611d;
+}
+
+.small-font {
+    font-size: 2vmin
+}

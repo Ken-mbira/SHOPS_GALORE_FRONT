@@ -1,0 +1,10 @@
+input {
+    background-color: #2b2a383a;
+}
+
+.proceed-email {
+    background-color: #E86105;
+    border-radius: 0;
+    color: white;
+    width: 100%;
+}
