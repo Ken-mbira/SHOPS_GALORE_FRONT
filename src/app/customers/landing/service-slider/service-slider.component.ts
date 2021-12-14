@@ -31,7 +31,7 @@ export class ServiceSliderComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 3
+        items: 5
       },
       740: {
         items: 5
