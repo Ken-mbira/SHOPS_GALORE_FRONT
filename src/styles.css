@@ -2,10 +2,10 @@
 
 html,
 body {
-  height: 100%;
 }
 
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  background: #e6e6e6;
 }
