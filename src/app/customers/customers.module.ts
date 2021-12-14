@@ -10,6 +10,7 @@ import { SliderComponent } from './landing/slider/slider.component';
 
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ServiceSliderComponent } from './landing/service-slider/service-slider.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     NavbarComponent,
     LandingComponent,
     CategoryComponent,
-    SliderComponent
+    SliderComponent,
+    ServiceSliderComponent
   ],
   imports: [
     CommonModule,
