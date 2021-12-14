@@ -1,6 +1,10 @@
-#row {
+.row {
   --bs-gutter-x: 0;
   color: rgba(43, 42, 56, 0.7);
+}
+
+#row {
+  --bs-gutter-x: 1.5rem;
 }
 
 .register {
