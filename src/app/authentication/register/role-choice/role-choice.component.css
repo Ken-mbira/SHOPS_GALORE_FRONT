@@ -1,6 +1,7 @@
 .row {
   --bs-gutter-x: 0;
 }
+
 .role-choice {
   height: auto;
   text-align: center;
@@ -11,6 +12,17 @@
   border-radius: 10px;
   font-weight: 300;
   color: rgba(43, 42, 56, 0.7);
+}
+
+.admin {
+  padding: 0 4rem;
+  text-align: right;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.admin:hover {
+  color: #e86105;
 }
 
 .hero-title {
@@ -30,6 +42,7 @@
   border: 2px solid rgba(43, 42, 56, 0.05);
   font-size: 1.5rem;
   font-weight: normal;
+  cursor: pointer;
 }
 
 img {
@@ -38,7 +51,8 @@ img {
   margin-right: 3rem;
 }
 
-.role-option:hover {
+.role-option:hover,
+.admin:hover {
   transform: scale(1.05);
   transition: 500ms;
 }
