@@ -1,14 +1,43 @@
+.role-choice {
+  padding: 2vw 10vw;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 30px 30px rgba(43, 42, 56, 0.15);
+  border-radius: 10px;
+  font-weight: 300;
+  color: rgba(43, 42, 56, 0.7);
+}
+
+.hero-title {
+  font-size: 2vw;
+  margin-bottom: 2.5vw;
+}
+
+.role-option {
+  display: flex;
+  margin: 1vw 0;
+  padding: 1vw 2vw;
+  height: 4vw;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 30px 30px rgba(43, 42, 56, 0.15);
+  border-radius: 5px;
+  font-size: 1.25vw;
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 1vw;
+}
+
+.role-option:hover {
+  transform: scale(1.05);
+  transition: 500ms;
+}
+
 #roles {
-    display: flex;
-    flex-direction: column;
-}
-
-#roles>button {
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#roles>button:hover {
-    transform: scale(1.3)
+  width: 20vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
