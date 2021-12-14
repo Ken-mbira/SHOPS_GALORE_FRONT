@@ -1,3 +1,6 @@
+.row {
+  --bs-gutter-x: 0;
+}
 .role-choice {
   height: auto;
   text-align: center;
