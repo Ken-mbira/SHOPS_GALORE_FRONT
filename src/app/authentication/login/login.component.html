@@ -1,45 +1,54 @@
-<div class="contaier-fluid d-flex justify-content-center align-items-center" id="login">
-    <div class="row">
-        <div class="col-md-8">
-            <form class="p-5 rounded-1 shadow-lg" style="background-color:white;">
-                <div class="input-group">
-                    <input class="form-control rounded-0" type="email" placeholder="Email" size="30">
-                </div>
-                <div class="input-group mt-3">
-                    <input class="form-control rounded-0" type="password" placeholder="Password" size="30">
-                </div>
-                <div class="d-flex mt-3 mb-3 justify-content-between small-font">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="rememberme"><label class="form-check-label" for="rememberme">Remember me</label>
+<div class="container-fluid row">
+    <div class="register col-lg-10 col-xl-10">
+        <div class="row container-fluid justify-content-center">
+            <div class="register-form col-md-8 col-lg-6">
+                <p>Login to manage your account</p>
+                <form>
+                    <div class="mt-2 row g-3">
+                        <div class="col-12 placeholder-icon">
+                            <img src="../../../../assets/Mail.svg" alt="" height="20px">
+                            <input type="email" class="form-control " placeholder="E-mail or Phone Number">
+                        </div>
+                        <div class="col-12 placeholder-icon">
+                            <img src="../../../../assets/lock.svg" alt="" height="25px">
+                            <input type="password" class="form-control " placeholder="Password">
+                            <img id="password-toggle" src="../../../../assets/eye-off.svg" alt="">
+                            <img id="password-toggle" class="pwd-on" src="../../../../assets/eye.svg" alt="">
+                        </div>
                     </div>
-                    <a routerLink="../forgot" style="color:#E86105 !important">Forgot Password?</a>
-                </div>
-                <div>
-                    <button class="btn btn-login">Login</button>
-                </div>
-                <div class="mt-2 mb-3">
-                    <p>Don't have an account? <a routerLink="../register" style="color:#E86105 !important;">Sign up</a></p>
-                </div>
-            </form>
-        </div>
-        <div class="d-none d-md-block col-md-1"></div>
-        <div class="col-md-3 mt-4" style="text-align: center">
-            <div class="d-flex justify-content-center mt-3">
-                <div style="background-color:white; white-space:nowrap;" class="p-2 shadow-lg">
-                    <img src="../../../assets/2993685_brand_brands_google_logo_logos_icon 1.svg" style="vertical-align:middle" width="20px">
-                    <span class="ms-2">Login with Google</span>
-                </div>
+                    <div class="mt-2 row g-3">
+                        <div class="mt-2 form-check col-6">
+                            <input class="form-check-input" id="acceptterms" type="checkbox">
+                            <small><label class="form-check-label" for="acceptterms">Remember me</label></small>
+                        </div>
+                        <div class="mt-2 form-check col-6 text-end">
+                            <small><a routerLink="../forgot" style="color:#E86105 !important">Forgot
+                                    Password?</a></small>
+                        </div>
+                    </div>
+                    <div class="mt-5 mb-5">
+                        <button routerLink="../success" class="btn btn-register">LOGIN</button>
+                    </div>
+                    <div class="mt-2" style="width:100%;text-align:center">
+                        <small>Don't have an account? <a routerLink="../register" style="color:#E86105 !important">Sign
+                                up</a></small>
+                    </div>
+                </form>
             </div>
-            <div class="d-flex justify-content-center mt-3">
-                <div style="background-color:white; white-space:nowrap;" class="p-2 shadow-lg">
-                    <img src="../../../assets/4202107_facebook_fb_logo_social_social media_icon 1.svg" style="vertical-align:middle" width="20px">
-                    <span class="ms-2">Login with Facebook</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt-3">
-                <div style="background-color:white; white-space:nowrap;" class="p-2 shadow-lg">
-                    <img src="../../../assets/317720_social media_tweet_twitter_social_icon 1.svg" style="vertical-align:middle" width="20px">
-                    <span class="ms-2">Login with Twitter</span>
+            <div class="col-md-6 d-flex justify-content-center align-items-center mt-3">
+                <div id="registration_means">
+                    <button class=" btn btn-lg" style="background-color:white; padding: 10px 40px;"
+                        routerLink="form"><span class="badge"><img
+                                src="../../../assets/2993685_brand_brands_google_logo_logos_icon 1.svg"
+                                width="20px"></span>Login with Google</button>
+                    <button class=" btn btn-lg" style="background-color:white; padding: 10px 40px;"
+                        routerLink="form"><span class="badge"><img
+                                src="../../../assets/317720_social media_tweet_twitter_social_icon 1.svg"
+                                width="20px"></span>Login with Twitter</button>
+                    <button class=" btn btn-lg" style="background-color:white; padding: 10px 40px;"
+                        routerLink="form"><span class="badge"><img
+                                src="../../../assets/4202107_facebook_fb_logo_social_social media_icon 1.svg"
+                                width="20px"></span>Login with Facebook</button>
                 </div>
             </div>
         </div>
