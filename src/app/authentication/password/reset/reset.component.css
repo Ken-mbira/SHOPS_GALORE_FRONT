@@ -1,10 +1,67 @@
-input {
-    background-color: #2b2a383a;
+.row {
+  --bs-gutter-x: 0;
 }
 
-.proceed-email {
-    background-color: #E86105;
-    border-radius: 0;
-    color: white;
-    width: 100%;
+.role-choice {
+  height: auto;
+  text-align: center;
+  margin: 15vh auto;
+  padding: 6rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 30px 30px rgba(43, 42, 56, 0.15);
+  border-radius: 10px;
+  font-weight: 300;
+  color: rgba(43, 42, 56, 0.7);
+}
+.btn-register {
+  color: #fff;
+  background-color: #e86105;
+  border-color: #e86105;
+  border-radius: 5px;
+  width: 80%;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.btn-register:hover,
+.btn-register:active,
+.btn-register:focus {
+  transform: scale(1.05);
+  transition: 500ms;
+}
+
+#forgot {
+  font-weight: normal;
+  color: #e86105;
+  font-size: 36px;
+}
+
+input {
+  background: rgba(43, 42, 56, 0.05);
+  border-radius: 5px;
+  height: 4rem;
+  padding-left: 4rem;
+}
+
+.form-control {
+  border: none;
+}
+
+.placeholder-icon {
+  width: 80%;
+  text-align: left;
+  position: relative;
+  margin: 2rem auto;
+  margin-bottom: 0;
+}
+
+.placeholder-icon > img {
+  position: absolute;
+  top: 15px;
+  padding-left: 20px;
+}
+
+.col-12 > img {
+  top: 23px;
 }
