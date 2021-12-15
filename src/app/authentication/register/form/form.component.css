@@ -34,6 +34,7 @@ input {
   border-radius: 5px;
   height: 4rem;
   margin-bottom: 0.5rem;
+  padding-left: 4rem;
 }
 
 .btn-register {
@@ -54,6 +55,30 @@ input {
   transition: 500ms;
 }
 
+.placeholder-icon {
+  position: relative;
+}
+
+.placeholder-icon > img {
+  position: absolute;
+  top: 15px;
+  padding-left: 20px;
+}
+
+.col-12 > img {
+  top: 23px;
+}
+
+#password-toggle {
+  right: 25px;
+  top: 20px;
+  height: 20px;
+}
+
+.pwd-on {
+  display: none;
+}
+
 #registration_means {
   display: flex;
   flex-direction: column;
@@ -72,5 +97,6 @@ input {
 
 #acceptterms {
   height: 1rem;
+  padding: 0;
   border-radius: 0;
 }
