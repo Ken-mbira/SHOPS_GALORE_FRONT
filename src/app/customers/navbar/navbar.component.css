@@ -2,13 +2,16 @@ nav {
   background-color: #2b2a38;
 }
 
+.navbar-brand {
+  flex: 0.75;
+}
+
 .navbar-collapse {
-  flex-grow: 0;
-  align-items: center;
+  justify-content: space-between !important;
 }
 
 form {
-  flex: 0.5;
+  flex: 0.75;
   position: relative;
 }
 
