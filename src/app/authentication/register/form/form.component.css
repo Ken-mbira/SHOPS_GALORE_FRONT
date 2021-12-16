@@ -100,3 +100,8 @@ input {
   padding: 0;
   border-radius: 0;
 }
+
+.form-check-input:checked {
+  background-color: #e86105;
+  border-color: #e86105;
+}
