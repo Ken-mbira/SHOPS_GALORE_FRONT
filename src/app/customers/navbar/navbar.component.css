@@ -1,13 +1,56 @@
-.btn-outline {
-    background: none;
-    color: white;
-    border-radius: 0;
-    border-color: #E86105;
+nav {
+  background-color: #2b2a38;
 }
 
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active {
-    background-color: #E86105;
-    color: #2B2A38;
+.navbar-collapse {
+  flex-grow: 0;
+  align-items: center;
+}
+
+form {
+  flex: 0.5;
+  position: relative;
+}
+
+.btn {
+  position: absolute;
+  padding: 3px;
+  top: 0;
+  left: 2rem;
+}
+
+.form-control {
+  border: none;
+  padding-left: 4rem;
+}
+
+.form-control::placeholder {
+  color: #e6e6e6;
+}
+
+input {
+  background: rgba(230, 230, 230, 0.5);
+  border-radius: 5px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+a {
+  color: #e6e6e6;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: #e86105;
+}
+
+.navbar-toggler {
+  color: #e86105;
 }
