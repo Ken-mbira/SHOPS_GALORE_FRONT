@@ -1,4 +1,9 @@
 img {
-    height: 60vh;
-    object-fit: cover;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #2b2a38 !important;
 }

@@ -12,29 +12,29 @@ export class ServiceSliderComponent implements OnInit {
   constructor() { }
 
   customOptions: OwlOptions = {
-    pullDrag:true,
-    merge:true,
-    autoplay:true,
-    autoplayHoverPause:true,
-    autoplayTimeout:5000,
+    pullDrag: true,
+    merge: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout: 5000,
     loop: true,
     mouseDrag: true,
     touchDrag: false,
-    margin:0,
-    autoplayMouseleaveTimeout:2000,
-    dots:false,
+    margin: 0,
+    autoplayMouseleaveTimeout: 2000,
+    dots: true,
     navSpeed: true,
-    autoplaySpeed:3000,
+    autoplaySpeed: 3000,
     navText: ['<', '>'],
     responsive: {
       0: {
         items: 1
       },
       400: {
-        items: 5
+        items: 2
       },
       740: {
-        items: 5
+        items: 3
       },
       940: {
         items: 5
