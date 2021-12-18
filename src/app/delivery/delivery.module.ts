@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 import { NgChartsModule } from 'ng2-charts'
 
@@ -52,7 +54,8 @@ import { MeansComponent } from './means/means.component';
     MatIconModule,
     MatDividerModule,
     MatSelectModule,
-    NgChartsModule
+    NgChartsModule,
+    MatGridListModule
   ]
 })
 export class DeliveryModule { }

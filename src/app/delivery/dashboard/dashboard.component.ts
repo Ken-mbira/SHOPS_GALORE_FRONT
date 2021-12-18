@@ -13,18 +13,18 @@ export class DashboardComponent {
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
       {
-        data: [ 65, 59, 80, 81, 56, 55, 40 ],
+        data: [ 65, 59, 80, 81, 56, 55, 40,45,45,2,35,46 ],
         label: 'Series A',
-        backgroundColor: 'rgba(148,159,177,0.2)',
-        borderColor: 'rgba(148,159,177,1)',
-        pointBackgroundColor: 'rgba(148,159,177,1)',
+        backgroundColor: 'rgba(43,42,56,0.2)',
+        borderColor: '#2B2A38',
+        pointBackgroundColor: '#E86105',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(148,159,177,0.8)',
         fill: 'origin',
       }
     ],
-    labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ]
+    labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December' ]
   };
 
   public lineChartOptions: ChartConfiguration['options'] = {

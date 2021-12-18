@@ -1,0 +1,28 @@
+@media (max-width:900px) {
+    .dashboard,
+    .stats {
+        width: 100vw !important;
+    }
+    .delivery-chart {
+        width: 100% !important;
+    }
+}
+
+.shadow {
+    background: white;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+h6 {
+    color: #E86105;
+    font-size: smaller;
+}
+
+span {
+    font-size: smaller;
+}
+
+mat-icon {
+    margin: 0 0.5rem !important;
+}
