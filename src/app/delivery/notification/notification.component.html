@@ -1,9 +1,26 @@
-<div>
-    <div class="rounded-2 shadow" style="background:white;width:80vw;margin-top: 10px;" class="p-3 d-flex justify-content-between align-items-center">
-        <p class="m-0">Your subscription for Nova has been renewed</p>
-    </div>
-    <div class="rounded-2 shadow" style="background:#2B2A38;width:80vw;color:white;margin-top: 10px" class="p-3 d-flex justify-content-between align-items-center">
-        <p class="m-0">Your subscription for Nova has been renewed</p>
-        <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon>
-    </div>
+<div style="width:80vw">
+    <mat-accordion>
+        <mat-expansion-panel class="animate__animated animate__bounceInUp" style="background-color: #2B2A38 !important;color:white" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="color:white">
+                    Your bus has ...
+                </mat-panel-title>
+                <mat-panel-description>
+                    <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="animate__animated animate__bounceInUp" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Your bus has ...
+                </mat-panel-title>
+                <mat-panel-description>
+                    <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>
