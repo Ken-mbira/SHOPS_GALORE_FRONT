@@ -18,8 +18,19 @@ mat-sidenav-container {
 
 .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    justify-content: center;
+    padding-top: 10px;
     overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }

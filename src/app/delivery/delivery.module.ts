@@ -6,6 +6,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
+
+import { NgChartsModule } from 'ng2-charts'
 
 import { DeliveryRoutingModule } from './delivery-routing.module';
 import { DeliveryComponent } from './delivery.component';
@@ -21,6 +24,7 @@ import { DestinationComponent } from './destination/destination.component';
 import { SummaryComponent } from './destination/summary/summary.component';
 import { NewComponent } from './destination/new/new.component';
 import { MeansComponent } from './means/means.component';
+
 
 
 @NgModule({
@@ -46,7 +50,9 @@ import { MeansComponent } from './means/means.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule,
+    NgChartsModule
   ]
 })
 export class DeliveryModule { }
