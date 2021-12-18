@@ -9,6 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -58,7 +59,8 @@ import { MeansComponent } from './means/means.component';
     MatSelectModule,
     NgChartsModule,
     MatGridListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ]
 })
 export class DeliveryModule { }
