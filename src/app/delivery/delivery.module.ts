@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider'; 
+
 import { DeliveryRoutingModule } from './delivery-routing.module';
 import { DeliveryComponent } from './delivery.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -35,7 +41,12 @@ import { MeansComponent } from './means/means.component';
   ],
   imports: [
     CommonModule,
-    DeliveryRoutingModule
+    DeliveryRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatDividerModule
   ]
 })
 export class DeliveryModule { }
