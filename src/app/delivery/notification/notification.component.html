@@ -1,12 +1,13 @@
 <div style="width:80vw">
     <mat-accordion>
-        <mat-expansion-panel class="animate__animated animate__bounceInUp" style="background-color: #2B2A38 !important;color:white" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel class="animate__animated animate__bounceInUp shadow" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
-                <mat-panel-title style="color:white">
+                <mat-panel-title>
+                    <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon>
                     Your bus has ...
                 </mat-panel-title>
                 <mat-panel-description>
-                    <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon>
+
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <p>I'm visible because I am open</p>
@@ -16,9 +17,6 @@
                 <mat-panel-title>
                     Your bus has ...
                 </mat-panel-title>
-                <mat-panel-description>
-                    <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon>
-                </mat-panel-description>
             </mat-expansion-panel-header>
             <p>I'm visible because I am open</p>
         </mat-expansion-panel>
