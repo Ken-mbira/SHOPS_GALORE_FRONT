@@ -1,0 +1,18 @@
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    height: 45px;
+}
+
+span {
+    margin-left: 1rem;
+}
+
+button:hover,
+button:active {
+    background-color: #2B2A38;
+    border-radius: 0;
+    color: white;
+}

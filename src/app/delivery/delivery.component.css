@@ -1,0 +1,25 @@
+mat-toolbar {
+    background-color: none;
+    height: 10vh;
+}
+
+mat-sidenav {
+    width: 200px;
+    background: none;
+    color: #E86105;
+    border-radius: 0;
+    text-align: center
+}
+
+mat-sidenav-container {
+    background: none;
+    height: 90vh;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: scroll;
+}

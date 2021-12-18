@@ -1,3 +1,13 @@
 <mat-toolbar>
     <app-navbar style="width:100%"></app-navbar>
 </mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened class="shadow">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
