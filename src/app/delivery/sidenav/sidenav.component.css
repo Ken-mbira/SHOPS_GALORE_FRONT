@@ -11,8 +11,10 @@ span {
 }
 
 button:hover,
-button:active {
-    background-color: #2B2A38;
+button:active,
+button:focus {
+    background-color: #E86105;
     border-radius: 0;
-    color: white;
+    color: #E6E6E6;
+    transition: 800ms;
 }

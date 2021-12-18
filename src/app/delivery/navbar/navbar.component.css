@@ -1,4 +1,10 @@
 a {
     text-decoration: none;
-    color: black;
+    color: #2B2A38;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #E86105;
 }
