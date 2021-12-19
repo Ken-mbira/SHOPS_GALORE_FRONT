@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -32,12 +33,14 @@ import { DropoffComponent } from './deliveries/dropoff/dropoff.component';
 import { TransitComponent } from './deliveries/transit/transit.component';
 import { NotificationComponent } from './notification/notification.component';
 import { DestinationComponent } from './destination/destination.component';
-import { SummaryComponent } from './destination/summary/summary.component';
-import { NewComponent } from './destination/new/new.component';
 import { MeansComponent } from './means/means.component';
 import { FillIdComponent } from './deliveries/dropoff/fill-id/fill-id.component';
 import { AccountComponent } from './account/account.component';
 import { AccountSideNavComponent } from './account/account-side-nav/account-side-nav.component';
+import { NewDeliveryMeansComponent } from './means/new-delivery-means/new-delivery-means.component';
+import { SummaryDeliveryMeansComponent } from './means/summary-delivery-means/summary-delivery-means.component';
+import { NewDestinationComponent } from './destination/new-destination/new-destination.component';
+import { SummaryDestinationComponent } from './destination/summary-destination/summary-destination.component';
 
 
 
@@ -53,12 +56,14 @@ import { AccountSideNavComponent } from './account/account-side-nav/account-side
     TransitComponent,
     NotificationComponent,
     DestinationComponent,
-    SummaryComponent,
-    NewComponent,
     MeansComponent,
     FillIdComponent,
     AccountComponent,
-    AccountSideNavComponent
+    AccountSideNavComponent,
+    NewDeliveryMeansComponent,
+    SummaryDeliveryMeansComponent,
+    NewDestinationComponent,
+    SummaryDestinationComponent
   ],
   imports: [
     CommonModule,
@@ -78,7 +83,9 @@ import { AccountSideNavComponent } from './account/account-side-nav/account-side
     FormsModule,
     MatInputModule,
     MatCheckboxModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   entryComponents: [FillIdComponent]
 })

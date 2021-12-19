@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SummaryComponent } from './summary.component';
+import { NewDeliveryMeansComponent } from './new-delivery-means.component';
 
-describe('SummaryComponent', () => {
-  let component: SummaryComponent;
-  let fixture: ComponentFixture<SummaryComponent>;
+describe('NewDeliveryMeansComponent', () => {
+  let component: NewDeliveryMeansComponent;
+  let fixture: ComponentFixture<NewDeliveryMeansComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SummaryComponent ]
+      declarations: [ NewDeliveryMeansComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SummaryComponent);
+    fixture = TestBed.createComponent(NewDeliveryMeansComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

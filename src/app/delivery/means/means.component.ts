@@ -11,5 +11,4 @@ export class MeansComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
