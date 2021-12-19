@@ -36,6 +36,8 @@ import { SummaryComponent } from './destination/summary/summary.component';
 import { NewComponent } from './destination/new/new.component';
 import { MeansComponent } from './means/means.component';
 import { FillIdComponent } from './deliveries/dropoff/fill-id/fill-id.component';
+import { AccountComponent } from './account/account.component';
+import { AccountSideNavComponent } from './account/account-side-nav/account-side-nav.component';
 
 
 
@@ -54,7 +56,9 @@ import { FillIdComponent } from './deliveries/dropoff/fill-id/fill-id.component'
     SummaryComponent,
     NewComponent,
     MeansComponent,
-    FillIdComponent
+    FillIdComponent,
+    AccountComponent,
+    AccountSideNavComponent
   ],
   imports: [
     CommonModule,
