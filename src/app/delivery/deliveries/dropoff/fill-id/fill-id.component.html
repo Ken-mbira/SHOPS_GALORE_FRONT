@@ -1,0 +1,13 @@
+<div>
+    <h2 mat-dialog-title>Enter the user's ID number to complete the transaction</h2>
+    <mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Id</mat-label>
+            <input matInput [(ngModel)]="id" name="id">
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button (click)="close()">Close</button>
+        <button mat-raised-button [mat-dialog-close]="id" cdkFocusInitial>Complete</button>
+    </mat-dialog-actions>
+</div>

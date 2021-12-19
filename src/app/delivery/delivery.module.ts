@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -8,6 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule,} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 
 import { NgChartsModule } from 'ng2-charts'
@@ -26,6 +35,9 @@ import { DestinationComponent } from './destination/destination.component';
 import { SummaryComponent } from './destination/summary/summary.component';
 import { NewComponent } from './destination/new/new.component';
 import { MeansComponent } from './means/means.component';
+import { FillIdComponent } from './deliveries/dropoff/fill-id/fill-id.component';
+import { AccountComponent } from './account/account.component';
+import { AccountSideNavComponent } from './account/account-side-nav/account-side-nav.component';
 
 
 
@@ -43,7 +55,10 @@ import { MeansComponent } from './means/means.component';
     DestinationComponent,
     SummaryComponent,
     NewComponent,
-    MeansComponent
+    MeansComponent,
+    FillIdComponent,
+    AccountComponent,
+    AccountSideNavComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +70,16 @@ import { MeansComponent } from './means/means.component';
     MatDividerModule,
     MatSelectModule,
     NgChartsModule,
-    MatGridListModule
-  ]
+    MatGridListModule,
+    MatExpansionModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    FormsModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatTooltipModule
+  ],
+  entryComponents: [FillIdComponent]
 })
 export class DeliveryModule { }
