@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PickupComponent implements OnInit {
 
   constructor() { }
+  checked = false;
+
+  setChecked(){
+    this.checked = true;
+  }
 
   ngOnInit(): void {
   }

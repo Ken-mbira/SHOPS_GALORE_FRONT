@@ -7,6 +7,7 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { NotificationComponent } from './notification/notification.component';
 import { MeansComponent } from './means/means.component';
 import { DestinationComponent } from './destination/destination.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard'},
@@ -18,7 +19,8 @@ const routes: Routes = [
       {path: 'deliveries', component:DeliveriesComponent},
       {path: 'notification', component: NotificationComponent},
       {path: 'means', component: MeansComponent},
-      {path: 'destination', component:DestinationComponent}
+      {path: 'destination', component:DestinationComponent},
+      {path: 'account', component:AccountComponent}
     ]
   },
 ];

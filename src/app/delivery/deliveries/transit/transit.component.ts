@@ -9,6 +9,12 @@ export class TransitComponent implements OnInit {
 
   constructor() { }
 
+  checked = false;
+
+  setChecked(){
+    this.checked = true;
+  }
+
   ngOnInit(): void {
   }
 

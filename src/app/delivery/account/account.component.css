@@ -1,0 +1,31 @@
+mat-sidenav {
+    width: 200px;
+    background: #E6E6E6;
+    color: #000000;
+    border-radius: 0;
+    text-align: center
+}
+
+mat-sidenav-container {
+    background: none;
+    height: 85vh;
+}
+
+p {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: smaller;
+    margin: 0;
+    padding: 0
+}
+
+img {
+    width: 40%;
+}
+
+@media (max-width:770px) {
+    img {
+        width: 100%
+    }
+}
