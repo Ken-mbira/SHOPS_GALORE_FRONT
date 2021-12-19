@@ -13,7 +13,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule,} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -70,7 +72,9 @@ import { FillIdComponent } from './deliveries/dropoff/fill-id/fill-id.component'
     MatFormFieldModule,
     MatDialogModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    MatTooltipModule
   ],
   entryComponents: [FillIdComponent]
 })
