@@ -2,7 +2,7 @@ h4 {
     font-size: smaller
 }
 
-hr {
+.margin-hr {
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: #E86105;

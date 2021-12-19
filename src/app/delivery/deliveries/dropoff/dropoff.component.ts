@@ -16,6 +16,12 @@ export class DropoffComponent implements OnInit {
 
   constructor(public dialog:MatDialog) { }
 
+  checked = false;
+
+  setChecked(){
+    this.checked = true;
+  }
+
   openDialog():void{
     const dialogRef = this.dialog.open(FillIdComponent, {
       width :  '250px',
