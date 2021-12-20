@@ -17,3 +17,15 @@ p {
     margin: 0;
     padding: 0
 }
+
+.stats,
+.chores,
+.left_out {
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
+.greeting_text {
+    animation: fadeIn;
+    animation-duration: 3s;
+}

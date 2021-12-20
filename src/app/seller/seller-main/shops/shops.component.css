@@ -7,7 +7,9 @@
 .shop-card {
     border-radius: 3px;
     color: white;
-    padding: 1em
+    padding: 1em;
+    animation: slideInUp;
+    animation-duration: 1s;
 }
 
 p {
