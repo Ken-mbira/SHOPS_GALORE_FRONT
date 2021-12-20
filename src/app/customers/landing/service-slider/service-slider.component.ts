@@ -20,7 +20,7 @@ export class ServiceSliderComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: false,
-    margin: 0,
+    margin: 20,
     autoplayMouseleaveTimeout: 2000,
     dots: true,
     navSpeed: true,
