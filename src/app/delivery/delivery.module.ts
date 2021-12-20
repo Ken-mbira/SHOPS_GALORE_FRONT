@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -68,24 +70,10 @@ import { SummaryDestinationComponent } from './destination/summary-destination/s
   imports: [
     CommonModule,
     DeliveryRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatDividerModule,
-    MatSelectModule,
     NgChartsModule,
-    MatGridListModule,
-    MatExpansionModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatDialogModule,
     FormsModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatTooltipModule,
-    MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomAngularMaterialModule,
   ],
   entryComponents: [FillIdComponent]
 })

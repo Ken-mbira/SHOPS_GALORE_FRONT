@@ -3,11 +3,37 @@ import { CommonModule } from '@angular/common';
 
 import { SellerRoutingModule } from './seller-routing.module';
 import { SellerComponent } from './seller.component';
+import { SellerMainComponent } from './seller-main/seller-main.component';
+import { SidenavComponent } from './seller-main/sidenav/sidenav.component';
+import { NavbarComponent } from './seller-main/navbar/navbar.component';
+import { DashboardComponent } from './seller-main/dashboard/dashboard.component';
+import { ShopsComponent } from './seller-main/shops/shops.component';
+import { SellerShopComponent } from './seller-shop/seller-shop.component';
+import { ShopSidenavComponent } from './seller-shop/shop-sidenav/shop-sidenav.component';
+import { ShopNavbarComponent } from './seller-shop/shop-navbar/shop-navbar.component';
+import { ShopDashboardComponent } from './seller-shop/shop-dashboard/shop-dashboard.component';
+import { ShopNotificationsComponent } from './seller-shop/shop-notifications/shop-notifications.component';
+import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.component';
+import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
+import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
 
 
 @NgModule({
   declarations: [
-    SellerComponent
+    SellerComponent,
+    SellerMainComponent,
+    SidenavComponent,
+    NavbarComponent,
+    DashboardComponent,
+    ShopsComponent,
+    SellerShopComponent,
+    ShopSidenavComponent,
+    ShopNavbarComponent,
+    ShopDashboardComponent,
+    ShopNotificationsComponent,
+    ShopOrdersComponent,
+    ShopProductsComponent,
+    ShopSettingsComponent
   ],
   imports: [
     CommonModule,
