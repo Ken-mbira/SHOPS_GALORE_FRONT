@@ -4,6 +4,15 @@
     }
 }
 
+@media (min-width:768px) {
+    .stats {
+        height: 30vh
+    }
+    .chores {
+        height: 17vh
+    }
+}
+
 p {
     margin: 0;
     padding: 0

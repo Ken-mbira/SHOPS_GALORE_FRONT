@@ -1,26 +1,71 @@
-<div style="background:white;width:80vw;min-height:90vh" class="p-2 dashboard">
+<div style="width:80vw;min-height:90vh" class="p-2 dashboard">
     <div>
         <h6>Good {{greeting}} Mbira, here's how we're doing</h6>
     </div>
-    <div class="row g-3 stats">
+    <div class="row g-3">
         <div class="col-md-4 col-6">
-            <div class="shadow p-2" style="background-color:#2B2A38">
-                <h5 style="color:#E86105">5</h5><br>
+            <div class="shadow p-2 stats" style="background-color:#2B2A38">
+                <h5 style="color:#E86105">5</h5>
                 <p style="color:white">Shops</p>
             </div>
         </div>
         <div class="col-md-4 col-6">
-            <div class="shadow p-2">
+            <div class="shadow p-2 stats" style="background-color:white">
                 <h5 style="color:#2B2A38">250K</h5>
                 <p style="color:#E86105">Sales this month</p>
                 <small>22% higher than last month</small>
             </div>
         </div>
         <div class="col-md-4 col-12">
-            <div class="shadow p-2">
+            <div class="shadow p-2 stats" style="background-color:white">
                 <h5 style="color:#2B2A38">1.5M</h5>
                 <p style="color:#E86105">Income this month</p>
                 <small>18% hignher than last month</small>
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mt-3">
+        <div class="col-md-8 g-2 row">
+            <div class="col-6">
+                <div style="background:white" class="p-2 chores">
+                    <h6 style="color:#E86105">Notifications</h6>
+                    <div class="d-flex align-items-center" style="height:fit-content">
+                        <mat-icon [ngStyle]="{'color':'#E86105'}">ring_volume</mat-icon><span>3 unread notifications</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div style="background:#2B2A38" class="p-2 chores">
+                    <h6 style="color:#E86105">Shops</h6>
+                    <div class="d-flex align-items-center" style="height:fit-content">
+                        <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon><span>1 attention required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div style="background:#2B2A38" class="p-2 chores">
+                    <h6 style="color:#E86105">2</h6>
+                    <p>Featured Shops</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div style="background:white" class="p-2 chores">
+                    <h6>274</h6>
+                    <p style="color:#E86105">Sales Today</p>
+                    <small>12% over than yesterday</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-2" style="background:white">
+            <div>
+                <div class="d-flex align-items-center">
+                    <mat-icon [ngStyle]="{'color':'#E86105'}">grade</mat-icon><span>Top 3 Shops</span>
+                </div>
+                <ol class="pt-2">
+                    <li style="color:#E86105 "><span style="color:black ">Orient Suppliers</span></li>
+                    <li style="color:#E86105 "><span style="color:black ">Cutlass Solutions</span></li>
+                    <li style="color:#E86105 "><span style="color:black ">Nova Pasteries</span></li>
+                </ol>
             </div>
         </div>
     </div>
