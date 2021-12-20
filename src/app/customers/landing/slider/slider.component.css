@@ -7,3 +7,14 @@ img {
 .owl-theme .owl-dots .owl-dot:hover span {
   background: #2b2a38 !important;
 }
+
+button {
+  border: none;
+  background: #2b2a38;
+}
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
