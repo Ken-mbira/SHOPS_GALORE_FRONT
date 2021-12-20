@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode == 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+        close
+        </mat-icon>
+    </button>
+    <app-navbar style="width:100%"></app-navbar>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav class="shadow" #sidenav="matSidenav">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
