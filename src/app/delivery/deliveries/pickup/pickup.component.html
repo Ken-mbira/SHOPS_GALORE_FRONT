@@ -1,0 +1,39 @@
+<div class="row mt-2 text-center" style="width:100%">
+    <hr class="margin-hr">
+    <div class="col-md-3">
+        <div class="reduced">
+            <h6>From</h6>
+            <p>Name of shop</p>
+            <p>Owner of shop</p>
+            <p>South B Nairobi</p>
+            <p>Contact: 0712345678</p>
+        </div>
+    </div>
+    <hr class="d-md-none">
+    <div class="col-md-3">
+        <div class="reduced">
+            <h6>To</h6>
+            <p>South B Nairobi</p>
+            <p>Contact: 0723454665</p>
+        </div>
+    </div>
+    <hr class="d-md-none">
+    <div class="col-md-3">
+        <h6>Means</h6>
+        <p>You will be using your Pickup</p>
+        <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid">
+    </div>
+    <hr class="d-md-none">
+    <div class="col-md-3 checks">
+        <div>
+            <h6 *ngIf="!checked">Check here to confirm you have received the package</h6>
+            <h6 *ngIf="checked">You have confirmed that you have received the package</h6>
+            <mat-checkbox [disabled]="checked" (change)="setChecked()" matTooltip="Please note, you cannot uncheck once you have checked this" class="example-margin"></mat-checkbox>
+        </div>
+        <div>
+            <h6>Once you successfully deliver the project click here</h6>
+            <button mat-raised-button class="mt-2" color="accent">Complete</button>
+        </div>
+    </div>
+    <hr class="margin-hr">
+</div>

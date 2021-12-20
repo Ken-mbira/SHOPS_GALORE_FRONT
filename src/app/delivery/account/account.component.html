@@ -1,0 +1,35 @@
+<mat-toolbar style="background:none; position:relative;">
+    <button mat-icon-button (click)="sidenav.toggle()" style="position:absolute;right:0">
+        <mat-icon *ngIf="!sidenav.opened">
+            keyboard_arrow_left
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+        close
+        </mat-icon>
+    </button>
+</mat-toolbar>
+<mat-sidenav-container style="width:80vw">
+    <mat-sidenav #sidenav="matSidenav" mode="side" position="end">
+        <app-account-side-nav></app-account-side-nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <h2>Account Settings</h2>
+            <div style="width:100%;height:fit-content" class="d-flex justify-content-center align-items-center">
+                <img src="../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid">
+            </div>
+            <div style="width:100%;position:relative;margin-top: 20px;">
+                <!-- <p style="color:#E86105;position: absolute;right:10em;top:0;">Edit Profile</p> -->
+                <h6>Contact & Addresses</h6>
+                <div>
+                    <p>
+                        <mat-icon>home</mat-icon><span>0712345678</span></p>
+                    <p>
+                        <mat-icon>phone</mat-icon><span>nova@pastries.com</span></p>
+                    <p>
+                        <mat-icon>home</mat-icon><span>Nairobi,Kenya</span></p>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,31 @@
+@media (max-width:900px) {
+    .dashboard {
+        width: 100vw !important;
+    }
+}
+
+@media (min-width:768px) {
+    .stats {
+        height: 30vh
+    }
+    .chores {
+        height: 17vh
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+.stats,
+.chores,
+.left_out {
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
+.greeting_text {
+    animation: fadeIn;
+    animation-duration: 3s;
+}
