@@ -1,0 +1,16 @@
+.new-shop {
+    background-color: #2b2a38;
+    color: white;
+    border-radius: 1px;
+}
+
+.shop-card {
+    border-radius: 3px;
+    color: white;
+    padding: 1em
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
