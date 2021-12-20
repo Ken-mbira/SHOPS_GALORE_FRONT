@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  now:Date = new Date()
+  greeting:string;
+  constructor() {
+    setInterval(() =>{
+      this.now = new Date();
+    },1)
+
+    setInterval(() => {
+      this.getGreeting()
+    },10000)
+
+  }
+
+  getGreeting(){
+    let currentTime = new Date()
+    if(currentTime.getHours() < 12){
+      this.greeting = "morning"
+    }else if(currentTime.getHours() > 12 && currentTime.getHours() < 18){
+      this.greeting = "afternoon"
+    }else{
+      this.greeting = "evening"
+    }
+  }
 
   ngOnInit(): void {
+    this.getGreeting()
   }
 
 }
