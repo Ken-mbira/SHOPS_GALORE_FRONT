@@ -5,6 +5,13 @@ import { SellerMainComponent } from './seller-main/seller-main.component';
 import { DashboardComponent } from './seller-main/dashboard/dashboard.component';
 import { ShopsComponent } from './seller-main/shops/shops.component';
 
+import { SellerShopComponent } from './seller-shop/seller-shop.component';
+import { ShopDashboardComponent } from './seller-shop/shop-dashboard/shop-dashboard.component';
+import { ShopNotificationsComponent } from './seller-shop/shop-notifications/shop-notifications.component';
+import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.component';
+import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
+import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard'},
   {
@@ -15,6 +22,17 @@ const routes: Routes = [
       { path: 'shops', component:ShopsComponent}
     ]
   },
+  {
+    path: 'shop',
+    component:SellerShopComponent,
+    children: [
+      { path: '', component:ShopDashboardComponent },
+      { path: 'notifications', component:ShopNotificationsComponent },
+      { path: 'orders', component:ShopOrdersComponent },
+      { path: 'products', component:ShopProductsComponent },
+      { path: 'settings', component:ShopSettingsComponent },
+    ]
+  }
 ];
 
 @NgModule({
