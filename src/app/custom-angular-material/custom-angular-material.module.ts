@@ -18,6 +18,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatStepperModule} from '@angular/material/stepper';
 
 
+import { NgChartsModule } from 'ng2-charts'
+
 
 @NgModule({
   declarations: [],
@@ -40,6 +42,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatCheckboxModule,
     MatTooltipModule,
     MatStepperModule,
+    NgChartsModule
   ]
 })
 export class CustomAngularMaterialModule { }
