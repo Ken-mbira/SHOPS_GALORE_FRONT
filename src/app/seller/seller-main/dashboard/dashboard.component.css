@@ -3,3 +3,8 @@
         width: 100vw !important;
     }
 }
+
+p {
+    margin: 0;
+    padding: 0
+}
