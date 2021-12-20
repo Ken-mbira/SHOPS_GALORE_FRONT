@@ -4,16 +4,18 @@ import { SellerComponent } from './seller.component';
 
 import { SellerMainComponent } from './seller-main/seller-main.component';
 import { DashboardComponent } from './seller-main/dashboard/dashboard.component';
+import { ShopsComponent } from './seller-main/shops/shops.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'main' },
+  { path: '', redirectTo: 'dashboard'},
   {
-    path: 'main',
+    path: '',
     component:SellerMainComponent,
     children: [
-      { path: 'dashboard', component:DashboardComponent}
+      { path: 'dashboard', component:DashboardComponent},
+      { path: 'shops', component:ShopsComponent}
     ]
-  }
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+
 import { SellerRoutingModule } from './seller-routing.module';
 import { SellerComponent } from './seller.component';
 import { SellerMainComponent } from './seller-main/seller-main.component';
@@ -37,7 +39,8 @@ import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings
   ],
   imports: [
     CommonModule,
-    SellerRoutingModule
+    SellerRoutingModule,
+    CustomAngularMaterialModule
   ]
 })
 export class SellerModule { }
