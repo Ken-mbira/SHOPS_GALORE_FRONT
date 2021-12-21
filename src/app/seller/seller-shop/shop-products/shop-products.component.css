@@ -1,0 +1,23 @@
+.new-product {
+    background-color: #2b2a38;
+    color: white;
+    border-radius: 1px;
+}
+
+.shop-card {
+    border-radius: 3px;
+    color: white;
+    padding: 1em;
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
+.shop-card:hover {
+    transform: scale(1.03);
+    transition-duration: 1s;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
