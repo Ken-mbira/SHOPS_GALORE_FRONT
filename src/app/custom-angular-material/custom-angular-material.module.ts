@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { NgChartsModule } from 'ng2-charts'
@@ -42,7 +43,8 @@ import { NgChartsModule } from 'ng2-charts'
     MatCheckboxModule,
     MatTooltipModule,
     MatStepperModule,
-    NgChartsModule
+    NgChartsModule,
+    MatTableModule
   ]
 })
 export class CustomAngularMaterialModule { }
