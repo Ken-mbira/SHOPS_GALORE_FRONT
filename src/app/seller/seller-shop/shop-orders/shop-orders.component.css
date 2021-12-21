@@ -2,3 +2,14 @@ p,
 mat-checkbox {
     font-size: 3vmin
 }
+
+@media (max-width:900px) {
+    .dashboard {
+        width: 100vw !important;
+    }
+}
+
+.dashboard {
+    animation: slideInUp;
+    animation-duration: 1s;
+}

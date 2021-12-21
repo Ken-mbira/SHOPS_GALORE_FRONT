@@ -7,6 +7,11 @@
     }
 }
 
+.dashboard {
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
 mat-icon {
     margin-left: 0.5em;
     margin-right: 0.5em
