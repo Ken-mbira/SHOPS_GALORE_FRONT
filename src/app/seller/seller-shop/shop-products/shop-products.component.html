@@ -2,16 +2,16 @@
     <div class="d-flex justify-content-between">
         <div>
             <h6>Products</h6>
-            <mat-form-field appearance="fill">
-                <mat-label>Filter</mat-label>
-                <mat-select>
-                    <mat-option value="one">All</mat-option>
-                    <mat-option value="two">Out Of Stock</mat-option>
-                </mat-select>
-            </mat-form-field>
         </div>
-        <button class="btn new-product" style="height:fit-content">New Product</button>
+        <button class="btn new-product" style="height:fit-content;font-size:3vmin">New Product</button>
     </div>
+    <mat-form-field appearance="fill" style="font-size:13px" class="mt-2">
+        <mat-label>Filter</mat-label>
+        <mat-select>
+            <mat-option value="one">All</mat-option>
+            <mat-option value="two">Out Of Stock</mat-option>
+        </mat-select>
+    </mat-form-field>
     <div class="row mt-3">
         <div class="col-md-4 shop-card" [routerLink]="['../products','2']" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg');">
             <p style="font-size:larger;color: #E86105;">Crossaint</p>
