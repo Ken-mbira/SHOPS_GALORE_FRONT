@@ -19,6 +19,7 @@ import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.compo
 import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
 import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
+import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-d
     ShopOrdersComponent,
     ShopProductsComponent,
     ShopSettingsComponent,
-    ShopOrderDetailComponent
+    ShopOrderDetailComponent,
+    SingleShopProductComponent
   ],
   imports: [
     CommonModule,

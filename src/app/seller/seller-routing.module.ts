@@ -11,6 +11,8 @@ import { ShopNotificationsComponent } from './seller-shop/shop-notifications/sho
 import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.component';
 import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
+
+import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
 import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
 
 const routes: Routes = [
@@ -32,6 +34,7 @@ const routes: Routes = [
       {path: 'orders',component:ShopOrdersComponent},
       { path: 'orders/:id', component:ShopOrderDetailComponent},
       { path: 'products', component:ShopProductsComponent },
+      { path: 'products/:id', component:SingleShopProductComponent },
       { path: 'settings', component:ShopSettingsComponent },
     ]
   }
