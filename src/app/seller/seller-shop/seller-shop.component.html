@@ -1,1 +1,21 @@
-<p>seller-shop works!</p>
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode == 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+        close
+        </mat-icon>
+    </button>
+    <app-shop-navbar style="width:100%"></app-shop-navbar>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav class="shadow" #sidenav="matSidenav">
+        <app-shop-sidenav></app-shop-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
