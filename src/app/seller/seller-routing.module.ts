@@ -11,6 +11,7 @@ import { ShopNotificationsComponent } from './seller-shop/shop-notifications/sho
 import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.component';
 import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
+import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard'},
@@ -28,7 +29,8 @@ const routes: Routes = [
     children: [
       { path: '', component:ShopDashboardComponent },
       { path: 'notifications', component:ShopNotificationsComponent },
-      { path: 'orders', component:ShopOrdersComponent },
+      {path: 'orders',component:ShopOrdersComponent},
+      { path: 'orders/:id', component:ShopOrderDetailComponent},
       { path: 'products', component:ShopProductsComponent },
       { path: 'settings', component:ShopSettingsComponent },
     ]
