@@ -1,0 +1,20 @@
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    height: 45px;
+}
+
+span {
+    margin-left: 1rem;
+}
+
+button:hover,
+button:active,
+button:focus {
+    background-color: #E86105;
+    border-radius: 0;
+    color: #E6E6E6;
+    transition: 800ms;
+}
