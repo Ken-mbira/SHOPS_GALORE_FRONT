@@ -31,7 +31,16 @@ export class NewShopProductComponent implements OnInit {
       firstCtrl: [Boolean, Validators.required],
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
+      name: ['', Validators.required],
+      brand: ['', Validators.required],
+      category: ['', Validators.required],
+      type: ['', Validators.required],
+      description: ['', Validators.required],
+      price: [''],
+      length: [''],
+      width: [''],
+      height: [''],
+      quantity: [''],
     });
   }
 }
