@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators,AbstractControl} from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/material/stepper';
 import { Observable } from 'rxjs'
@@ -61,10 +61,9 @@ export class NewShopProductComponent implements OnInit {
     },
   ]
 
-  
+
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  productFormGroup: FormGroup;
 
   hasVariations:boolean = null;
 
@@ -77,21 +76,26 @@ export class NewShopProductComponent implements OnInit {
     'vertical')));
   }
 
+  get formArray(): AbstractControl | null { return this.productFormGroup.get('formArray'); }
+
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: [Boolean, Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      name: ['', Validators.required],
-      brand: ['', Validators.required],
-      category: ['', Validators.required],
-      type: ['', Validators.required],
-      description: ['', Validators.required],
-      price: [''],
-      length: [''],
-      width: [''],
-      height: [''],
-      quantity: [''],
+    this.productFormGroup = this._formBuilder.group({
+      formArray: this._formBuilder.array([
+        this._formBuilder.group({
+          name: ['', Validators.required],
+          brand: ['', Validators.required],
+          category: ['', Validators.required],
+          type: ['', Validators.required],
+          description: ['', Validators.required]
+        }),
+        this._formBuilder.group({
+          price: [''],
+          length:[''],
+          width:[''],
+          height:[''],
+          quantity:[0]
+        })
+      ])
     });
   }
 }

@@ -1,59 +1,69 @@
-<mat-stepper style="width:80vw;min-height:85vh" class="main" [linear]="true" [orientation]="(stepperOrientation | async)!" #stepper>
-    <mat-step>
-        <div class="d-flex justify-content-center">
-            <form>
-                <ng-template matStepLabel>Select whether your product has variations or not</ng-template>
-                <mat-button-toggle-group name="hasVariations" aria-label="Variations">
-                    <mat-button-toggle>Has Variations</mat-button-toggle>
-                    <mat-button-toggle>Has No Variations</mat-button-toggle>
-                </mat-button-toggle-group>
-                <div class="mt-2">
-                    <button mat-raised-button matStepperNext>Next</button>
-                </div>
-            </form>
-        </div>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill in the product details">
-        <div class="d-flex justify-content-center">
-            <form [formGroup]="secondFormGroup" style="display: flex;flex-direction:column;align-items:flex-start;">
-                <mat-form-field appearance="legacy">
-                    <mat-label>Name</mat-label>
-                    <input matInput formControlName="name" placeholder="Ex. Leather Jacket" required>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Description</mat-label>
-                    <textarea placeholder="Product description" formControlName="description" matInput required></textarea>
-                </mat-form-field>
-                <ngx-mat-tree-select-input [options]="options" [placeholder]="'Select Category'" [heading]="'Children of'" [canSelectParentNode]="false" [controlName]="'category'">
-                </ngx-mat-tree-select-input>
-                <mat-form-field appearance="outline">
-                    <mat-label>Brand</mat-label>
-                    <mat-select formControlName="brand">
-                        <mat-option>Brand 1</mat-option>
-                        <mat-option>Brand 2</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Type</mat-label>
-                    <mat-select formControlName="type">
-                        <mat-option>Type 1</mat-option>
-                        <mat-option>Type 2</mat-option>
-                    </mat-select>
-                </mat-form-field>
+<form [formGroup]="productFormGroup">
+    <mat-stepper formArrayName="formArray" style="width:80vw;min-height:85vh" class="main" [linear]="true" [orientation]="(stepperOrientation | async)!" #stepper>
+        <mat-step>
+            <div class="d-flex justify-content-center">
                 <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                    <ng-template matStepLabel>Select whether your product has variations or not</ng-template>
+                    <mat-button-toggle-group name="hasVariations" aria-label="Variations">
+                        <mat-button-toggle>Has Variations</mat-button-toggle>
+                        <mat-button-toggle>Has No Variations</mat-button-toggle>
+                    </mat-button-toggle-group>
+                    <div class="mt-2">
+                        <button mat-raised-button matStepperNext>Next</button>
+                    </div>
                 </div>
-                <p>Form Status: {{ secondFormGroup.value.category.name }}</p>
-            </form>
-        </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-    </mat-step>
-</mat-stepper>
+            </div>
+        </mat-step>
+        <mat-step formGroupName="0" [stepControl]="formArray?.get([0])" label="Fill in the product details">
+            <div class="d-flex justify-content-center">
+                <div style="display: flex;flex-direction:column;align-items:flex-start;">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" placeholder="Ex. Leather Jacket" required>
+                    </mat-form-field>
+                    <p>Form status:{{productFormGroup.status}}</p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea placeholder="Product description" formControlName="description" matInput required></textarea>
+                    </mat-form-field>
+                    <ngx-mat-tree-select-input [options]="options" [placeholder]="'Select Category'" [heading]="'Children of'" [canSelectParentNode]="false" [controlName]="'category'">
+                    </ngx-mat-tree-select-input>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Brand</mat-label>
+                        <mat-select formControlName="brand">
+                            <mat-option value="brand1">Brand 1</mat-option>
+                            <mat-option value="brand2">Brand 2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Type</mat-label>
+                        <mat-select formControlName="type">
+                            <mat-option value="type1">Type 1</mat-option>
+                            <mat-option value="type2">Type 2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Enter specifics on the product</ng-template>
+            <p>Fill in product specifics</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</form>
