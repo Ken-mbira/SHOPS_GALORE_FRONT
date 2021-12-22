@@ -1,4 +1,4 @@
-<mat-stepper style="width:80vw;min-height:85vh" class="main" [linear]="true" #stepper>
+<mat-stepper style="width:80vw;min-height:85vh" class="main" [linear]="true" [orientation]="(stepperOrientation | async)!" #stepper>
     <mat-step>
         <div class="d-flex justify-content-center">
             <form>
