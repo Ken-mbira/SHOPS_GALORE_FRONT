@@ -1,1 +1,36 @@
-<p>new-shop-product works!</p>
+<mat-stepper style="width:80vw;min-height:85vh" class="main" [linear]="true" #stepper>
+    <mat-step>
+        <div class="d-flex justify-content-center">
+            <form>
+                <ng-template matStepLabel>Select whether your product has variations or not</ng-template>
+                <mat-button-toggle-group name="hasVariations" aria-label="Variations">
+                    <mat-button-toggle>Has Variations</mat-button-toggle>
+                    <mat-button-toggle>Has No Variations</mat-button-toggle>
+                </mat-button-toggle-group>
+                <div class="mt-2">
+                    <button mat-raised-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+        <form [formGroup]="secondFormGroup">
+            <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-stepper>
