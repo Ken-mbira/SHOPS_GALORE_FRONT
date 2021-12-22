@@ -4,6 +4,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/material/stepper';
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
+import { TreeData } from 'mat-tree-select-input';
 
 @Component({
   selector: 'app-new-shop-product',
@@ -11,6 +12,56 @@ import { map } from 'rxjs/operators'
   styleUrls: ['./new-shop-product.component.css']
 })
 export class NewShopProductComponent implements OnInit {
+
+  options: TreeData[] = [
+    {
+      name: 'Electronics',
+      value: 'Electronics',
+      children: [
+        {
+          name: 'Phones',
+          value: 'Phones',
+          children: [
+            {
+              name: 'Iphones',
+              value: 'Iphones', 
+              children: []
+              
+            } 
+          ]
+        }
+      ]
+    },
+   
+    {
+      name: 'Web Development',
+      value: 'Web Development',
+      children: [
+        {
+          name: 'Frontend Development',
+          value: 'Frontend Development',
+          children: [
+            {
+              name: 'Angular',
+              value: 'Angular',
+              children: []
+
+              
+            },
+            {
+              name: 'React',
+              value: 'React',
+              children: []
+
+              
+            }
+          ]
+        }
+      ]
+    },
+  ]
+
+  
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;

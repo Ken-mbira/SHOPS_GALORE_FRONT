@@ -13,50 +13,38 @@
             </form>
         </div>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <mat-step [stepControl]="secondFormGroup" label="Fill in the product details">
         <div class="d-flex justify-content-center">
             <form [formGroup]="secondFormGroup" style="display: flex;flex-direction:column;align-items:flex-start;">
                 <mat-form-field appearance="legacy">
                     <mat-label>Name</mat-label>
                     <input matInput formControlName="name" placeholder="Ex. Leather Jacket" required>
                 </mat-form-field>
-                <mat-form-field appearance="legacy">
+                <mat-form-field appearance="outline">
                     <mat-label>Description</mat-label>
                     <textarea placeholder="Product description" formControlName="description" matInput required></textarea>
                 </mat-form-field>
-                <mat-form-field appearance="legacy">
+                <ngx-mat-tree-select-input [options]="options" [placeholder]="'Select Category'" [heading]="'Children of'" [canSelectParentNode]="false" [controlName]="'category'">
+                </ngx-mat-tree-select-input>
+                <mat-form-field appearance="outline">
                     <mat-label>Brand</mat-label>
                     <mat-select formControlName="brand">
                         <mat-option>Brand 1</mat-option>
                         <mat-option>Brand 2</mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field appearance="legacy">
+                <mat-form-field appearance="outline">
                     <mat-label>Type</mat-label>
                     <mat-select formControlName="type">
                         <mat-option>Type 1</mat-option>
                         <mat-option>Type 2</mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field appearance="legacy">
-                    <mat-label>Category</mat-label>
-                    <mat-select>
-                        <mat-option>Category 1</mat-option>
-                        <mat-option>Category 2</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="legacy">
-                    <mat-label>Specific Category</mat-label>
-                    <mat-select formControlName="category">
-                        <mat-option value="women-clothing">Spec Category 1</mat-option>
-                        <mat-option value="men-clothing">Spec Category 2</mat-option>
-                    </mat-select>
-                </mat-form-field>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
                     <button mat-button matStepperNext>Next</button>
                 </div>
-                <p>Form Status: {{ secondFormGroup.status }}</p>
+                <p>Form Status: {{ secondFormGroup.value.category.name }}</p>
             </form>
         </div>
     </mat-step>

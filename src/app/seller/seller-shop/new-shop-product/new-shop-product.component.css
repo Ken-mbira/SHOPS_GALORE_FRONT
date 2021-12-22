@@ -7,3 +7,7 @@ mat-step {
         width: 100vw !important;
     }
 }
+
+::ng-deep .cdk-overlay-pane {
+    opacity: 1;
+}
