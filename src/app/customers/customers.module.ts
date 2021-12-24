@@ -14,6 +14,12 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ServiceSliderComponent } from './landing/service-slider/service-slider.component';
 import { FeaturedProductsComponent } from './landing/featured-products/featured-products.component';
 import { CategoriesComponent } from './landing/categories/categories.component';
+import { SingleProductComponent } from './single-product/single-product.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { ShopFocusComponent } from './shop-focus/shop-focus.component';
+import { OrdersComponent } from './orders/orders.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 @NgModule({
@@ -25,7 +31,13 @@ import { CategoriesComponent } from './landing/categories/categories.component';
     SliderComponent,
     ServiceSliderComponent,
     FeaturedProductsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    SingleProductComponent,
+    CartPageComponent,
+    CheckoutPageComponent,
+    ShopFocusComponent,
+    OrdersComponent,
+    SearchResultsComponent
   ],
   imports: [
     CommonModule,
