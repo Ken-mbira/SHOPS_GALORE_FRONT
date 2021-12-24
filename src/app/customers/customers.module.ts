@@ -14,6 +14,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ServiceSliderComponent } from './landing/service-slider/service-slider.component';
 import { FeaturedProductsComponent } from './landing/featured-products/featured-products.component';
 import { CategoriesComponent } from './landing/categories/categories.component';
+import { SingleProductComponent } from './single-product/single-product.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CategoriesComponent } from './landing/categories/categories.component';
     SliderComponent,
     ServiceSliderComponent,
     FeaturedProductsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    SingleProductComponent
   ],
   imports: [
     CommonModule,
