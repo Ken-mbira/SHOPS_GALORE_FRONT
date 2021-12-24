@@ -22,6 +22,7 @@ import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-d
 import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
 import { NewShopProductComponent } from './seller-shop/new-shop-product/new-shop-product.component';
 import { SingleProductMainComponent } from './seller-shop/single-shop-product/single-product-main/single-product-main.component';
+import { SingleProductVariationsComponent } from './seller-shop/single-shop-product/single-product-variations/single-product-variations.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SingleProductMainComponent } from './seller-shop/single-shop-product/si
     ShopOrderDetailComponent,
     SingleShopProductComponent,
     NewShopProductComponent,
-    SingleProductMainComponent
+    SingleProductMainComponent,
+    SingleProductVariationsComponent
   ],
   imports: [
     CommonModule,
