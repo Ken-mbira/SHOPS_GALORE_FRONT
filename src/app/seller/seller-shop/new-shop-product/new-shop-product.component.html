@@ -1,11 +1,14 @@
-<mat-stepper style="width:80vw;min-height:85vh" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
+<mat-stepper style="width:80vw;min-height:85vh" class="main" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
     <mat-step>
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle value="bold">Has Variations</mat-button-toggle>
-            <mat-button-toggle value="italic">Has No Variations</mat-button-toggle>
+            <mat-button-toggle value="bold" (click)="checkVariation(true)">Has Variations</mat-button-toggle>
+            <mat-button-toggle value="italic" (click)="checkVariation(false)">Has No Variations</mat-button-toggle>
         </mat-button-toggle-group>
+        <div class="p-2">
+            <button mat-raised-button matStepperNext>Next</button>
+        </div>
     </mat-step>
-    <mat-step label="Enter Product Details">
+    <mat-step label="Enter Product Details" *ngIf="hasVariations">
         <form class="d-flex flex-column">
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
@@ -36,7 +39,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step label="Enter Product Details">
+    <mat-step label="Without Variations" *ngIf="!hasVariations">
         <form>
             <mat-form-field appearance="fill">
                 <mat-label>Name</mat-label>

@@ -12,6 +12,11 @@ import { TreeData } from 'mat-tree-select-input';
 })
 export class NewShopProductComponent implements OnInit {
 
+  checkVariation(boolean:boolean){
+    this.hasVariations = boolean
+  }
+  hasVariations = false;
+
   options: TreeData[] = [
     {
       name: 'Electronics',
