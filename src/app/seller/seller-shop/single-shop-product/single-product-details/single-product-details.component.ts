@@ -24,14 +24,15 @@ export class SingleProductDetailsComponent implements OnInit {
     this.default =  this.images[i]
   }
 
-  deleteImage(i:any){
-    this.images.splice(i,1)
-  }
-
   images:any = [
-    {src : "../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg", isDefault:false},
-    {src : "../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg", isDefault:false}
   ]
+
+  deleteImage(i:any){
+    if(this.default == this.images[i]){
+      this.default=null;
+    }
+    this.images.splice(i,1);
+  }
 
   fileBrowseHandler(event){
     console.log(event.files[0])
