@@ -9,6 +9,25 @@ export class SingleProductDetailsComponent implements OnInit {
 
   constructor() { }
 
+  default:any;
+
+  findDefault(){
+    for(let i=0;i<this.images.length;i++){
+      if(this.images[i].isDefault){
+        this.default = this.images[i]
+      }
+    }
+  }
+
+  setDefault(i:any){
+    this.images[i].isDefault = true;
+    this.default =  this.images[i]
+  }
+
+  deleteImage(i:any){
+    this.images.splice(i,1)
+  }
+
   images:any = [
     {src : "../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg", isDefault:false},
     {src : "../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg", isDefault:false}
@@ -26,6 +45,7 @@ export class SingleProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.findDefault()
   }
 
 }

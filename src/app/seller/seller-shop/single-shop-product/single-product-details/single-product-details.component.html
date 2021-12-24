@@ -1,14 +1,15 @@
 <div>
     <div class="row">
         <div class="col-5">
-            <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2 m-1">
+            <img *ngIf="default" src={{default.src}} class="img-fluid rounded-2 m-1">
+            <img src="" class="img-fluid rounded-2 m-1">
         </div>
         <div class="col-7 row">
-            <div *ngFor="let image of images" class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
+            <div *ngFor="let image of images;let i = index" class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
                 <img src={{image.src}} class="img-fluid rounded-2 m-1 image">
                 <div class="middle">
-                    <button mat-raised-button class="set-default-button">Set default</button>
-                    <mat-icon [ngStyle]="{'color':'red'}" style="cursor:pointer">delete</mat-icon>
+                    <button mat-raised-button class="set-default-button" (click)="setDefault(i)">Set default</button>
+                    <mat-icon [ngStyle]="{'color':'red'}" style="cursor:pointer" (click)="deleteImage(i)">delete</mat-icon>
                 </div>
             </div>
             <div *ngIf="images.length < 4" class="col-6">
