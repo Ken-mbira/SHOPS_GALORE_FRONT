@@ -1,0 +1,33 @@
+@media (max-width:900px) {
+    .main {
+        width: 100vw !important;
+    }
+}
+
+.editable {
+    cursor: pointer;
+    color: blue
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+.details {
+    padding: 1em
+}
+
+.details span {
+    margin-left: 0.5em
+}
+
+.logo img {
+    width: 200vmin
+}
+
+@media (min-width:600px) {
+    .logo img {
+        width: 600px
+    }
+}
