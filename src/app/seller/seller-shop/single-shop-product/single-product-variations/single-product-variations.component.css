@@ -1,0 +1,20 @@
+p {
+    margin: 0;
+    padding: 0
+}
+
+.variation {
+    background-color: #e86105;
+    color: white
+}
+
+.variation:hover {
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+span {
+    margin-left: 0.5em
+}

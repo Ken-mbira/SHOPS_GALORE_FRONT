@@ -1,1 +1,6 @@
-<p>single-shop-product works!</p>
+<div class="main row p-3" style="width:80vw;">
+    <app-single-product-main class="col-md-6"></app-single-product-main>
+    <hr class="d-md-none mt-3 mb-3">
+    <app-single-product-variations class="col-md-6" *ngIf="hasVariation"></app-single-product-variations>
+    <app-single-product-details class="col-md-6" *ngIf="!hasVariation"></app-single-product-details>
+</div>
