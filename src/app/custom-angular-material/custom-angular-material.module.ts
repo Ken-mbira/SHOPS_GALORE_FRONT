@@ -24,6 +24,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { NgChartsModule } from 'ng2-charts'
 import { MatTreeSelectInputModule } from 'mat-tree-select-input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { MatTreeSelectInputModule } from 'mat-tree-select-input';
     FormsModule,
     ReactiveFormsModule,
     MatButtonToggleModule,
-    MatTreeSelectInputModule
+    MatTreeSelectInputModule,
+    NgbModule
   ]
 })
 export class CustomAngularMaterialModule { }
