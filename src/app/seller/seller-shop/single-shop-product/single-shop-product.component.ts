@@ -9,6 +9,8 @@ export class SingleShopProductComponent implements OnInit {
 
   constructor() { }
 
+  hasVariation = true;
+
   ngOnInit(): void {
   }
 
