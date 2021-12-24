@@ -20,6 +20,7 @@ import { ShopProductsComponent } from './seller-shop/shop-products/shop-products
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
 import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
 import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
+import { NewShopProductComponent } from './seller-shop/new-shop-product/new-shop-product.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { SingleShopProductComponent } from './seller-shop/single-shop-product/si
     ShopProductsComponent,
     ShopSettingsComponent,
     ShopOrderDetailComponent,
-    SingleShopProductComponent
+    SingleShopProductComponent,
+    NewShopProductComponent
   ],
   imports: [
     CommonModule,

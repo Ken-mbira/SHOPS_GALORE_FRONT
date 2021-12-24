@@ -14,6 +14,7 @@ import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings
 
 import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
 import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
+import { NewShopProductComponent } from './seller-shop/new-shop-product/new-shop-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard'},
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: 'orders/:id', component:ShopOrderDetailComponent},
       { path: 'products', component:ShopProductsComponent },
       { path: 'products/:id', component:SingleShopProductComponent },
+      { path: 'new_product', component:NewShopProductComponent },
       { path: 'settings', component:ShopSettingsComponent },
     ]
   }
