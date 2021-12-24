@@ -16,6 +16,10 @@
     backface-visibility: hidden;
 }
 
+.submit-stock {
+    background-color: #e86105
+}
+
 .middle {
     transition: .5s ease;
     opacity: 0;

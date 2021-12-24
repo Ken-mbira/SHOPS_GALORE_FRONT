@@ -35,7 +35,6 @@ export class SingleProductDetailsComponent implements OnInit {
   }
 
   fileBrowseHandler(event){
-    console.log(event.files[0])
     var reader = new FileReader();
     reader.readAsDataURL(event.files[0])
 
