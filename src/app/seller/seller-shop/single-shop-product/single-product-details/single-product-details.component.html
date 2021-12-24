@@ -4,28 +4,17 @@
             <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2 m-1">
         </div>
         <div class="col-7 row">
-            <div class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
-                <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2 m-1 image">
+            <div *ngFor="let image of images" class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
+                <img src={{image.src}} class="img-fluid rounded-2 m-1 image">
                 <div class="middle">
                     <button mat-raised-button class="set-default-button">Set default</button>
                 </div>
             </div>
-            <div class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
-                <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2 m-1 image">
-                <div class="middle">
-                    <button mat-raised-button class="set-default-button">Set default</button>
-                </div>
-            </div>
-            <div class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
-                <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2 m-1 image">
-                <div class="middle">
-                    <button mat-raised-button class="set-default-button">Set default</button>
-                </div>
-            </div>
-            <div class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
-                <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2 m-1 image">
-                <div class="middle">
-                    <button mat-raised-button class="set-default-button">Set default</button>
+            <div *ngIf="images.length < 4" class="col-6">
+                <div class="new-image p-1">
+                    <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target)">
+                    <mat-icon>cloud_upload</mat-icon><br>
+                    <small>Drop an image or <span style="color:blue">click me</span></small>
                 </div>
             </div>
         </div>
