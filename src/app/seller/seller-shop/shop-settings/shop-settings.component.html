@@ -1,1 +1,50 @@
-<p>shop-settings works!</p>
+<div style="width:80vw" class="main">
+    <div class="d-flex justify-content-center align-items-center" style="width:100%;height:fit-content">
+        <div class="logo">
+            <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2">
+            <p class="editable" (click)="open(content)">edit</p>
+        </div>
+    </div>
+    <div class="bio p-3">
+        <h6><b>Bio</b></h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta porro, nobis aliquid labore necessitatibus nulla harum enim alias at quibusdam perspiciatis mollitia facere repellendus distinctio voluptates aspernatur accusamus nemo culpa?</p>
+        <small class="editable">edit</small>
+    </div>
+    <div class="mt-3 details">
+        <p><b>Created On:</b><span>23/34/3433</span></p>
+    </div>
+    <div class="details">
+        <p><b>Pickup Location:</b><span>Kiserian,Kajiado</span></p>
+        <small class="editable">edit</small>
+    </div>
+    <div class="details">
+        <p><b>Phone Contact:</b><span>0722442604</span></p>
+        <small class="editable">edit</small>
+    </div>
+    <div class="details">
+        <p><b>Email Contact:</b><span>mbiraken17@gmail.com</span></p>
+        <small class="editable">edit</small>
+    </div>
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Update Shop Logo</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="dropzone">
+                <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target)">
+                <img src="../../../../assets/bell.svg" alt="">
+                <h3>Drag and drop file here</h3>
+                <h3>or</h3>
+                <label for="fileDropRef">Browse for file</label>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>

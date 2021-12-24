@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
 
@@ -50,8 +49,6 @@ import { SummaryDestinationComponent } from './destination/summary-destination/s
   imports: [
     CommonModule,
     DeliveryRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     CustomAngularMaterialModule,
   ],
   entryComponents: [FillIdComponent]
