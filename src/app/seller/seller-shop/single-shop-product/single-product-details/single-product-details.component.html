@@ -8,6 +8,7 @@
                 <img src={{image.src}} class="img-fluid rounded-2 m-1 image">
                 <div class="middle">
                     <button mat-raised-button class="set-default-button">Set default</button>
+                    <mat-icon [ngStyle]="{'color':'red'}" style="cursor:pointer">delete</mat-icon>
                 </div>
             </div>
             <div *ngIf="images.length < 4" class="col-6">
