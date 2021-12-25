@@ -21,6 +21,7 @@ mat-sidenav-container {
     min-height: 90vh;
     justify-content: center;
     overflow-y: scroll;
+    width: 100%;
 }
 
 .content::-webkit-scrollbar {
