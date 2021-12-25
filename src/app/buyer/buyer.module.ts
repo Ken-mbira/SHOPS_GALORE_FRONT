@@ -9,6 +9,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+import { SingleOrderComponent } from './single-order/single-order.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +21,15 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     SidenavComponent,
     DashboardComponent,
     WishlistComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    SingleOrderComponent,
+    NotificationsComponent,
   ],
   imports: [
     CommonModule,
-    BuyerRoutingModule
+    BuyerRoutingModule,
+    CustomAngularMaterialModule
+
   ]
 })
 export class BuyerModule { }

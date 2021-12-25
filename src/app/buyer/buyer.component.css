@@ -1,0 +1,36 @@
+mat-toolbar {
+    background-color: none;
+    height: 10vh;
+}
+
+mat-sidenav {
+    width: 200px;
+    background: #2B2A38;
+    color: #E86105;
+    border-radius: 0;
+    text-align: center
+}
+
+mat-sidenav-container {
+    background: none;
+    height: 90vh;
+}
+
+.content {
+    display: flex;
+    min-height: 90vh;
+    justify-content: center;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
