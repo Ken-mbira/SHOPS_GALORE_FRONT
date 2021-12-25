@@ -10,6 +10,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+import { SingleOrderComponent } from './single-order/single-order.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CustomAngularMaterialModule } from '../custom-angular-material/custom-a
     DashboardComponent,
     WishlistComponent,
     OrderHistoryComponent,
+    SingleOrderComponent,
   ],
   imports: [
     CommonModule,

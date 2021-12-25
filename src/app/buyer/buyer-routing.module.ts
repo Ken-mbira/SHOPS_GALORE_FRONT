@@ -5,6 +5,7 @@ import { BuyerComponent } from './buyer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { SingleOrderComponent } from './single-order/single-order.component';
 
 const routes: Routes = [
   { path:"", redirectTo:"dashboard"},
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path:"dashboard",component:DashboardComponent },
       { path:"wishlist",component:WishlistComponent },
       { path:"orders",component:OrderHistoryComponent },
+      { path:"orders/:id",component:SingleOrderComponent},
     ]  
   }
 ];
