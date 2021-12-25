@@ -18,9 +18,8 @@ mat-sidenav-container {
 
 .content {
     display: flex;
-    height: fit-content;
+    min-height: 90vh;
     justify-content: center;
-    padding-top: 10px;
     overflow-y: scroll;
 }
 
