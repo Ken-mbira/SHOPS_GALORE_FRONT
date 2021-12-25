@@ -1,1 +1,31 @@
-<p>single-order works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 main">
+    <!-- id -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let order">{{order.id}}</td>
+    </ng-container>
+
+    <!-- date -->
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let order">{{order.product_name}}</td>
+    </ng-container>
+
+    <!-- items -->
+
+    <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantity</th>
+        <td mat-cell *matCellDef="let order">{{order.quantity}}</td>
+    </ng-container>
+
+    <!-- price -->
+
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let order">{{order.price}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
