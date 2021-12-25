@@ -2,6 +2,11 @@
     background-color: #e86105;
 }
 
+.main {
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
 p {
     margin: 0;
     padding: 0;
