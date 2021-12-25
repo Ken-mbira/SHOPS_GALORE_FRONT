@@ -10,6 +10,8 @@ import { DailyOrdersComponent } from './daily-orders/daily-orders.component';
 import { IncomingComponent } from './incoming/incoming.component';
 import { OutgoingComponent } from './outgoing/outgoing.component';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { OutgoingComponent } from './outgoing/outgoing.component';
   ],
   imports: [
     CommonModule,
-    StaffRoutingModule
+    StaffRoutingModule,
+    CustomAngularMaterialModule
   ]
 })
 export class StaffModule { }
