@@ -11,6 +11,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
 import { SingleOrderComponent } from './single-order/single-order.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SingleOrderComponent } from './single-order/single-order.component';
     WishlistComponent,
     OrderHistoryComponent,
     SingleOrderComponent,
+    NotificationsComponent,
   ],
   imports: [
     CommonModule,
