@@ -4,7 +4,7 @@ mat-toolbar {
 }
 
 mat-sidenav {
-    width: 200px;
+    min-width: 200px;
     background: #2B2A38;
     color: #E86105;
     border-radius: 0;

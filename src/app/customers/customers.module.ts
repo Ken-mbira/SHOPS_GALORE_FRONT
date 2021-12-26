@@ -22,6 +22,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CustomAngularMaterialModule } from '../custom-angular-material/custom-a
     CheckoutPageComponent,
     ShopFocusComponent,
     OrdersComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
