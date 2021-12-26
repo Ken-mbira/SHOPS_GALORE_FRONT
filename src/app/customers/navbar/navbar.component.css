@@ -1,59 +1,16 @@
-nav {
-  background-color: #2b2a38;
-}
-
-.navbar-brand {
-  flex: 0.75;
-}
-
-.navbar-collapse {
-  justify-content: space-between !important;
-}
-
-form {
-  flex: 0.75;
-  position: relative;
-}
-
-.btn {
-  position: absolute;
-  padding: 3px;
-  top: 0;
-  left: 2rem;
-}
-
-.form-control {
-  border: none;
-  padding-left: 4rem;
-}
-
-.form-control::placeholder {
-  color: #e6e6e6;
-}
-
-input {
-  background: rgba(230, 230, 230, 0.5);
-  border-radius: 5px;
-}
-
-.dropdown-toggle::after {
-  display: none;
-}
-
 a {
-  color: #e6e6e6;
+    text-decoration: none;
+    color: #2B2A38;
 }
 
-.nav-item {
-  margin-right: 1rem;
+a:hover,
+a:active,
+a:focus {
+    color: #E86105;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active {
-  color: #e86105;
-}
-
-.navbar-toggler {
-  color: #e86105;
+@media (max-width:900px) {
+    .phone-dropdown {
+        display: none;
+    }
 }

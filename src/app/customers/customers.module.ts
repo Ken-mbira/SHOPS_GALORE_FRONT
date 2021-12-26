@@ -21,6 +21,8 @@ import { ShopFocusComponent } from './shop-focus/shop-focus.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     CarouselModule,
     CustomersRoutingModule,
     MdbCarouselModule,
+    CustomAngularMaterialModule
   ]
 })
 export class CustomersModule { }
