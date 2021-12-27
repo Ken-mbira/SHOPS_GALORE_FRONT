@@ -1,0 +1,41 @@
+mat-toolbar {
+    background-color: #2b2a38;
+    height: 10vh;
+}
+
+mat-sidenav {
+    min-width: 200px;
+    background: #2B2A38;
+    color: #E86105;
+    border-radius: 0;
+    text-align: center
+}
+
+mat-sidenav-container {
+    background: none;
+    height: 90vh;
+}
+
+@media (min-width:901px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+
+/* .content {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    padding-top: 10px;
+    overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} */

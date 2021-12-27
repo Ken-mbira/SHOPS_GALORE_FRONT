@@ -16,12 +16,16 @@ p {
 .total-purchases {
     background-color: #2b2a38;
     height: 40vh;
+    animation: slideInUp;
+    animation-duration: 0.8s;
 }
 
 .order,
 .cart {
     height: 40vh;
     background-color: #e86105;
+    animation: slideInUp;
+    animation-duration: 1s;
 }
 
 .wishlist,
@@ -30,11 +34,15 @@ p {
 }
 
 .wishlist {
-    background-color: #e86105
+    background-color: #e86105;
+    animation: slideInUp;
+    animation-duration: 1.5s;
 }
 
 .favourite {
-    background-color: #2b2a38
+    background-color: #2b2a38;
+    animation: slideInUp;
+    animation-duration: 1.5s;
 }
 
 .order,
@@ -42,7 +50,7 @@ p {
 .total-purchases,
 .favourite,
 .wishlist {
-    padding: 0.5em
+    padding: 0.5em;
 }
 
 .order:hover,

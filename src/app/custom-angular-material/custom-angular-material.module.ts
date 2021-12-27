@@ -21,6 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -58,7 +60,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTreeSelectInputModule,
     NgbModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTreeModule,
+    MatBadgeModule
   ]
 })
 export class CustomAngularMaterialModule { }
