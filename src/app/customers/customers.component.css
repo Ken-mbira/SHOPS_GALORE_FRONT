@@ -16,7 +16,14 @@ mat-sidenav-container {
     height: 90vh;
 }
 
-.content {
+@media (min-width:901px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+
+/* .content {
     display: flex;
     height: fit-content;
     justify-content: center;
@@ -30,13 +37,5 @@ mat-sidenav-container {
 
 .content {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
-}
-
-@media (min-width:901px) {
-    .side-nav {
-        display: none;
-    }
-}
+} */
