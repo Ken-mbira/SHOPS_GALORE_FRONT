@@ -11,6 +11,27 @@ export class ImagesComponent implements OnInit {
 
   constructor() { }
 
+  images:any[] = [
+    {src: '../../../../assets/marjan-blan-marjanblan-_zdAcilqUaw-unsplash.jpg',highlighted:true},
+    {src: '../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg',highlighted:false},
+    {src: '../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg',highlighted:false},
+    {src: '../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg',highlighted:false}
+  ]
+
+  highlighted:any;
+
+  findHighlited(){
+    for(let i=0;i<this.images.length; i++){
+      if(this.images[i].highlighted === true){
+        this.highlighted = this.images[i]
+      }
+    }
+  }
+
+  makeHighlited(index:any){
+    this.highlighted = this.images[index]
+  }
+
   customOptions: OwlOptions = {
     pullDrag: true,
     merge: true,
@@ -35,6 +56,7 @@ export class ImagesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.findHighlited()
   }
 
 }
