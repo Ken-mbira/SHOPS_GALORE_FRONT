@@ -34,9 +34,6 @@ export class FeaturedProductsComponent implements OnInit {
         items: 2
       },
       500:{
-        items:2
-      },
-      600:{
         items:3
       },
       740: {
@@ -44,6 +41,9 @@ export class FeaturedProductsComponent implements OnInit {
       },
       1000: {
         items: 5
+      },
+      1155: {
+        items: 6
       }
     },
     nav: false
