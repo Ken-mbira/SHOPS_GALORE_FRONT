@@ -22,7 +22,7 @@ export class FeaturedProductsComponent implements OnInit {
     touchDrag: true,
     margin: 20,
     autoplayMouseleaveTimeout: 2000,
-    dots: true,
+    dots: false,
     navSpeed: true,
     autoplaySpeed: 3000,
     navText: ['<', '>'],
