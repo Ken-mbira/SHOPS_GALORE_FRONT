@@ -1,23 +1,23 @@
 .featured {
-  margin: 2rem 0;
-  color: #2b2a36;
+    color: #2b2a36;
 }
 
 h4 {
-  font-size: xx-large;
-  font-weight: 600;
-  margin: 2rem 0;
-}
-
-h5 {
-  margin: 0;
+    font-size: xx-large;
+    font-weight: 600;
 }
 
 p {
-  color: rgba(43, 42, 56, 0.7);
-  margin: 0;
+    color: rgba(43, 42, 56, 0.7);
+    border: 0;
+    padding: 0;
+    font-size: .875rem
 }
 
 .discount {
-  text-decoration: line-through;
+    text-decoration: line-through;
+}
+
+h5 {
+    font-size: 1rem
 }
