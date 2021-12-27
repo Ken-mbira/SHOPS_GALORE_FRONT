@@ -19,7 +19,7 @@ export class FeaturedProductsComponent implements OnInit {
     autoplayTimeout: 5000,
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
+    touchDrag: true,
     margin: 20,
     autoplayMouseleaveTimeout: 2000,
     dots: true,
