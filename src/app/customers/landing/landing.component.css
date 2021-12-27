@@ -1,6 +1,10 @@
 @media (max-width:900px) {
-    .hidden-category {
+    .categories {
         display: none
+    }
+    .slider-category {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 }
 
