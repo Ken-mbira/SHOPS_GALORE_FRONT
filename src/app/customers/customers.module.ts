@@ -23,6 +23,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ImagesComponent } from './single-product/images/images.component';
+import { WithVariationsComponent } from './single-product/with-variations/with-variations.component';
+import { WithoutVariationsComponent } from './single-product/without-variations/without-variations.component';
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ShopFocusComponent,
     OrdersComponent,
     SearchResultsComponent,
-    SidenavComponent
+    SidenavComponent,
+    ImagesComponent,
+    WithVariationsComponent,
+    WithoutVariationsComponent
   ],
   imports: [
     CommonModule,
