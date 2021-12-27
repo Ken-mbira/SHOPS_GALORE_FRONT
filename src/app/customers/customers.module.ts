@@ -21,6 +21,12 @@ import { ShopFocusComponent } from './shop-focus/shop-focus.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { ImagesComponent } from './single-product/images/images.component';
+import { WithVariationsComponent } from './single-product/with-variations/with-variations.component';
+import { WithoutVariationsComponent } from './single-product/without-variations/without-variations.component';
+
 
 @NgModule({
   declarations: [
@@ -37,13 +43,18 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     CheckoutPageComponent,
     ShopFocusComponent,
     OrdersComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    SidenavComponent,
+    ImagesComponent,
+    WithVariationsComponent,
+    WithoutVariationsComponent
   ],
   imports: [
     CommonModule,
     CarouselModule,
     CustomersRoutingModule,
     MdbCarouselModule,
+    CustomAngularMaterialModule
   ]
 })
 export class CustomersModule { }

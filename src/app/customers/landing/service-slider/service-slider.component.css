@@ -1,24 +1,20 @@
 div {
-  background-color: white;
-  display: flex;
-  height: fit-content;
-  align-items: center;
-  width: fit-content;
-  justify-content: center;
-  margin-top: 5rem;
-  margin-right: 0;
-  padding: 15px 30px;
-  border-radius: 5px;
-  color: #2b2a38;
+    background-color: white;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    border-radius: 5px;
+    color: #2b2a38;
 }
 
-div > img {
-  margin-right: 1rem;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+div>img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }
 
-div > p {
-  margin: 0;
+div>p {
+    margin: 0;
 }
