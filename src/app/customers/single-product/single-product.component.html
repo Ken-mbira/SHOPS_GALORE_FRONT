@@ -13,7 +13,8 @@
                 <small style="text-decoration: line-through;">KES 1,234</small>
                 <hr style="background-color: #e86105;">
             </div>
-            <app-with-variations></app-with-variations>
+            <app-with-variations *ngIf="hasVariations"></app-with-variations>
+            <app-without-variations *ngIf="!hasVariations"></app-without-variations>
         </div>
     </div>
 </div>
