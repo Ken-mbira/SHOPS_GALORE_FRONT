@@ -26,6 +26,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { ImagesComponent } from './single-product/images/images.component';
 import { WithVariationsComponent } from './single-product/with-variations/with-variations.component';
 import { WithoutVariationsComponent } from './single-product/without-variations/without-variations.component';
+import { ProductDescriptionComponent } from './single-product/product-description/product-description.component';
+import { ShopInformationComponent } from './single-product/shop-information/shop-information.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { WithoutVariationsComponent } from './single-product/without-variations/
     SidenavComponent,
     ImagesComponent,
     WithVariationsComponent,
-    WithoutVariationsComponent
+    WithoutVariationsComponent,
+    ProductDescriptionComponent,
+    ShopInformationComponent
   ],
   imports: [
     CommonModule,
