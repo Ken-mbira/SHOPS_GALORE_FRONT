@@ -14,14 +14,6 @@ export class CartPageComponent implements OnInit {
   products:Product[] = [
     {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
     {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
-    {imageUrl:"https://picsum.photos/200", name:"Leather Jacket", quantity:3,price:2345,subTotal:12345},
   ]
   
 
