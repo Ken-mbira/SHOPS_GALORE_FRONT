@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleProductComponent implements OnInit {
 
-  hasVariations = true;
+  hasVariations = false;
 
   constructor() { }
 
