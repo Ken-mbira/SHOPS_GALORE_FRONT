@@ -41,7 +41,7 @@ export class ImagesComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    margin: 20,
+    margin: 10,
     autoplayMouseleaveTimeout: 2000,
     dots: true,
     navSpeed: true,
