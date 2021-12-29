@@ -1,0 +1,23 @@
+.filters {
+    display: none;
+    width: 29%;
+    background-color: red
+}
+
+.main {
+    width: 100%;
+    background-color: blue
+}
+
+@media (min-width:900px) {
+    .custom-main-container {
+        display: flex;
+        justify-content: space-between
+    }
+    .filters {
+        display: block
+    }
+    .main {
+        width: 69%;
+    }
+}
