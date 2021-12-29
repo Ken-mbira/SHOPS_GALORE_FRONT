@@ -1,0 +1,17 @@
+p {
+    margin: 0;
+    padding: 0
+}
+
+.pallet {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.single-variation {
+    cursor: pointer
+}
+
+.single-variation:hover {
+    transform: scale(1.05);
+}
