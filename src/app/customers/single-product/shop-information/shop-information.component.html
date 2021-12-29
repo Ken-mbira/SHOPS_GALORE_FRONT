@@ -1,7 +1,30 @@
 <div>
-    <p style="font-size:1.2rem;font-weight:bold">Product Description</p>
+    <p style="font-size:1.2rem;font-weight:bold">Shop Information</p>
     <mat-divider [ngStyle]="{'backgroundColor':'#e86105'}" class="mt-2 mb-2"></mat-divider>
-    <div>
-        <p style="font-size:0.8rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, animi vitae, officia, in molestias necessitatibus maxime explicabo amet nemo numquam quas sit? Voluptate repellat a facere eum saepe eos rerum!</p>
+    <div style="background-color:white" class="shadow m-3 p-2">
+        <div class="d-flex justify-content-between">
+            <p style="font-size:1rem;font-weight:500">Ovoe Crafts</p>
+            <button mat-mini-fab style="background-color: #c4b8b1dc;" aria-label="Example icon button with a plus one icon">
+                <mat-icon>arrow_right</mat-icon>
+              </button>
+        </div>
+        <mat-divider [ngStyle]="{'backgroundColor':'#c4b8b1dc'}" class="mt-2 mb-2"></mat-divider>
+        <div>
+            <p style="font-size:0.9rem">Contact & Addresses</p>
+            <ul style="list-style-type:none;" class="mt-2">
+                <li style="height:fit-content" class="d-flex align-items-center mt-2">
+                    <mat-icon [ngStyle]="{'color':'#e86105'}">phone</mat-icon>
+                    <p class="ms-2" style="font-size:0.8rem">0758926990</p>
+                </li>
+                <li style="height:fit-content" class="d-flex align-items-center mt-2">
+                    <mat-icon [ngStyle]="{'color':'#e86105'}">alternate_email</mat-icon>
+                    <p class="ms-2" style="font-size:0.8rem">mbiraken17@gmail.com</p>
+                </li>
+                <li style="height:fit-content" class="d-flex align-items-center mt-2">
+                    <mat-icon [ngStyle]="{'color':'#e86105'}">location_on</mat-icon>
+                    <p class="ms-2" style="font-size:0.8rem">Kiserian, Kajiado</p>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
