@@ -1,1 +1,82 @@
-<p>cart-page works!</p>
+<div class="container-md" style="background-color:white;min-height:90vh">
+    <div>
+        <p style="font-size:1.5rem;font-weight:bold">Cart</p>
+        <small style="color:#e86105">1 item(s)</small>
+    </div>
+    <div class="d-none d-md-block mt-md-4" *ngIf="row">
+        <div class="row titles">
+            <div class="col-md-5">
+                <p>Product</p>
+            </div>
+            <div class="col-md-2">
+                <p>Quantity</p>
+            </div>
+            <div class="col-md-2">
+                <p>Unit Price</p>
+            </div>
+            <div class="col-md-2">
+                <p>Sub Total</p>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let product of products; let i=index">
+        <hr style="background-color:#e86105">
+        <div *ngIf="row" class="row d-flex align-items-center when-row" style="height:fit-content">
+            <div class="col-md-3">
+                <img src={{product.imageUrl}} alt="" class="img-fluid">
+            </div>
+            <div class="col-md-2">
+                <p>{{(product.name.length>20)? (product.name | slice:0:20)+'...':(product.name)}}</p>
+            </div>
+            <div class="col-md-2">
+                <div style="height:fit-content">
+                    <button mat-icon-button aria-label="Example icon button with a heart icon">
+                    <mat-icon style="color:#e86105">remove</mat-icon>
+                  </button>
+                    <input type="text" class="form-control rounded-1 border border-dark text-center" style="background:none;color:#e86105" readonly="readonly" value={{product.quantity}}>
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                        <mat-icon style="color:#e86105">add</mat-icon>
+                      </button>
+                </div>
+            </div>
+            <div class="col-md-2 cash">
+                <p>KES {{product.price}}</p><br>
+            </div>
+            <div class="col-md-2 cash">
+                <p>KES {{product.subTotal}}</p>
+            </div>
+            <div class="col-md-1" style="cursor:pointer">
+                <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon style="color:red">delete</mat-icon>
+                  </button>
+            </div>
+        </div>
+        <div *ngIf="!row">
+            <div>
+                <img src={{product.imageUrl}} alt="" class="img-fluid" style="width:100%;">
+            </div>
+            <div class="d-flex mt-3">
+                <p style="font-size:1.2rem;font-weight:600">{{(product.name.length>15)? (product.name | slice:0:15)+'...':(product.name)}}</p>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <p><span class="me-1" style="font-size:1.2rem;font-weight: 600;">Quantity:</span>{{product.quantity}}</p>
+                </div>
+                <div class="col-6">
+                    <p><span class="me-1" style="font-size:1.2rem;font-weight: 600;">Price:</span>KES {{product.price}}</p>
+                </div>
+            </div>
+            <div class="d-flex mt-3">
+                <p><span class="me-1" style="font-size:1.2rem;font-weight: 600;">Sub Total:</span>KES {{product.subTotal}}</p>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+            </div>
+        </div>
+        <hr style="background-color:#e86105">
+    </div>
+</div>
