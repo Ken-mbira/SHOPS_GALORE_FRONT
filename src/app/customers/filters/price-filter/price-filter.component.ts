@@ -17,9 +17,9 @@ export class PriceFilterComponent implements OnInit {
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "<b>Min price:</b> KSH" + value;
+          return "<span>Min price:</span> KSH" + value;
         case LabelType.High:
-          return "<b>Max price:</b> KSH" + value;
+          return "<span>Max price:</span> KSH" + value;
         default:
           return "KSH" + value;
       }
