@@ -33,6 +33,7 @@ import { ChildrenCategoriesComponent } from './main-category/children-categories
 import { ProductListComponent } from './product-list/product-list.component';
 import { PriceFilterComponent } from './filters/price-filter/price-filter.component';
 import { RatingFilterComponent } from './filters/rating-filter/rating-filter.component';
+import { ShopSliderComponent } from './shop-focus/shop-slider/shop-slider.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { RatingFilterComponent } from './filters/rating-filter/rating-filter.com
     ChildrenCategoriesComponent,
     ProductListComponent,
     PriceFilterComponent,
-    RatingFilterComponent
+    RatingFilterComponent,
+    ShopSliderComponent
   ],
   imports: [
     CommonModule,

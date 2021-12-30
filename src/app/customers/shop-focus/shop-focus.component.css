@@ -1,0 +1,33 @@
+.filters {
+    display: none;
+    width: 29%;
+    background-color: white;
+    border-radius: 2px;
+    padding: 1rem;
+}
+
+.main {
+    width: 100%;
+    background-color: white;
+    min-height: 88vh;
+    padding: 1rem;
+    border-radius: 2px;
+}
+
+@media (min-width:900px) {
+    .custom-main-container {
+        display: flex;
+        justify-content: space-between
+    }
+    .filters {
+        display: block
+    }
+    .main {
+        width: 69%;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
