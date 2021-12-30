@@ -18,3 +18,12 @@ div>img {
 div>p {
     margin: 0;
 }
+
+.single-service {
+    cursor: pointer
+}
+
+.single-service:hover {
+    animation: pulse;
+    animation-duration: 1s;
+}
