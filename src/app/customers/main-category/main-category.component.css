@@ -1,11 +1,17 @@
 .filters {
     display: none;
     width: 29%;
-    background-color: red
+    background-color: white;
+    border-radius: 2px;
+    padding: 1rem;
 }
 
 .main {
     width: 100%;
+    background-color: white;
+    min-height: 90vh;
+    padding: 1rem;
+    border-radius: 2px;
 }
 
 @media (min-width:900px) {

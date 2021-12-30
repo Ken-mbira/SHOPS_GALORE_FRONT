@@ -30,6 +30,8 @@ import { ShopInformationComponent } from './single-product/shop-information/shop
 import { MainCategoryComponent } from './main-category/main-category.component';
 import { ChildrenCategoriesComponent } from './main-category/children-categories/children-categories.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { PriceFilterComponent } from './filters/price-filter/price-filter.component';
+import { RatingFilterComponent } from './filters/rating-filter/rating-filter.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { ProductListComponent } from './product-list/product-list.component';
     ShopInformationComponent,
     MainCategoryComponent,
     ChildrenCategoriesComponent,
-    ProductListComponent
+    ProductListComponent,
+    PriceFilterComponent,
+    RatingFilterComponent
   ],
   imports: [
     CommonModule,
