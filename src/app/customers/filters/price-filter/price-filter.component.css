@@ -1,0 +1,7 @@
+::ng-deep .price-slider .ngx-slider .ngx-slider-selection {
+    background: #e86105 !important;
+}
+
+::ng-deep .price-slider .ngx-slider .ngx-slider-pointer {
+    background: #e86105 !important
+}

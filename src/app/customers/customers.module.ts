@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel'
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersComponent } from './customers.component';
@@ -66,7 +67,8 @@ import { RatingFilterComponent } from './filters/rating-filter/rating-filter.com
     CarouselModule,
     CustomersRoutingModule,
     MdbCarouselModule,
-    CustomAngularMaterialModule
+    CustomAngularMaterialModule,
+    NgxSliderModule
   ]
 })
 export class CustomersModule { }
