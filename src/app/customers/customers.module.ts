@@ -13,7 +13,6 @@ import { SliderComponent } from './landing/slider/slider.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ServiceSliderComponent } from './landing/service-slider/service-slider.component';
 import { FeaturedProductsComponent } from './landing/featured-products/featured-products.component';
-import { CategoriesComponent } from './landing/categories/categories.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
@@ -28,6 +27,8 @@ import { WithVariationsComponent } from './single-product/with-variations/with-v
 import { WithoutVariationsComponent } from './single-product/without-variations/without-variations.component';
 import { ProductDescriptionComponent } from './single-product/product-description/product-description.component';
 import { ShopInformationComponent } from './single-product/shop-information/shop-information.component';
+import { MainCategoryComponent } from './main-category/main-category.component';
+import { ChildrenCategoriesComponent } from './main-category/children-categories/children-categories.component';
 
 
 @NgModule({
@@ -39,7 +40,6 @@ import { ShopInformationComponent } from './single-product/shop-information/shop
     SliderComponent,
     ServiceSliderComponent,
     FeaturedProductsComponent,
-    CategoriesComponent,
     SingleProductComponent,
     CartPageComponent,
     CheckoutPageComponent,
@@ -51,7 +51,9 @@ import { ShopInformationComponent } from './single-product/shop-information/shop
     WithVariationsComponent,
     WithoutVariationsComponent,
     ProductDescriptionComponent,
-    ShopInformationComponent
+    ShopInformationComponent,
+    MainCategoryComponent,
+    ChildrenCategoriesComponent
   ],
   imports: [
     CommonModule,

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-main-category',
+  templateUrl: './main-category.component.html',
+  styleUrls: ['./main-category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class MainCategoryComponent implements OnInit {
 
   constructor(private observer:BreakpointObserver) { }
 

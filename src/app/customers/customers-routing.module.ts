@@ -7,7 +7,7 @@ import { SingleProductComponent } from './single-product/single-product.componen
 import { ShopFocusComponent } from './shop-focus/shop-focus.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { OrdersComponent } from './orders/orders.component';
-import { CategoryComponent } from './category/category.component';
+import { MainCategoryComponent } from './main-category/main-category.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 
@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'shop/:id',component:ShopFocusComponent},
       { path: 'cart',component:CartPageComponent },
       { path: 'orders',component:OrdersComponent },
-      { path: 'category/:id',component:CategoryComponent },
+      { path: 'category/:id',component:MainCategoryComponent },
       { path: 'search-results/:phrase',component:SearchResultsComponent },
       { path: 'checkout',component:CheckoutPageComponent }
     ]
