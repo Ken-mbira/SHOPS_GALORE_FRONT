@@ -24,13 +24,13 @@
     <div *ngFor="let product of products; let i=index">
         <hr style="background-color:#e86105">
         <div *ngIf="row" class="row d-flex align-items-center when-row" style="height:fit-content">
-            <div class="col-md-3">
-                <img src={{product.imageUrl}} alt="" class="img-fluid">
+            <div class="col-md-1">
+                <img src={{product.imageUrl}} alt="" style="object-fit: cover;" class="img-fluid">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <p>{{(product.name.length>20)? (product.name | slice:0:20)+'...':(product.name)}}</p>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div style="height:fit-content">
                     <button mat-icon-button aria-label="Example icon button with a heart icon">
                     <mat-icon style="color:#e86105">remove</mat-icon>
