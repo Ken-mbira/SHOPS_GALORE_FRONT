@@ -7,7 +7,6 @@
         </div>
         <div><button mat-icon-button aria-label="Example icon button with a menu icon" (click)="gridView = false">
             <mat-icon>list</mat-icon>
-
           </button>
         </div>
     </div>
@@ -17,7 +16,7 @@
                 <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="card-img-top img-fluid" alt="...">
                 <div class="m-1">
                     <p class="card-text" style="font-size:0.83rem">Fashion Vintage...</p>
-                    <h5 class="card-title" style="font-size:0.83rem">KES 1,189 - 1,299</h5>
+                    <h5 class="card-title" style="font-size:0.83rem;color:#e86105">KES 1,189 - 1,299</h5>
                     <p class="card-text" style="font-size:0.83rem;text-decoration: line-through;">KES 1,999</p>
                 </div>
             </div>
@@ -27,7 +26,7 @@
                 <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="card-img-top img-fluid" alt="...">
                 <div class="m-1">
                     <p class="card-text" style="font-size:0.83rem">Fashion Vintage...</p>
-                    <h5 class="card-title" style="font-size:0.83rem">KES 1,189 - 1,299</h5>
+                    <h5 class="card-title" style="font-size:0.83rem;color:#e86105">KES 1,189 - 1,299</h5>
                     <p class="card-text" style="font-size:0.83rem;text-decoration: line-through;">KES 1,999</p>
                 </div>
             </div>
@@ -37,7 +36,7 @@
                 <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="card-img-top img-fluid" alt="...">
                 <div class="m-1">
                     <p class="card-text" style="font-size:0.83rem">Fashion Vintage...</p>
-                    <h5 class="card-title" style="font-size:0.83rem">KES 1,189 - 1,299</h5>
+                    <h5 class="card-title" style="font-size:0.83rem;color:#e86105">KES 1,189 - 1,299</h5>
                     <p class="card-text" style="font-size:0.83rem;text-decoration: line-through;">KES 1,999</p>
                 </div>
             </div>
@@ -47,13 +46,87 @@
                 <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="card-img-top img-fluid" alt="...">
                 <div class="m-1">
                     <p class="card-text" style="font-size:0.83rem">Fashion Vintage...</p>
-                    <h5 class="card-title" style="font-size:0.83rem">KES 1,189 - 1,299</h5>
+                    <h5 class="card-title" style="font-size:0.83rem;color:#e86105">KES 1,189 - 1,299</h5>
                     <p class="card-text" style="font-size:0.83rem;text-decoration: line-through;">KES 1,999</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="list-view" *ngIf="!gridView">
-
+    <div *ngIf="!gridView">
+        <div class="list-product">
+            <hr style="background-color: #2b2a38;">
+            <div class="list-view row mt-3">
+                <div class="col-3">
+                    <img src="../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-5">
+                    <div>
+                        <p style="font-size:1.2rem;font-weight: 600;">Fashion Vintage...</p>
+                    </div>
+                    <div>
+                        <p class="card-title" style="font-size:0.9rem;color:#e86105">KES 1,189 - 1,299</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <button mat-raised-button style="background-color:#e86105">ADD TO CART</button>
+                    </div>
+                    <div class="mt-3">
+                        <button mat-raised-button [routerLink]="['/customer/product',1]"><span style="color:#2b2a38">View</span></button>
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #2b2a38;">
+        </div>
+        <div class="list-product">
+            <hr style="background-color: #2b2a38;">
+            <div class="list-view row mt-3">
+                <div class="col-3">
+                    <img src="../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-5">
+                    <div>
+                        <p style="font-size:1.2rem;font-weight: 600;">Fashion Vintage...</p>
+                    </div>
+                    <div>
+                        <p class="card-title" style="font-size:0.9rem;color:#e86105">KES 1,189 - 1,299</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <button mat-raised-button style="background-color:#e86105">ADD TO CART</button>
+                    </div>
+                    <div class="mt-3">
+                        <button mat-raised-button [routerLink]="['/customer/product',1]"><span style="color:#2b2a38">View</span></button>
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #2b2a38;">
+        </div>
+        <div class="list-product">
+            <hr style="background-color: #2b2a38;">
+            <div class="list-view row mt-3">
+                <div class="col-3">
+                    <img src="../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-5">
+                    <div>
+                        <p style="font-size:1.2rem;font-weight: 600;">Fashion Vintage...</p>
+                    </div>
+                    <div>
+                        <p class="card-title" style="font-size:0.9rem;color:#e86105">KES 1,189 - 1,299</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <button mat-raised-button style="background-color:#e86105">ADD TO CART</button>
+                    </div>
+                    <div class="mt-3">
+                        <button mat-raised-button [routerLink]="['/customer/product',1]"><span style="color:#2b2a38">View</span></button>
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #2b2a38;">
+        </div>
     </div>
 </div>
