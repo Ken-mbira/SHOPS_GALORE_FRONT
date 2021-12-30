@@ -24,6 +24,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -66,7 +68,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
     MatTreeModule,
     MatBadgeModule,
     MatPaginatorModule,
-    NgxMasonryModule
+    NgxMasonryModule,
+    MatMenuModule
 
   ]
 })
