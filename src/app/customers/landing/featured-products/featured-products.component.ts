@@ -44,6 +44,17 @@ export class FeaturedProductsComponent implements OnInit {
       },
       1155: {
         items: 6
+      },
+      1300:{
+        items:7
+      },
+      1400:{
+        items:8
+      },
+      1600:{
+        items:9
+      },1900:{
+        items:10
       }
     },
     nav: false

@@ -30,6 +30,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgChartsModule } from 'ng2-charts'
 import { MatTreeSelectInputModule } from 'mat-tree-select-input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatNativeDateModule,
     MatTreeModule,
     MatBadgeModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgxMasonryModule
+
   ]
 })
 export class CustomAngularMaterialModule { }
