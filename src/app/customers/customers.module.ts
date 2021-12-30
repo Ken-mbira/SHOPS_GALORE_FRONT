@@ -29,6 +29,7 @@ import { ProductDescriptionComponent } from './single-product/product-descriptio
 import { ShopInformationComponent } from './single-product/shop-information/shop-information.component';
 import { MainCategoryComponent } from './main-category/main-category.component';
 import { ChildrenCategoriesComponent } from './main-category/children-categories/children-categories.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ChildrenCategoriesComponent } from './main-category/children-categories
     ProductDescriptionComponent,
     ShopInformationComponent,
     MainCategoryComponent,
-    ChildrenCategoriesComponent
+    ChildrenCategoriesComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,
