@@ -1,0 +1,8 @@
+.category:hover {
+    animation: pulse;
+    animation-duration: 0.7s;
+}
+
+.category {
+    cursor: pointer
+}
