@@ -14,7 +14,7 @@ import { ResetComponent } from './password/reset/reset.component';
 import { ForgotComponent } from './password/forgot/forgot.component';
 
 const routes: Routes = [
-  { path: '', component: AuthenticationComponent },
+  { path: '', redirectTo:'login' },
   {path: 'login', component: LoginComponent},
   { 
     path: 'register', 

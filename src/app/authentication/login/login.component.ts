@@ -9,6 +9,8 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  hide:boolean = true;
+
   ngOnInit(): void {
   }
 

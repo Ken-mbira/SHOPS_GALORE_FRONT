@@ -32,7 +32,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import { NgChartsModule } from 'ng2-charts'
 import { MatTreeSelectInputModule } from 'mat-tree-select-input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxMasonryModule } from 'ngx-masonry';
 
 
 @NgModule({
@@ -68,8 +67,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     MatTreeModule,
     MatBadgeModule,
     MatPaginatorModule,
-    NgxMasonryModule,
-    MatMenuModule
+    MatMenuModule,
 
   ]
 })
