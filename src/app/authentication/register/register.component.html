@@ -3,27 +3,11 @@
         <mat-step label="Enter your role">
             <app-role-choice></app-role-choice>
         </mat-step>
-        <mat-step label="Fill out your address">
+        <mat-step label="Fill out your information">
             <app-form></app-form>
         </mat-step>
-        <mat-step label="Fill out your phone number">
-            <form>
-                <mat-form-field appearance="fill">
-                    <mat-label>Phone number</mat-label>
-                    <input matInput placeholder="Ex. 12345678" required>
-                </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form>
-        </mat-step>
-        <mat-step>
-            <ng-template matStepLabel>Done</ng-template>
-            <p>You are now done.</p>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-            </div>
+        <mat-step label="Success">
+            <app-successfull></app-successfull>
         </mat-step>
     </mat-stepper>
 
