@@ -1,10 +1,7 @@
-<div class="container-md d-md-flex align-items-center" style="height:100vh">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-6" style="background-color:white;">
-            <div class=" mt-2 mb-4">
-                <p style="font-size:1.2rem;font-weight:500;white-space: nowrap;">Login to manage your account</p>
-            </div>
-            <form class="text-center">
+        <div class="col-md-6">
+            <form style="background:white">
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>Email</mat-label>
@@ -18,13 +15,14 @@
                         <input matInput [type]="hide ? 'password' : 'text'" class="example-right-align">
                         <span matPrefix><mat-icon style="color:#e86105">lock</mat-icon></span>
                         <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]=" 'Hide password' " [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                          </button>
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
                     </mat-form-field>
                 </div>
             </form>
         </div>
-        <div class="col-md-6 ">
+        <div class="col-md-6">
+
         </div>
     </div>
 </div>

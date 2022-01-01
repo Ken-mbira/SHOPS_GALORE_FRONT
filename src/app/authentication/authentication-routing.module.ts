@@ -14,25 +14,30 @@ import { ResetComponent } from './password/reset/reset.component';
 import { ForgotComponent } from './password/forgot/forgot.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'login' },
-  {path: 'login', component: LoginComponent},
   { 
-    path: 'register', 
-    component: RegisterComponent,
-    children: [
-      {path: '', component:RoleChoiceComponent},
-      {path: 'form', component:FormComponent},
-      {path: 'success', component:SuccessfullComponent}
+    path: '',
+    component:AuthenticationComponent,
+    children:[
+      {path: 'login', component: LoginComponent},
+      { 
+        path: 'register', 
+        component: RegisterComponent,
+        children: [
+          {path: '', component:RoleChoiceComponent},
+          {path: 'form', component:FormComponent},
+          {path: 'success', component:SuccessfullComponent}
+        ]
+      },
+      {
+        path: '',
+        component: PasswordComponent,
+        children: [
+          {path: 'forgot', component:ForgotComponent},
+          {path: 'reset', component:ResetComponent}
+        ]
+      }
     ]
   },
-  {
-    path: '',
-    component: PasswordComponent,
-    children: [
-      {path: 'forgot', component:ForgotComponent},
-      {path: 'reset', component:ResetComponent}
-    ]
-  }
 ];
 
 @NgModule({
