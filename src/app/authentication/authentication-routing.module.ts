@@ -21,12 +21,7 @@ const routes: Routes = [
       {path: 'login', component: LoginComponent},
       { 
         path: 'register', 
-        component: RegisterComponent,
-        children: [
-          {path: '', component:RoleChoiceComponent},
-          {path: 'form', component:FormComponent},
-          {path: 'success', component:SuccessfullComponent}
-        ]
+        component: RegisterComponent
       },
       {
         path: '',

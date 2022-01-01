@@ -25,6 +25,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -68,6 +70,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatBadgeModule,
     MatPaginatorModule,
     MatMenuModule,
+    MatRadioModule
 
   ]
 })
