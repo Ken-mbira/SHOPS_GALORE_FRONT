@@ -16,11 +16,5 @@ input.example-right-align {
 }
 
 .mat-form-field {
-    width: 20rem;
-}
-
-@media (max-width: 500px) {
-    .mat-form-field {
-        width: 15rem;
-    }
+    width: 100%
 }
