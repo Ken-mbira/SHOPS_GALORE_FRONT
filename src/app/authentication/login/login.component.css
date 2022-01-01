@@ -18,3 +18,32 @@ input.example-right-align {
 .mat-form-field {
     width: 100%
 }
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-login-cards {
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.social-login-cards:hover {
+    animation: pulse;
+    animation-duration: .7s
+}
