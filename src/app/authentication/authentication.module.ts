@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationComponent } from './authentication.component';
 import { LoginComponent } from './login/login.component';
@@ -27,7 +29,8 @@ import { ResetComponent } from './password/reset/reset.component';
   ],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    CustomAngularMaterialModule
   ]
 })
 export class AuthenticationModule { }

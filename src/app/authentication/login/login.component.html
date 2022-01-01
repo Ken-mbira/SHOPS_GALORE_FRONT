@@ -1,56 +1,28 @@
-<div class="container-fluid row">
-    <div class="register col-lg-10 col-xl-10">
-        <div class="row container-fluid justify-content-center">
-            <div class="register-form col-md-8 col-lg-6">
-                <p>Login to manage your account</p>
-                <form>
-                    <div class="mt-2 row g-3">
-                        <div class="col-12 placeholder-icon">
-                            <img src="../../../../assets/Mail.svg" alt="" height="20px">
-                            <input type="email" class="form-control " placeholder="E-mail or Phone Number">
-                        </div>
-                        <div class="col-12 placeholder-icon">
-                            <img src="../../../../assets/lock.svg" alt="" height="25px">
-                            <input type="password" class="form-control " placeholder="Password">
-                            <img id="password-toggle" src="../../../../assets/eye-off.svg" alt="">
-                            <img id="password-toggle" class="pwd-on" src="../../../../assets/eye.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="mt-2 row g-3">
-                        <div class="mt-2 form-check col-6">
-                            <input class="form-check-input" id="acceptterms" type="checkbox">
-                            <small><label class="form-check-label" for="acceptterms">Remember me</label></small>
-                        </div>
-                        <div class="mt-2 form-check col-6 text-end">
-                            <small><a routerLink="../forgot" style="color:#E86105 !important">Forgot
-                                    Password?</a></small>
-                        </div>
-                    </div>
-                    <div class="mt-5 mb-5">
-                        <button routerLink="../success" class="btn btn-register">LOGIN</button>
-                    </div>
-                    <div class="mt-2" style="width:100%;text-align:center">
-                        <small>Don't have an account? <a routerLink="../register" style="color:#E86105 !important">Sign
-                                up</a></small>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6 d-flex justify-content-center align-items-center mt-3">
-                <div id="registration_means">
-                    <button class=" btn btn-lg" style="background-color:white; padding: 10px 40px;"
-                        routerLink="form"><span class="badge"><img
-                                src="../../../assets/2993685_brand_brands_google_logo_logos_icon 1.svg"
-                                width="20px"></span>Login with Google</button>
-                    <button class=" btn btn-lg" style="background-color:white; padding: 10px 40px;"
-                        routerLink="form"><span class="badge"><img
-                                src="../../../assets/317720_social media_tweet_twitter_social_icon 1.svg"
-                                width="20px"></span>Login with Twitter</button>
-                    <button class=" btn btn-lg" style="background-color:white; padding: 10px 40px;"
-                        routerLink="form"><span class="badge"><img
-                                src="../../../assets/4202107_facebook_fb_logo_social_social media_icon 1.svg"
-                                width="20px"></span>Login with Facebook</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form style="background:white">
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" class="example-right-align">
+                        <span matPrefix><mat-icon style="color:#e86105 ">email</mat-icon></span>
+                    </mat-form-field>
                 </div>
-            </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" class="example-right-align">
+                        <span matPrefix><mat-icon style="color:#e86105">lock</mat-icon></span>
+                        <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]=" 'Hide password' " [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+
         </div>
     </div>
 </div>
