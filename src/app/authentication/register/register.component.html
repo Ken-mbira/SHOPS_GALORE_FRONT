@@ -1,3 +1,14 @@
-<div class="contaier-fluid" id="register">
-    <router-outlet></router-outlet>
+<div class="contaier-md">
+    <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+        <mat-step label="Enter your role">
+            <app-role-choice></app-role-choice>
+        </mat-step>
+        <mat-step label="Fill out your information">
+            <app-form></app-form>
+        </mat-step>
+        <mat-step label="Success">
+            <app-successfull></app-successfull>
+        </mat-step>
+    </mat-stepper>
+
 </div>
