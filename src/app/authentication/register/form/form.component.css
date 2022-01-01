@@ -27,12 +27,32 @@ p {
     animation-duration: .7s
 }
 
-
-/* .names mat-form-field {
-    width: 10em;
-    margin-left: 1rem;
-} */
-
 .long mat-form-field {
     width: 100%
+}
+
+@media (min-width: 992px) {
+    .names {
+        display: flex;
+        justify-content: space-between
+    }
+}
+
+@media only screen and (min-width:572px) and (max-width: 767px) {
+    .names {
+        display: flex;
+        justify-content: space-between
+    }
+}
+
+@media (max-width:572px) {
+    .names mat-form-field {
+        width: 100%
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .names mat-form-field {
+        width: 100%
+    }
 }
