@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -26,6 +27,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -70,7 +72,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatBadgeModule,
     MatPaginatorModule,
     MatMenuModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule,
+    MatSnackBarModule
 
   ]
 })
