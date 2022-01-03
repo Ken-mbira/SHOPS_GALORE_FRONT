@@ -21,9 +21,21 @@ const routes: Routes = [
     loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule),
     canActivate:[LoggedGuard]
   },
-  { path: 'delivery', loadChildren: () => import('./delivery/delivery.module').then(m => m.DeliveryModule) },
-  { path: 'staff', loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule) },
-  { path: 'buyer', loadChildren: () => import('./buyer/buyer.module').then(m => m.BuyerModule) },
+  {
+    path: 'delivery',
+    loadChildren: () => import('./delivery/delivery.module').then(m => m.DeliveryModule),
+    canActivate:[LoggedGuard]
+  },
+  { 
+    path: 'staff',
+    loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule),
+    canActivate:[LoggedGuard]
+  },
+  {
+    path: 'buyer',
+    loadChildren: () => import('./buyer/buyer.module').then(m => m.BuyerModule),
+    canActivate:[LoggedGuard]
+  },
   { path: '**', component: NotFoundComponent},
 
 ];
