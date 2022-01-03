@@ -17,13 +17,9 @@ const routes: Routes = [
     loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule,)
   },
   {
-    path: 'seller',
+    path: 'store_owner',
     loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule),
-    canActivate:[LoggedGuard],
-    data: {
-      role:"store_owner",
-      path:"seller"
-    }
+    canActivate:[LoggedGuard]
   },
   { path: 'delivery', loadChildren: () => import('./delivery/delivery.module').then(m => m.DeliveryModule) },
   { path: 'staff', loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule) },

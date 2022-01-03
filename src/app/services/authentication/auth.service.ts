@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 import { environment } from 'src/environments/environment';
+import { User } from 'src/app/classes/user/user';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Role } from 'src/app/classes/role/role';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,10 @@ export class AuthService {
   public redirectUrl:string;
 
   private isAuthenticated = new BehaviorSubject<Boolean>(false)
-
   authStatus = this.isAuthenticated.asObservable()
+
+  private userInstance = new BehaviorSubject<User>(new User("",new Role(0,""),"","",new Date(),"","","","","",false))
+  userStatus = this.userInstance.asObservable();
 
   checkAuth(){
     const helper = new JwtHelperService()
@@ -33,12 +37,42 @@ export class AuthService {
     }
   }
 
+  getInstance(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${localStorage.getItem('access_token')}`
+    })
+
+    this.http.get(`${environment.BASE_URL}user/instance/`,{"headers":headers}).subscribe(response => {
+      this.userInstance.next(new User(
+        response['email'],
+        new Role(
+          response['role']['id'],
+          response['role']['name']
+        ),
+        response['first_name'],
+        response['last_name'],
+        response['member_since'],
+        response['profile']['phone_number'],
+        response['profile']['bio'],
+        response['profile']['location'],
+        response['profile']['avatar'],
+        response['profile']['gender'],
+        response['profile']['receive_notifications_via_email']
+      ))
+    })
+  }
+
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}api/token/`,credentials).subscribe(response=>{
       localStorage.setItem("access_token",response['access'])
       localStorage.setItem("refresh_token",response['refresh'])
-      this.route.navigate([this.redirectUrl])
-      this.redirectUrl = null;
+      this.getInstance()
+      if(this.redirectUrl){
+        this.route.navigate([this.redirectUrl])
+        this.redirectUrl = null;
+      }else{
+        this.route.navigate([""])
+      }
     },error=>{
       console.log(error)
       this.snackBar.open(error['error']['detail'],"Try Again",{duration:3000})
