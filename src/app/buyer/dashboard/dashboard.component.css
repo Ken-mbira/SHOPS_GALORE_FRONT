@@ -1,0 +1,75 @@
+.main {
+    width: 80vw;
+}
+
+@media (max-width: 1150px) {
+    main {
+        width: 100vw
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+.total-purchases {
+    background-color: #2b2a38;
+    height: 40vh;
+    animation: slideInUp;
+    animation-duration: 0.8s;
+}
+
+.order,
+.cart {
+    height: 40vh;
+    background-color: #e86105;
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
+.wishlist,
+.favourite {
+    height: 40vh;
+}
+
+.wishlist {
+    background-color: #e86105;
+    animation: slideInUp;
+    animation-duration: 1.5s;
+}
+
+.favourite {
+    background-color: #2b2a38;
+    animation: slideInUp;
+    animation-duration: 1.5s;
+}
+
+.order,
+.cart,
+.total-purchases,
+.favourite,
+.wishlist {
+    padding: 0.5em;
+}
+
+.order:hover,
+.cart:hover,
+.total-purchases:hover,
+.favourite:hover,
+.wishlist:hover {
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+}
+
+@media (max-width:768px) {
+    .order,
+    .cart,
+    .total-purchases {
+        height: 15vh;
+    }
+    .favourite,
+    .wishlist {
+        height: 25vh;
+    }
+}

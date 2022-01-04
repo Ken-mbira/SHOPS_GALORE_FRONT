@@ -1,0 +1,21 @@
+mat-step {
+    margin-top: 10px
+}
+
+@media (max-width:900px) {
+    .main {
+        width: 100vw !important;
+    }
+}
+
+::ng-deep .cdk-overlay-pane {
+    opacity: 1;
+}
+
+mat-form-field {
+    width: 60vmin
+}
+
+.dimensions mat-form-field {
+    width: 100px;
+}

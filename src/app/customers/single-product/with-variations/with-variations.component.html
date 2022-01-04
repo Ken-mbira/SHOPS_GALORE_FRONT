@@ -1,0 +1,25 @@
+<div style="text-align: center">
+    <p style="font-size:1.2rem">Available Variations</p>
+    <div style="text-align: left;width:100%" class="d-flex justify-content-center">
+        <div>
+            <div class="color d-flex">
+                <p class="me-2">Color:</p>
+                <div class="d-flex flex-wrap">
+                    <div *ngFor="let color of colors;let i = index" class="single-variation">
+                        <div class="pallet m-1" [ngStyle]="{'backgroundColor': color.color}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="size mt-3 d-flex">
+                <p class="me-2">Size:</p>
+                <div class="d-flex flex-wrap">
+                    <div *ngFor="let size of sizes;let i = index" class="single-variation">
+                        <div class="p-1 border border-dark m-1">
+                            <p>{{size.value}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

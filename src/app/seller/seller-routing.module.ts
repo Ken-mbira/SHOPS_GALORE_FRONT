@@ -12,6 +12,10 @@ import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.compo
 import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
 
+import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
+import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
+import { NewShopProductComponent } from './seller-shop/new-shop-product/new-shop-product.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard'},
   {
@@ -28,8 +32,11 @@ const routes: Routes = [
     children: [
       { path: '', component:ShopDashboardComponent },
       { path: 'notifications', component:ShopNotificationsComponent },
-      { path: 'orders', component:ShopOrdersComponent },
+      {path: 'orders',component:ShopOrdersComponent},
+      { path: 'orders/:id', component:ShopOrderDetailComponent},
       { path: 'products', component:ShopProductsComponent },
+      { path: 'products/:id', component:SingleShopProductComponent },
+      { path: 'new_product', component:NewShopProductComponent },
       { path: 'settings', component:ShopSettingsComponent },
     ]
   }

@@ -1,15 +1,36 @@
-.header {
-  margin-bottom: 2rem;
-  font-weight: 600;
-  color: rgba(43, 42, 56, 0.7);
+.example-tree-invisible {
+    display: none;
 }
 
-.content {
-  padding-left: 1rem;
-  color: rgba(43, 42, 56, 0.7);
+.example-tree ul,
+.example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
 }
 
-img {
-  margin-right: 1rem;
-  height: 20px;
+
+/*
+ * This padding sets alignment of the nested nodes.
+ */
+
+.example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+}
+
+
+/*
+ * Padding for leaf nodes.
+ * Leaf nodes need to have padding so as to align with other non-leaf nodes
+ * under the same parent.
+ */
+
+.example-tree div[role=group]>.mat-tree-node {
+    padding-left: 10px;
+}
+
+.example-tree {
+    background: none;
+    padding: 0.5em;
+    margin: 0.5em;
 }

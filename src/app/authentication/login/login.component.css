@@ -1,107 +1,49 @@
+.example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+.mat-form-field {
+    width: 100%
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
 .row {
-  --bs-gutter-x: 0;
-  color: rgba(43, 42, 56, 0.7);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#row {
-  --bs-gutter-x: 1.5rem;
+.row>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
 }
 
-.register {
-  margin: 10vh auto;
+.social-login-cards {
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 500;
 }
 
-.register-form > p {
-  text-align: center;
-  font-weight: 300;
-  font-size: 36px;
-}
-
-form {
-  padding: 3vw 2.5vw;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(43, 42, 56, 0.15);
-  box-shadow: 0px 30px 30px rgba(43, 42, 56, 0.15);
-}
-
-.form-control {
-  border: none;
-}
-
-input {
-  background: rgba(43, 42, 56, 0.05);
-  border-radius: 5px;
-  height: 4rem;
-  margin-bottom: 0.5rem;
-  padding-left: 4rem;
-}
-
-.btn-register {
-  color: #fff;
-  background-color: #e86105;
-  border-color: #e86105;
-  border-radius: 5px;
-  width: 100%;
-  padding: 10px 0;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.btn-register:hover,
-.btn-register:active,
-.btn-register:focus {
-  transform: scale(1.05);
-  transition: 500ms;
-}
-
-.placeholder-icon {
-  position: relative;
-}
-
-.placeholder-icon > img {
-  position: absolute;
-  top: 15px;
-  padding-left: 20px;
-}
-
-.col-12 > img {
-  top: 23px;
-}
-
-#password-toggle {
-  right: 25px;
-  top: 20px;
-  height: 20px;
-}
-
-.pwd-on {
-  display: none;
-}
-
-#registration_means {
-  display: flex;
-  flex-direction: column;
-}
-
-#registration_means > button {
-  margin-top: 1.5rem;
-  color: rgba(43, 42, 56, 0.7);
-  box-shadow: 0px 30px 30px rgba(43, 42, 56, 0.15);
-}
-
-#registration_means > button:hover {
-  transform: scale(1.05);
-  transition: 500ms;
-}
-
-#acceptterms {
-  height: 1rem;
-  padding: 0;
-  border-radius: 50%;
-}
-
-.form-check-input:checked {
-  background-color: #e86105;
-  border-color: #e86105;
+.social-login-cards:hover {
+    animation: pulse;
+    animation-duration: .7s
 }

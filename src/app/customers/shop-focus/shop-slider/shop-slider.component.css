@@ -1,0 +1,9 @@
+.shop-slider {
+    height: 25em
+}
+
+@media (max-width:500px) {
+    .shop-slider {
+        height: 20em
+    }
+}

@@ -18,6 +18,12 @@ import { ShopNotificationsComponent } from './seller-shop/shop-notifications/sho
 import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.component';
 import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
+import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
+import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
+import { NewShopProductComponent } from './seller-shop/new-shop-product/new-shop-product.component';
+import { SingleProductMainComponent } from './seller-shop/single-shop-product/single-product-main/single-product-main.component';
+import { SingleProductVariationsComponent } from './seller-shop/single-shop-product/single-product-variations/single-product-variations.component';
+import { SingleProductDetailsComponent } from './seller-shop/single-shop-product/single-product-details/single-product-details.component';
 
 
 @NgModule({
@@ -35,7 +41,13 @@ import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings
     ShopNotificationsComponent,
     ShopOrdersComponent,
     ShopProductsComponent,
-    ShopSettingsComponent
+    ShopSettingsComponent,
+    ShopOrderDetailComponent,
+    SingleShopProductComponent,
+    NewShopProductComponent,
+    SingleProductMainComponent,
+    SingleProductVariationsComponent,
+    SingleProductDetailsComponent
   ],
   imports: [
     CommonModule,

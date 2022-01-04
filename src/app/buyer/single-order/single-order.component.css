@@ -1,0 +1,19 @@
+.main {
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 80vw
+}
+
+@media (max-width: 900px) {
+    table {
+        width: 100vw
+    }
+}

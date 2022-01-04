@@ -1,0 +1,35 @@
+<div class="container-md mt-md-3">
+    <div class="row">
+        <div class="col-md-5">
+            <app-images class="shadow"></app-images>
+        </div>
+        <div class="col-md-7">
+            <div>
+                <p style="font-size:1.5rem">Fashion Vintage Breathable Sneakers</p>
+            </div>
+            <div>
+                <hr style="background-color: #e86105;">
+                <p style="font-size:1.3rem;font-weight:bold">KES 1,234 - 1,234</p>
+                <small style="text-decoration: line-through;">KES 1,234</small>
+                <hr style="background-color: #e86105;">
+            </div>
+            <div *ngIf="hasVariations">
+                <app-with-variations></app-with-variations>
+            </div>
+            <div class="mt-3" *ngIf="!hasVariations">
+                <app-without-variations></app-without-variations>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-7">
+            <app-product-description></app-product-description>
+        </div>
+        <div class="col-md-1 d-none d-md-flex justify-content-center">
+            <mat-divider vertical style="height:100%"></mat-divider>
+        </div>
+        <div class="col-md-4 mt-4 mt-md-0">
+            <app-shop-information></app-shop-information>
+        </div>
+    </div>
+</div>

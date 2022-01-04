@@ -1,4 +1,19 @@
-<app-navbar></app-navbar>
-<div class="container-fluid" id="landing">
-    <router-outlet></router-outlet>
-</div>
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode == 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened" [ngStyle]="{'color':'#E86105'}">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened" [ngStyle]="{'color':'#E86105'}">
+        close
+        </mat-icon>
+    </button>
+    <app-navbar style="width:100%"></app-navbar>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav class="shadow side-nav" #sidenav="matSidenav">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

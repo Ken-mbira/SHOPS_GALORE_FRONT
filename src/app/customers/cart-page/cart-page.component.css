@@ -1,0 +1,24 @@
+p {
+    margin: 0;
+    padding: 0
+}
+
+.titles p {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.titles div {
+    display: flex;
+    justify-content: center
+}
+
+.cash {
+    font-size: 1.1rem;
+    font-weight: 600
+}
+
+.when-row div {
+    display: flex;
+    justify-content: center
+}

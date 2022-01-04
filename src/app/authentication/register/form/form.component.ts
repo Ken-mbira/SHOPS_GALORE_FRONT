@@ -9,6 +9,9 @@ export class FormComponent implements OnInit {
 
   constructor() { }
 
+  firstPasswordHide:boolean = true;
+  secondPasswordHide:boolean = true;
+
   ngOnInit(): void {
   }
 
