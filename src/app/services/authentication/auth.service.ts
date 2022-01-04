@@ -42,7 +42,9 @@ export class AuthService {
       'Authorization':`Bearer ${localStorage.getItem('access_token')}`
     })
 
-    this.http.get(`${environment.BASE_URL}user/instance/`,{"headers":headers}).subscribe(response => {
+    return this.http.get(`${environment.BASE_URL}user/instance/`,{"headers":headers}).subscribe(response => {
+      this.setToken(response['role']['name'],'user_role')
+
       this.userInstance.next(new User(
         response['email'],
         new Role(
@@ -64,19 +66,24 @@ export class AuthService {
 
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}api/token/`,credentials).subscribe(response=>{
-      localStorage.setItem("access_token",response['access'])
-      localStorage.setItem("refresh_token",response['refresh'])
+      this.setToken(response['access'],'access_token')
+      this.setToken(response['refresh'],'refresh_token')
       this.getInstance()
       if(this.redirectUrl){
         this.route.navigate([this.redirectUrl])
         this.redirectUrl = null;
       }else{
-        this.route.navigate([""])
+        // this.route.navigate([""])
+        console.log(this.userInstance.value)
       }
     },error=>{
       console.log(error)
       this.snackBar.open(error['error']['detail'],"Try Again",{duration:3000})
     })
+  }
+
+  setToken(token:string,name:string){
+    localStorage.setItem(name,token)
   }
 
 }
