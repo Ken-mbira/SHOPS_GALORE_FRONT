@@ -5,7 +5,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { LoggedGuard } from './guards/logged.guard';
 import { RoleGuard } from './guards/role.guard';
-import { LoggedinGuard } from './guards/loggedin.guard'
+import { LoggedinGuard } from './guards/loggedin.guard';
+import { HasroleGuard } from './guards/hasrole.guard'
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
   },
   { 
     path: 'customer',
-    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule,)
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule,),
+    canActivate: [HasroleGuard]
   },
   {
     path: 'store_owner',
