@@ -20,7 +20,7 @@ export class AuthService {
 
   public redirectUrl:string;
 
-  private isAuthenticated = new BehaviorSubject<Boolean>(false)
+  private isAuthenticated = new BehaviorSubject<boolean>(false)
   authStatus = this.isAuthenticated.asObservable()
 
   private userInstance = new BehaviorSubject<User>(new User("",new Role(0,""),"","",new Date(),"","","","","",false))
@@ -64,6 +64,7 @@ export class AuthService {
       ))
 
       if(this.redirectUrl){
+        console.log(this.redirectUrl)
         this.route.navigate([this.redirectUrl])
         this.redirectUrl = null;
       }else{

@@ -10,13 +10,16 @@ import { Router } from '@angular/router';
 })
 export class LoggedGuard implements CanActivate {
 
-  constructor(private authService:AuthService,private route:Router){
+  isAuthenticated:boolean;
 
+  constructor(private authService:AuthService,private route:Router){
   }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(!this.authService.checkAuth()){
+      this.authService.checkAuth()
+      this.authService.authStatus.subscribe(value => this.isAuthenticated = value)
+      if(!this.isAuthenticated){
        this.route.navigate(['auth/login']) 
        this.authService.redirectUrl = state.url
        return false
