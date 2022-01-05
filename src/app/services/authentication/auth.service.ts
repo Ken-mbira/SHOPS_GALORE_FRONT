@@ -102,12 +102,14 @@ export class AuthService {
     return localStorage.getItem("access_token")
   }
 
+  getRefreshToken(){
+    return localStorage.getItem("refresh_token")
+  }
+
   refreshToken() {
     return this.http.post<any>(`${environment.BASE_URL}api/token/refresh/`, {
-      'refresh': this.getAccessToken()
-    }).subscribe(response => {
-      this.setToken(response,"access_token")
-    });
+      'refresh': this.getRefreshToken()
+    })
   }
 
 }

@@ -3,34 +3,74 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
+import { Observable,BehaviorSubject, throwError,of} from 'rxjs';
+
 
 import { AuthService } from '../services/authentication/auth.service';
+import { catchError, finalize,filter,take,switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  private isRefreshing = false;
-  private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+  private AUTH_HEADER = "Authorization";
+  private token = localStorage.getItem("access_token");
+  isRefreshing = false;
+  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+
   constructor(private authService:AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     if(this.authService.getAccessToken()){
-      request = this.addToken(request,this.authService.getAccessToken())
+      request = this.addToken(request)
     }
-    
-    return next.handle(request);
+
+    request = this.addToken(request);
+
+    return next.handle(request).pipe(catchError((error:HttpErrorResponse) => {
+      if (error && error.status === 401){
+        if (this.isRefreshing) {
+          return this.refreshTokenSubject.pipe(
+            filter(result => result !== null),
+            take(1),
+            switchMap(() => next.handle(this.addToken(request)))
+          );
+        }else{
+          this.isRefreshing = true;
+
+          this.refreshTokenSubject.next(null);
+
+          return this.refreshAccessToken().pipe(
+            switchMap((success:boolean) => {
+              this.authService.setToken(success['access'],"access_token")
+              this.refreshTokenSubject.next(success);
+              return next.handle(this.addToken(request))
+            }),
+
+            finalize(() => (this.isRefreshing = false))
+          );
+        }
+      }else{
+        return throwError(error)
+      }
+      
+    })) as Observable<HttpEvent<any>>;
   }
 
-  addToken(request: HttpRequest<any>,token:string){
+  private refreshAccessToken(): Observable<any> {
+    return this.authService.refreshToken()
+  }
+
+  private addToken(request: HttpRequest<any>): HttpRequest<any> {
+    if (!this.authService.getAccessToken()) {
+      return request;
+    }
+
     return request.clone({
-      setHeaders:{
-        "Authorization": `Bearer ${token}`
-      }
-    })
+      headers: request.headers.set(this.AUTH_HEADER, "Bearer " + this.authService.getAccessToken())
+    });
   }
 }
