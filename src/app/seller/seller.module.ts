@@ -29,6 +29,8 @@ import { SingleProductDetailsComponent } from './seller-shop/single-shop-product
 import { AuthInterceptor } from '../interceptors/auth.interceptor';
 import { ShopService } from './services/shop.service';
 import { NewShopComponent } from './seller-main/new-shop/new-shop.component';
+import { NewShopFormComponent } from './seller-main/new-shop/new-shop-form/new-shop-form.component';
+import { SelectLocationComponent } from './seller-main/new-shop/select-location/select-location.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { NewShopComponent } from './seller-main/new-shop/new-shop.component';
     SingleProductMainComponent,
     SingleProductVariationsComponent,
     SingleProductDetailsComponent,
-    NewShopComponent
+    NewShopComponent,
+    NewShopFormComponent,
+    SelectLocationComponent
   ],
   imports: [
     CommonModule,

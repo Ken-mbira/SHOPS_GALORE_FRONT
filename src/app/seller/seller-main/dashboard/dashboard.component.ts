@@ -35,11 +35,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGreeting()
-    this.shopService.getShopList().subscribe(response =>{
-      console.log(response)
-    },error=>{
-      console.log(error)
-    })
   }
 
 }

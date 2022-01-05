@@ -1,1 +1,14 @@
-<p>new-shop works!</p>
+<div class="main">
+    <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!" #stepper>
+        <mat-step label="Enter your shop details">
+            <div class="wrappers">
+                <app-new-shop-form></app-new-shop-form>
+            </div>
+        </mat-step>
+        <mat-step label="Choose your pickup location">
+            <div class="wrappers">
+                <app-select-location></app-select-location>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>
