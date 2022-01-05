@@ -10,6 +10,8 @@ import { MatStepper } from '@angular/material/stepper';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
+import { Role } from 'src/app/classes/role/role';
+
 
 @Component({
   selector: 'app-register',
@@ -28,16 +30,20 @@ export class RegisterComponent implements OnInit {
 
   registrationForm = this.fb.group({
     role:[0,Validators.required],
-    email:['', Validators.required,Validators.email],
+    email:['', [Validators.email,Validators.required]],
     password:['', Validators.required],
     first_name:['',Validators.required],
     last_name:['',Validators.required],
   })
 
-  chooseRole(event,stepper:MatStepper){
+  chooseRole(event:Role,stepper:MatStepper){
     this.registrationForm.patchValue({role:event.id})
     stepper.next()
-    console.log(this.registrationForm.value)
+  }
+
+  submitForm(event,stepper:MatStepper){
+    console.log(event)
+    stepper.next()
   }
 
   ngOnInit(): void {
