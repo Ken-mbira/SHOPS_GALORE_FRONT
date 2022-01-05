@@ -11,6 +11,7 @@ import { ShopNotificationsComponent } from './seller-shop/shop-notifications/sho
 import { ShopOrdersComponent } from './seller-shop/shop-orders/shop-orders.component';
 import { ShopProductsComponent } from './seller-shop/shop-products/shop-products.component';
 import { ShopSettingsComponent } from './seller-shop/shop-settings/shop-settings.component';
+import { NewShopComponent } from './seller-main/new-shop/new-shop.component';
 
 import { SingleShopProductComponent } from './seller-shop/single-shop-product/single-shop-product.component';
 import { ShopOrderDetailComponent } from './seller-shop/shop-orders/shop-order-detail/shop-order-detail.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
     component:SellerMainComponent,
     children: [
       { path: 'dashboard', component:DashboardComponent},
-      { path: 'shops', component:ShopsComponent}
+      { path: 'shops', component:ShopsComponent},
+      { path: 'shops/new-shop', component:NewShopComponent },
     ]
   },
   {
