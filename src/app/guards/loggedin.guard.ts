@@ -11,13 +11,18 @@ import { Router ,ActivatedRoute,RoutesRecognized,NavigationEnd} from '@angular/r
 })
 export class LoggedinGuard implements CanActivate {
 
+  isAuthenticated:boolean;
+
   constructor(private authService:AuthService,private router:Router,private activatedRoute:ActivatedRoute){
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(this.authService.checkAuth()){
+    this.authService.authStatus.subscribe(value => this.isAuthenticated = value)
+    this.authService.checkAuth()
+    if(this.isAuthenticated){
+      this.router.navigate([localStorage.getItem("user_role")]);
       return false
     }else{
       return true
