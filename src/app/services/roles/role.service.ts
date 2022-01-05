@@ -12,20 +12,22 @@ export class RoleService {
 
   constructor(private http:HttpClient) { }
 
-  getRoles():Role[]{
-    const rolesList: Role[] = []; 
+
+  getRoles(){
+    let myRoles:Role[] = []
     this.http.get(`${environment.BASE_URL}user/roles/`).subscribe(response => {
       let roles:any = response
       for (let index = 0; index < roles.length; index++) {
         let role = new Role(roles[index].id,roles[index].name)
-        rolesList.push(role)
+        myRoles.push(role)
       }
     },error=>{
+      console.log(error)
     })
-    return rolesList;
+    this.rolesList.next(myRoles)
   }
 
-  private roles = new BehaviorSubject<Role[]>(this.getRoles());
+  rolesList = new BehaviorSubject<Role[]>([]);
 
-  currentRoles = this.roles.asObservable()
+  currentRoles = this.rolesList.asObservable()
 }
