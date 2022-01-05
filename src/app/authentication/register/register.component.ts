@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import {StepperOrientation} from '@angular/material/stepper';
-import { Validators,FormBuilder } from '@angular/forms';
+import { Validators,FormBuilder,FormGroup } from '@angular/forms';
 
 import { MatStepper } from '@angular/material/stepper';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import { Role } from 'src/app/classes/role/role';
+import { RegistrationService } from 'src/app/services/registration/registration.service';
 
 
 @Component({
@@ -22,7 +24,7 @@ export class RegisterComponent implements OnInit {
 
   stepperOrientation: Observable<StepperOrientation>;
 
-  constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder) {
+  constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private registrationService:RegistrationService,private snackBar:MatSnackBar) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 500px)')
       .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
@@ -41,9 +43,14 @@ export class RegisterComponent implements OnInit {
     stepper.next()
   }
 
-  submitForm(event,stepper:MatStepper){
-    console.log(event)
-    stepper.next()
+  submitForm(event:FormGroup,stepper:MatStepper){
+    this.registrationService.register(event).subscribe(response => {
+      console.log(response)
+      this.snackBar.open(`${response}`,"Thank you",{duration: 3000})
+      stepper.next()
+    },error=>{
+      console.log(error)
+    })
   }
 
   ngOnInit(): void {
