@@ -95,4 +95,16 @@ export class AuthService {
     this.route.navigate([''])
   }
 
+  getAccessToken(){
+    return localStorage.getItem("access_token")
+  }
+
+  refreshToken() {
+    return this.http.post<any>(`${environment.BASE_URL}api/token/refresh/`, {
+      'refresh': this.getAccessToken()
+    }).subscribe(response => {
+      this.setToken(response,"access_token")
+    });
+  }
+
 }

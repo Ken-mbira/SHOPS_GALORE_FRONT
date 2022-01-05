@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ShopService } from '../../services/shop.service'
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   now:Date = new Date()
   greeting:string;
-  constructor() {
+  constructor(private shopService:ShopService) {
     setInterval(() =>{
       this.now = new Date();
     },1)
@@ -33,6 +35,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGreeting()
+    this.shopService.getShopList().subscribe(response =>{
+      console.log(response)
+    },error=>{
+      console.log(error)
+    })
   }
 
 }

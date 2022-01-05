@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
 
@@ -25,8 +26,19 @@ import { SingleProductMainComponent } from './seller-shop/single-shop-product/si
 import { SingleProductVariationsComponent } from './seller-shop/single-shop-product/single-product-variations/single-product-variations.component';
 import { SingleProductDetailsComponent } from './seller-shop/single-shop-product/single-product-details/single-product-details.component';
 
+import { AuthInterceptor } from '../interceptors/auth.interceptor';
+import { ShopService } from './services/shop.service';
+
 
 @NgModule({
+  providers: [
+    ShopService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   declarations: [
     SellerComponent,
     SellerMainComponent,
