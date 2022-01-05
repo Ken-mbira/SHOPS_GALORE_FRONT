@@ -87,4 +87,12 @@ export class AuthService {
     localStorage.setItem(name,token)
   }
 
+  logout(){
+    localStorage.removeItem("user_role")
+    localStorage.removeItem("access_token")
+    localStorage.removeItem("refresh_token")
+
+    this.route.navigate([''])
+  }
+
 }
