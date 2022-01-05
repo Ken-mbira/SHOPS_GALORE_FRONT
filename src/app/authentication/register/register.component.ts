@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
       this.snackBar.open(`${response}`,"Thank you",{duration: 3000})
       stepper.next()
     },error=>{
-      console.log(error)
+      this.snackBar.open("There was a problem creating your account","Sorry",{duration: 3000})
     })
   }
 
