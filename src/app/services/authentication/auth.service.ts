@@ -38,11 +38,12 @@ export class AuthService {
   }
 
   getInstance(){
+
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${localStorage.getItem('access_token')}`
     })
 
-    return this.http.get(`${environment.BASE_URL}user/instance/`,{"headers":headers}).subscribe(response => {
+    this.http.get(`${environment.BASE_URL}user/instance/`,{"headers":headers}).subscribe(response => {
       this.setToken(response['role']['name'],'user_role')
 
       this.userInstance.next(new User(
@@ -61,6 +62,13 @@ export class AuthService {
         response['profile']['gender'],
         response['profile']['receive_notifications_via_email']
       ))
+
+      if(this.redirectUrl){
+        this.route.navigate([this.redirectUrl])
+        this.redirectUrl = null;
+      }else{
+        this.route.navigate([response['role']['name']])
+      }
     })
   }
 
@@ -69,15 +77,7 @@ export class AuthService {
       this.setToken(response['access'],'access_token')
       this.setToken(response['refresh'],'refresh_token')
       this.getInstance()
-      if(this.redirectUrl){
-        this.route.navigate([this.redirectUrl])
-        this.redirectUrl = null;
-      }else{
-        // this.route.navigate([""])
-        console.log(this.userInstance.value)
-      }
     },error=>{
-      console.log(error)
       this.snackBar.open(error['error']['detail'],"Try Again",{duration:3000})
     })
   }
