@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 
 import { FormGroup, FormGroupDirective } from '@angular/forms'
 
@@ -12,6 +12,12 @@ export class NewShopFormComponent implements OnInit {
   newShopForm:FormGroup;
 
   constructor(private rootFormGroup:FormGroupDirective) { }
+
+  @Output() formSubmission = new EventEmitter<FormGroup>();
+
+  fillForm(){
+    this.formSubmission.emit(this.newShopForm)
+  }
 
   ngOnInit(): void {
     this.newShopForm = this.rootFormGroup.control

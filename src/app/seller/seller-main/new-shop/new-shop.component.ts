@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
-import {StepperOrientation} from '@angular/material/stepper';
+import { StepperOrientation, MatStepper } from '@angular/material/stepper';
 import { Validators,FormBuilder,FormGroup } from '@angular/forms';
 
 @Component({
@@ -25,6 +25,10 @@ export class NewShopComponent implements OnInit {
     email_contact:['',[Validators.required,Validators.email]],
     pickup_location:[0,Validators.required]
   })
+
+  moveStepper(event:FormGroup,stepper:MatStepper){
+    stepper.next()
+  }
 
   constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private snackBar:MatSnackBar) {
     this.stepperOrientation = breakpointObserver

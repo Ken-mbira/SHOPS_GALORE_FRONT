@@ -2,7 +2,7 @@
     <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!" #stepper>
         <mat-step label="Enter your shop details">
             <div class="wrappers">
-                <app-new-shop-form></app-new-shop-form>
+                <app-new-shop-form (formSubmission)="moveStepper($event,stepper)"></app-new-shop-form>
             </div>
         </mat-step>
         <mat-step label="Choose your pickup location">
