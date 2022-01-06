@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation, MatStepper } from '@angular/material/stepper';
 import { Validators,FormBuilder,FormGroup, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
+
+import { ShopService } from '../../services/shop.service';
 
 export function validatePhoneNumber():ValidatorFn{
   return (control:AbstractControl) : ValidationErrors | null => {
@@ -41,10 +42,17 @@ export class NewShopComponent implements OnInit {
   }
 
   submitForm(event:FormGroup){
-    console.log(this.newShopForm)
+    this.shopService.createShop(event).subscribe(response=>{
+      this.snackBar.open("Your shop was created successfully!","Congratulations",{duration:3000})
+      console.log(response)
+    },error => {
+      this.snackBar.open("There was a problem creating your shop","Sorry",{duration:3000})
+      console.log(error)
+    })
+    this.router.navigate(['store_owner/shops/'])
   }
 
-  constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private snackBar:MatSnackBar) {
+  constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private snackBar:MatSnackBar,private shopService:ShopService,private router:Router) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 500px)')
       .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
