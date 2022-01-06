@@ -13,8 +13,10 @@
     </div>
     <div>
         <mat-form-field appearance="fill">
+            <span matPrefix>+254</span>
             <mat-label>Phone Number</mat-label>
-            <input formControlName="phone_contact" matInput type="text" placeholder="eg. 07...">
+            <input formControlName="phone_contact" matInput type="text" placeholder="eg. 7123..">
+            <mat-error *ngIf="!newShopForm.value.phone_contact.valid">Please enter a correct phone number</mat-error>
             <mat-hint>How people will reach you</mat-hint>
         </mat-form-field>
     </div>
@@ -22,6 +24,7 @@
         <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
             <input formControlName="email_contact" matInput type="email" placeholder="eg. shop@gmail.com">
+            <mat-error *ngIf="!newShopForm.value.email_contact.valid">Please enter a valid email address</mat-error>
             <mat-hint>Shop email</mat-hint>
         </mat-form-field>
     </div>

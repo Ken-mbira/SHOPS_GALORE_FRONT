@@ -21,7 +21,7 @@ export class NewShopComponent implements OnInit {
   newShopForm = this.fb.group({
     name:['',Validators.required],
     bio:['',Validators.required],
-    phone_contact:['',Validators.required],
+    phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
     email_contact:['',[Validators.required,Validators.email]],
     pickup_location:[""]
   })
