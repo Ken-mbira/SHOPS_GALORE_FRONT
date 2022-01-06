@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { FormGroup, FormGroupDirective } from '@angular/forms'
 
 @Component({
   selector: 'app-form',
@@ -7,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  registrationForm:FormGroup;
+
+  constructor(private rootFormGroup:FormGroupDirective) { }
 
   firstPasswordHide:boolean = true;
   secondPasswordHide:boolean = true;
 
+  @Output() formSubmission = new EventEmitter<FormGroup>()
+
+  submitForm(){
+    this.formSubmission.emit(this.registrationForm)
+  }
+
   ngOnInit(): void {
+    this.registrationForm = this.rootFormGroup.control
   }
 
 }
