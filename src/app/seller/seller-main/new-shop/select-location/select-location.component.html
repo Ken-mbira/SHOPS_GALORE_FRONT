@@ -1,4 +1,6 @@
 <div [formGroup]="newShopForm">
-    <ngx-mat-tree-select-input [options]="options" [placeholder]="'Select Location'" [heading]="'Children of'" [canSelectParentNode]="false" [controlName]="'pickup_location'">
-    </ngx-mat-tree-select-input>
+    <div>
+        <ngx-mat-tree-select-input [options]="locations" [placeholder]="'Select Location'" [heading]="'Within'" [canSelectParentNode]="false" [controlName]="'pickup_location'">
+        </ngx-mat-tree-select-input>
+    </div>
 </div>
