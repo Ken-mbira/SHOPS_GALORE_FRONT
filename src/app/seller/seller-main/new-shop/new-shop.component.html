@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" [formGroup]="newShopForm">
     <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!" #stepper>
         <mat-step label="Enter your shop details">
             <div class="wrappers">

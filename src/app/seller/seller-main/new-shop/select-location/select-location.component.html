@@ -1,1 +1,4 @@
-<p>select-location works!</p>
+<div [formGroup]="newShopForm">
+    <ngx-mat-tree-select-input [options]="options" [placeholder]="'Select Location'" [heading]="'Children of'" [canSelectParentNode]="false" [controlName]="'pickup_location'">
+    </ngx-mat-tree-select-input>
+</div>

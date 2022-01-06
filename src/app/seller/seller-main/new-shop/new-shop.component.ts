@@ -18,6 +18,14 @@ export class NewShopComponent implements OnInit {
 
   stepperOrientation: Observable<StepperOrientation>;
 
+  newShopForm = this.fb.group({
+    name:['',Validators.required],
+    bio:['',Validators.required],
+    phone_contact:['',Validators.required],
+    email_contact:['',[Validators.required,Validators.email]],
+    pickup_location:[0,Validators.required]
+  })
+
   constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private snackBar:MatSnackBar) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 500px)')

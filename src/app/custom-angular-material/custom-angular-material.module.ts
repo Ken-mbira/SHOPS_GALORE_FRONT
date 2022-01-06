@@ -75,7 +75,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatRadioModule,
     HttpClientModule,
     MatSnackBarModule
-
   ]
 })
 export class CustomAngularMaterialModule { }

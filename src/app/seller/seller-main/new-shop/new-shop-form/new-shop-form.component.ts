@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FormGroup, FormGroupDirective } from '@angular/forms'
+
 @Component({
   selector: 'app-new-shop-form',
   templateUrl: './new-shop-form.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewShopFormComponent implements OnInit {
 
-  constructor() { }
+  newShopForm:FormGroup;
+
+  constructor(private rootFormGroup:FormGroupDirective) { }
 
   ngOnInit(): void {
+    this.newShopForm = this.rootFormGroup.control
   }
 
 }
