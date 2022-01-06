@@ -14,7 +14,6 @@ export function validatePhoneNumber():ValidatorFn{
     const value = control.value;
 
     const isAllNumbers = /^\d+$/.test(value);
-    console.log(isAllNumbers)
 
     return ! isAllNumbers ? {allNumbers:true} : null;
   }
