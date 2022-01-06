@@ -16,6 +16,7 @@ export class NewShopFormComponent implements OnInit {
   @Output() formSubmission = new EventEmitter<FormGroup>();
 
   fillForm(){
+    this.newShopForm.patchValue({phone_contact:`+254${this.newShopForm.value.phone_contact}`})
     this.formSubmission.emit(this.newShopForm)
   }
 

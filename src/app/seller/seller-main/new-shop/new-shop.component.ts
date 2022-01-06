@@ -7,7 +7,18 @@ import {map} from 'rxjs/operators';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation, MatStepper } from '@angular/material/stepper';
-import { Validators,FormBuilder,FormGroup } from '@angular/forms';
+import { Validators,FormBuilder,FormGroup, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
+
+export function validatePhoneNumber():ValidatorFn{
+  return (control:AbstractControl) : ValidationErrors | null => {
+    const value = control.value;
+
+    const isAllNumbers = /^\d+$/.test(value);
+    console.log(isAllNumbers)
+
+    return ! isAllNumbers ? {allNumbers:true} : null;
+  }
+}
 
 @Component({
   selector: 'app-new-shop',
@@ -21,7 +32,7 @@ export class NewShopComponent implements OnInit {
   newShopForm = this.fb.group({
     name:['',Validators.required],
     bio:['',Validators.required],
-    phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
+    phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9),validatePhoneNumber()]],
     email_contact:['',[Validators.required,Validators.email]],
     pickup_location:[""]
   })
