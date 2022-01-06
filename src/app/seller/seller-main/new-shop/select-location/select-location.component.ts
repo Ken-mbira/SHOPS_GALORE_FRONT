@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TreeData } from 'mat-tree-select-input';
 import { FormGroup,FormGroupDirective } from '@angular/forms'
 
@@ -13,6 +13,8 @@ export class SelectLocationComponent implements OnInit {
 
   newShopForm : FormGroup;
 
+  @Output() formSubmission = new EventEmitter<FormGroup>();
+
   constructor(private rootFormGroup:FormGroupDirective,private locationService:LocationService) { }
 
   locations:TreeData[] = []
@@ -21,6 +23,11 @@ export class SelectLocationComponent implements OnInit {
     this.newShopForm = this.rootFormGroup.control
     this.locationService.currentLocations.subscribe(value => this.locations= value)
     this.locationService.getLocations()
+  }
+
+  submitForm(){
+    this.newShopForm.patchValue({pickup_location:this.newShopForm.value.pickup_location.value})
+    this.formSubmission.emit(this.newShopForm)
   }
 
 }

@@ -7,7 +7,7 @@
         </mat-step>
         <mat-step label="Choose your pickup location">
             <div class="wrappers">
-                <app-select-location></app-select-location>
+                <app-select-location (formSubmission)="submitForm($event)"></app-select-location>
             </div>
         </mat-step>
     </mat-stepper>

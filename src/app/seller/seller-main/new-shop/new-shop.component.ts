@@ -23,11 +23,15 @@ export class NewShopComponent implements OnInit {
     bio:['',Validators.required],
     phone_contact:['',Validators.required],
     email_contact:['',[Validators.required,Validators.email]],
-    pickup_location:[0,Validators.required]
+    pickup_location:[""]
   })
 
   moveStepper(event:FormGroup,stepper:MatStepper){
     stepper.next()
+  }
+
+  submitForm(event:FormGroup){
+    console.log(this.newShopForm)
   }
 
   constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private snackBar:MatSnackBar) {
