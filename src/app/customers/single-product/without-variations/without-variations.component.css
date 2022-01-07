@@ -1,3 +1,15 @@
+p {
+  margin: 0;
+}
+
+.cta {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  font-weight: 600;
+  font-size: larger;
+  color: #e6e6e6;
+}
+
 .favourite {
-    color: #e86105;
+  color: #e86105;
 }
