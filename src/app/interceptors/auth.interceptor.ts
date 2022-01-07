@@ -51,7 +51,7 @@ export class AuthInterceptor implements HttpInterceptor {
             }),
 
             finalize(() => (this.isRefreshing = false))
-          );
+          )
         }
       }else{
         return throwError(error)

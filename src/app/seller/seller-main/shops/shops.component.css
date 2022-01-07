@@ -14,7 +14,7 @@
 }
 
 .shop-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     transition-duration: 1s;
 }
 

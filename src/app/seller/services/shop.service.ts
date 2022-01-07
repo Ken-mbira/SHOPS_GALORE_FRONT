@@ -5,17 +5,44 @@ import { Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { BehaviorSubject } from 'rxjs';
+
 import { environment } from 'src/environments/environment';
+import { Shop } from 'src/app/interfaces/shop/shop'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
 
+  private shops = new BehaviorSubject<Shop[]>([]);
+  currentShops = this.shops.asObservable();
+
   constructor(private http:HttpClient,private snackBar:MatSnackBar,private router:Router) { }
 
   getShopList(){
-    return this.http.get(`${environment.BASE_URL}shop/`)
+    this.http.get(`${environment.BASE_URL}shop/`).subscribe((response:any) => {
+      let shops:Shop[] = []
+      for(let i = 0;i<response.length; i++){
+        let shop:Shop = {
+          name:response[i]['name'],
+          id:response[i]['id'],
+          bio:response[i]['bio'],
+          created_on:response[i]['created_on'],
+          logo:response[i]['logo'],
+          email_contact:response[i]['email_contact'],
+          phone_contact:response[i]['phone_contact'],
+          subscription_end_date:response[i]['subscription_end_date'],
+          functional:response[i]['functional'],
+          owner:response[i]['owner'],
+          products:response[i]['products']
+        }
+        shops.push(shop)
+      }
+      this.shops.next(shops)
+    },error=>{
+      console.log(error)
+    })
   }
 
   createShop(data:FormGroup){
