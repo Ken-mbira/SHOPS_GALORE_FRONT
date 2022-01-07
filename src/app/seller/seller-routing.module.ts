@@ -29,7 +29,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'shop',
+    path: 'shop/:id',
     component:SellerShopComponent,
     children: [
       { path: '', component:ShopDashboardComponent },
