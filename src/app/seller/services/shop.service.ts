@@ -9,7 +9,6 @@ import { BehaviorSubject } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { Shop } from 'src/app/interfaces/shop/shop'
-import { subscribeOn } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +18,21 @@ export class ShopService {
   private shops = new BehaviorSubject<Shop[]>([]);
   currentShops = this.shops.asObservable();
 
-  private singleShop = new BehaviorSubject<Shop>(null);
+  private singleShop = new BehaviorSubject<Shop>(
+    {
+      name:"",
+      id:0,
+      bio:"",
+      created_on:new Date(),
+      logo:"",
+      email_contact:"",
+      phone_contact:"",
+      subscription_end_date:new Date(),
+      functional:false,
+      owner:0,
+      products:0
+    }
+  );
   currentShop = this.singleShop.asObservable();
 
   constructor(private http:HttpClient,private snackBar:MatSnackBar,private router:Router) { }

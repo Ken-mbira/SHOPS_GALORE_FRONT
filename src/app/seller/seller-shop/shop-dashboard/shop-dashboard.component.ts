@@ -11,19 +11,7 @@ import { Shop } from 'src/app/interfaces/shop/shop'
 })
 export class ShopDashboardComponent implements OnInit {
 
-  shop:Shop = {
-    name:"",
-    id:0,
-    bio:"",
-    created_on:new Date(),
-    logo:"",
-    email_contact:"",
-    phone_contact:"",
-    subscription_end_date:new Date(),
-    functional:false,
-    owner:0,
-    products:0
-  }
+  shop:Shop;
 
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
