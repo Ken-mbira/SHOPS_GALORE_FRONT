@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration, ChartType } from 'chart.js';
 
+import { ShopService } from '../../services/shop.service';
+import { Shop } from 'src/app/interfaces/shop/shop'
+
 @Component({
   selector: 'app-shop-dashboard',
   templateUrl: './shop-dashboard.component.html',
   styleUrls: ['./shop-dashboard.component.css']
 })
 export class ShopDashboardComponent implements OnInit {
+
+  shop:Shop;
 
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
@@ -42,9 +47,10 @@ export class ShopDashboardComponent implements OnInit {
   }
   public lineChartType: ChartType = 'line';
 
-  constructor() { }
+  constructor(private shopService:ShopService) { }
 
   ngOnInit(): void {
+    this.shopService.currentShop.subscribe(shop => this.shop = shop)
   }
 
 }

@@ -26,14 +26,17 @@ export class AuthService {
   private userInstance = new BehaviorSubject<User>(new User("",new Role(0,""),"","",new Date(),"","","","","",false))
   userStatus = this.userInstance.asObservable();
 
-  checkAuth(){
+  checkTokenExpiration(){
     const helper = new JwtHelperService()
+    this.isAuthenticated.next(!helper.isTokenExpired(localStorage.getItem("access_token")))
+    return !helper.isTokenExpired(localStorage.getItem("access_token"))
+  }
+
+  checkAuth(){
     if(localStorage.getItem("access_token")){
-      this.isAuthenticated.next(!helper.isTokenExpired(localStorage.getItem("access_token")))
-      return !helper.isTokenExpired(localStorage.getItem("access_token"))
+      this.isAuthenticated.next(true)
     }else{
       this.isAuthenticated.next(false)
-      return false
     }
   }
 
@@ -92,7 +95,21 @@ export class AuthService {
     localStorage.removeItem("access_token")
     localStorage.removeItem("refresh_token")
 
-    this.route.navigate([''])
+    this.route.navigate(['/auth/login'])
+  }
+
+  getAccessToken(){
+    return localStorage.getItem("access_token")
+  }
+
+  getRefreshToken(){
+    return localStorage.getItem("refresh_token")
+  }
+
+  refreshToken() {
+    return this.http.post<any>(`${environment.BASE_URL}api/token/refresh/`, {
+      'refresh': this.getRefreshToken()
+    })
   }
 
 }

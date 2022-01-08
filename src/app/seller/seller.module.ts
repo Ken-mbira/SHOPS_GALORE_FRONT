@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
 
@@ -25,8 +26,24 @@ import { SingleProductMainComponent } from './seller-shop/single-shop-product/si
 import { SingleProductVariationsComponent } from './seller-shop/single-shop-product/single-product-variations/single-product-variations.component';
 import { SingleProductDetailsComponent } from './seller-shop/single-shop-product/single-product-details/single-product-details.component';
 
+import { AuthInterceptor } from '../interceptors/auth.interceptor';
+import { ShopService } from './services/shop.service';
+import { LocationService } from '../services/location/location.service';
+import { NewShopComponent } from './seller-main/new-shop/new-shop.component';
+import { NewShopFormComponent } from './seller-main/new-shop/new-shop-form/new-shop-form.component';
+import { SelectLocationComponent } from './seller-main/new-shop/select-location/select-location.component';
+
 
 @NgModule({
+  providers: [
+    ShopService,
+    LocationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   declarations: [
     SellerComponent,
     SellerMainComponent,
@@ -47,7 +64,10 @@ import { SingleProductDetailsComponent } from './seller-shop/single-shop-product
     NewShopProductComponent,
     SingleProductMainComponent,
     SingleProductVariationsComponent,
-    SingleProductDetailsComponent
+    SingleProductDetailsComponent,
+    NewShopComponent,
+    NewShopFormComponent,
+    SelectLocationComponent
   ],
   imports: [
     CommonModule,
