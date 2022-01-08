@@ -1,4 +1,8 @@
+.container-fluid {
+  width: 80vw !important;
+}
+
 p {
-    margin: 0;
-    padding: 0
+  margin: 0;
+  padding: 0;
 }

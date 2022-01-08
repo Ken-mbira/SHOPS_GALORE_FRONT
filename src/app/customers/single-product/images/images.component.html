@@ -1,15 +1,16 @@
-<div>
-    <div>
-        <img src={{highlighted.src}} class="rounded-1 img-fluid" alt="">
-    </div>
-    <div class="m-1">
+<div class="card" style="width: 100%;">
+    <img src="{{highlighted.src}}" class="card-img-top" alt="...">
+    <div class="card-body">
         <owl-carousel-o [options]="customOptions">
             <ng-container *ngFor="let image of images; let i = index">
                 <ng-template carouselSlide>
-                    <div *ngIf="highlighted != image" style="max-height:100px;max-width:100px;cursor:pointer" class="sample-image" (click)="makeHighlited(i)">
+                    <div *ngIf="highlighted != image" style="max-height:100px;max-width:100px;cursor:pointer"
+                        class="sample-image" (click)="makeHighlited(i)">
                         <img src={{image.src}} class="rounded-1 img-fluid" alt="...">
                     </div>
-                    <div *ngIf="highlighted == image" style="max-height:100px;max-width:100px;cursor:pointer;border:2px solid #e86105" class="sample-image" (click)="makeHighlited(i)">
+                    <div *ngIf="highlighted == image"
+                        style="max-height:100px;max-width:100px;cursor:pointer;border:2px solid #e86105"
+                        class="sample-image" (click)="makeHighlited(i)">
                         <img src={{image.src}} class="rounded-1 img-fluid" alt="...">
                     </div>
                 </ng-template>
