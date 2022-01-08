@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ShopService } from '../../services/shop.service'
+import { AuthService } from 'src/app/services/authentication/auth.service';
+import { User } from 'src/app/classes/user/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +11,11 @@ import { ShopService } from '../../services/shop.service'
 })
 export class DashboardComponent implements OnInit {
 
+  user:User;
+
   now:Date = new Date()
   greeting:string;
-  constructor(private shopService:ShopService) {
+  constructor(private shopService:ShopService,private authService:AuthService) {
     setInterval(() =>{
       this.now = new Date();
     },1)
@@ -34,6 +38,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.userStatus.subscribe(user => this.user = user)
+    this.authService.getInstance()
     this.getGreeting()
   }
 
