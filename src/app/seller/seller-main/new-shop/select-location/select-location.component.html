@@ -1,0 +1,9 @@
+<form [formGroup]="newShopForm" (ngSubmit)="submitForm()">
+    <div>
+        <ngx-mat-tree-select-input [options]="locations" [placeholder]="'Choose Location'" [heading]="'Within'" [canSelectParentNode]="false" [controlName]="'pickup_location'">
+        </ngx-mat-tree-select-input>
+    </div>
+    <div>
+        <button mat-raised-button style="background-color:#e86105;width:100%" type="submit" [disabled]="!newShopForm.value.pickup_location">Submit</button>
+    </div>
+</form>

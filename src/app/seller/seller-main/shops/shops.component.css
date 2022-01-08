@@ -10,10 +10,11 @@
     padding: 1em;
     animation: slideInUp;
     animation-duration: 1s;
+    cursor: pointer;
 }
 
 .shop-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     transition-duration: 1s;
 }
 

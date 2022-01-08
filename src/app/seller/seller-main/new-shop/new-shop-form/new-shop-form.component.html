@@ -1,0 +1,34 @@
+<form [formGroup]="newShopForm" (ngSubmit)="fillForm()">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput type="text" placeholder="eg. Orient Suppliers">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Bio</mat-label>
+            <textarea formControlName="bio" matInput placeholder="Say a bit about what it is your shop does..."></textarea>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <span matPrefix>+254</span>
+            <mat-label>Phone Number</mat-label>
+            <input formControlName="phone_contact" matInput type="text" placeholder="eg. 7123..">
+            <mat-error *ngIf="!newShopForm.value.phone_contact.valid">Please enter a correct phone number</mat-error>
+            <mat-hint>How people will reach you</mat-hint>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input formControlName="email_contact" matInput type="email" placeholder="eg. shop@gmail.com">
+            <mat-error *ngIf="!newShopForm.value.email_contact.valid">Please enter a valid email address</mat-error>
+            <mat-hint>Shop email</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="mt-2">
+        <button mat-raised-button style="background-color: #e86105;width: 100%;" type="submit" [disabled]="!newShopForm.valid">Next</button>
+    </div>
+</form>

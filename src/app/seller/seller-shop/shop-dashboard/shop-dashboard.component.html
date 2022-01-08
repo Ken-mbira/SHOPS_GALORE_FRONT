@@ -1,6 +1,6 @@
 <div style="width:80vw;min-height:90vh" class="p-2 dashboard">
     <div>
-        <h5>Nova Pasteries</h5>
+        <h5>{{shop.name}}</h5>
     </div>
     <div style="width:100%;background-color:white" class="p-2">
         <mat-form-field appearance="fill">
@@ -30,7 +30,7 @@
                             <mat-icon [ngStyle]="{'color':'#FFFFFF'}">shopping_basket</mat-icon>
                             <h6 style="color:#E86105">Product Count</h6>
                         </div>
-                        <p style="font-size:4vmin;color: white;">38</p>
+                        <p style="font-size:4vmin;color: white;">{{shop.products}}</p>
                     </div>
                 </div>
             </div>
