@@ -7,6 +7,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable,BehaviorSubject, throwError,of} from 'rxjs';
+import { Router } from '@angular/router';
 
 
 import { AuthService } from '../services/authentication/auth.service';
@@ -20,7 +21,7 @@ export class AuthInterceptor implements HttpInterceptor {
   isRefreshing = false;
   refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null)
 
-  constructor(private authService:AuthService) {}
+  constructor(private authService:AuthService,private router:Router) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
@@ -44,6 +45,10 @@ export class AuthInterceptor implements HttpInterceptor {
           this.refreshTokenSubject.next(null);
 
           return this.refreshAccessToken().pipe(
+            catchError((error:HttpErrorResponse) =>{
+              this.authService.logout()
+              return throwError(error)
+            }),
             switchMap((success:boolean) => {
               this.authService.setToken(success['access'],"access_token")
               this.refreshTokenSubject.next(success);
@@ -52,6 +57,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
             finalize(() => (this.isRefreshing = false))
           )
+
         }
       }else{
         return throwError(error)

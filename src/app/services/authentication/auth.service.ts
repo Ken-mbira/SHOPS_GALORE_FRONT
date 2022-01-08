@@ -95,7 +95,7 @@ export class AuthService {
     localStorage.removeItem("access_token")
     localStorage.removeItem("refresh_token")
 
-    this.route.navigate([''])
+    this.route.navigate(['/auth/login'])
   }
 
   getAccessToken(){
