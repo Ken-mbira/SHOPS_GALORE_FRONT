@@ -83,6 +83,25 @@ export class ShopService {
     })
   }
 
+  addShop(response):void{
+    let currentShops = this.shops.value
+    let shop:Shop = {
+      name:response['name'],
+      id:response['id'],
+      bio:response['bio'],
+      created_on:response['created_on'],
+      logo:response['logo'],
+      email_contact:response['email_contact'],
+      phone_contact:response['phone_contact'],
+      subscription_end_date:response['subscription_end_date'],
+      functional:response['functional'],
+      owner:response['owner'],
+      products:response['products']
+    }
+    let updatedShops = [...currentShops,shop]
+    this.shops.next(updatedShops)
+  }
+
   createShop(data:FormGroup){
     return this.http.post(`${environment.BASE_URL}shop/`,data.value)
   }
