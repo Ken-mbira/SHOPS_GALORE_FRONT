@@ -60,6 +60,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
         }
       }else{
+        this.authService.logout()
         return throwError(error)
       }
       
