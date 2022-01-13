@@ -37,6 +37,7 @@ import { HasVariationFormComponent } from './seller-shop/new-shop-product/has-va
 import { NoVariationFormComponent } from './seller-shop/new-shop-product/no-variation-form/no-variation-form.component';
 import { SuccessComponent } from './seller-shop/new-shop-product/success/success.component';
 import { ListService } from '../services/lists/list.service';
+import { ProductService } from '../services/product/product.service';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ListService } from '../services/lists/list.service';
     ShopService,
     LocationService,
     ListService,
+    ProductService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

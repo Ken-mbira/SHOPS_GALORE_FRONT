@@ -62,6 +62,23 @@ export class ShopService {
     })
   }
 
+  constructSingleShopData(response){
+    let shop:Shop = {
+      name:response['name'],
+      id:response['id'],
+      bio:response['bio'],
+      created_on:response['created_on'],
+      logo:response['logo'],
+      email_contact:response['email_contact'],
+      phone_contact:response['phone_contact'],
+      subscription_end_date:response['subscription_end_date'],
+      functional:response['functional'],
+      owner:response['owner'],
+      products:response['products']
+    }
+    return shop
+  }
+
   getShopDetails(id:number){
     this.http.get(`${environment.BASE_URL}shop/${id}/`).subscribe(response => {
       let shop:Shop = {
@@ -78,6 +95,7 @@ export class ShopService {
         products:response['products']
       }
       this.singleShop.next(shop)
+      localStorage.setItem("shop_id",shop.id.toString())
     },error=>{
       console.log(error)
     })

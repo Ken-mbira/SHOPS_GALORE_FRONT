@@ -28,6 +28,15 @@ export class ListService {
       }
     )
   }
+
+  constructSingleBrandData(data){
+    let brand = {
+      name:data.name,
+      id:data.id,
+      logo:data.logo
+    }
+    return brand
+  }
   getBrands(){
     this.http.get(`${environment.BASE_URL}shop/brand/`).subscribe(response=>{
       this.brands.next(this.constructBrandData(response))
@@ -75,6 +84,15 @@ export class ListService {
         return o
       }
     )
+  }
+
+  constructSingleTypeData(data){
+    let brand = {
+      name:data.name,
+      id:data.id,
+      description:data.description
+    }
+    return brand
   }
 
   getTypes(){
