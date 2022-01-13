@@ -2,6 +2,7 @@ import { Brand } from "../brand/brand";
 import { Shop } from "../shop/shop";
 import { Type } from "../type/type";
 import { Category } from "../category/category";
+import { Image } from "../image/image";
 
 export interface Product {
     id:number;
@@ -18,6 +19,6 @@ export interface Product {
     type:Type;
     owner:Shop;
     parent?:number;
-    children?:Product;
-    product_images:string[];
+    children?:Product[];
+    product_images:Image[];
 }

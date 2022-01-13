@@ -5,14 +5,14 @@
             <small *ngIf="!default">You don't seem to have chosen a default image... please do so by clicking one of your images</small>
         </div>
         <div class="col-md-7 row mt-3 mt-md-0">
-            <div *ngFor="let image of images;let i = index" class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
-                <img src={{image.src}} class="img-fluid rounded-2 m-1 image">
+            <div *ngFor="let image of product.product_images;let i = index" class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
+                <img src="{{image.image}}" class="img-fluid rounded-2 m-1 image">
                 <div class="middle">
                     <button mat-raised-button class="set-default-button" (click)="setDefault(i)">Set default</button>
                     <mat-icon [ngStyle]="{'color':'red'}" style="cursor:pointer" (click)="deleteImage(i)">delete</mat-icon>
                 </div>
             </div>
-            <div *ngIf="images.length < 4" class="col-12 col-md-6">
+            <div *ngIf="product.product_images.length < 4" class="col-12 col-md-6">
                 <div class="new-image p-1">
                     <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target)">
                     <mat-icon>cloud_upload</mat-icon><br>

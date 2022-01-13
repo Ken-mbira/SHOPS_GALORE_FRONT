@@ -3,7 +3,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/material/stepper';
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
-import { TreeData } from 'mat-tree-select-input';
 import { FormGroup } from '@angular/forms';
 
 import { ShopService } from '../../services/shop.service';

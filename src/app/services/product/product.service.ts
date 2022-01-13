@@ -36,7 +36,7 @@ export class ProductService {
           owner:this.shopService.constructSingleShopData(item.owner),
           parent:item.parent ? item.parent : null,
           children:item.children.length ? this.constructProductData(item.children) : [],
-          product_images:item.product_images
+          product_images:this.listService.constructImageData(item.product_images)
         }
         return o
       }
@@ -60,7 +60,7 @@ export class ProductService {
       owner:this.shopService.constructSingleShopData(item.owner),
       parent:item.parent ? item.parent : null,
       children:item.children.length ? this.constructProductData(item.children) : [],
-      product_images:item.product_images
+      product_images:this.listService.constructImageData(item.product_images)
     }
     return o
   }
@@ -119,8 +119,8 @@ export class ProductService {
       products:0
     },
     parent:null,
-    children:null,
-    product_images:[]
+    children:[],
+    product_images:[],
   })
 
   currentProduct = this.product.asObservable();

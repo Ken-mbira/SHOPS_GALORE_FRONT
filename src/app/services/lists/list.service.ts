@@ -69,6 +69,22 @@ export class ListService {
     }
   }
 
+  constructImageData(data){
+    return data.map(
+      (item)=>{
+        return this.constructSingleImageData(item)
+      }
+    )
+  }
+
+  constructSingleImageData(data){
+    return {
+      id:data.id,
+      image:data.image,
+      isDefault:data.is_default
+    }
+  }
+
   getCategories(){
     this.http.get(`${environment.BASE_URL}shop/category/`).subscribe(response => {
       this.categories.next(this.constructTreeData(response))
