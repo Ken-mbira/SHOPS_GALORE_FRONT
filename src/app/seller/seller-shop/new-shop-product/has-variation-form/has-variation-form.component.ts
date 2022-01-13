@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TreeData } from 'mat-tree-select-input';
 
@@ -16,6 +16,13 @@ export class HasVariationFormComponent implements OnInit {
   brands:Brand[];
   categories:TreeData[];
   types:Type[];
+
+  @Output() productSubmission = new EventEmitter<FormGroup>();
+
+  submitProduct(){
+    this.productForm.patchValue({"category":this.productForm.value.category['value']})
+    this.productSubmission.emit(this.productForm);
+  }
 
   constructor(private fb:FormBuilder,private listService:ListService) { }
 

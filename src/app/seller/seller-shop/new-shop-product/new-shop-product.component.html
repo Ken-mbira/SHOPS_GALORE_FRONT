@@ -3,7 +3,7 @@
         <app-variation-choice (variationChoice)="checkVariation($event)"></app-variation-choice>
     </mat-step>
     <mat-step label="Enter Product Details" *ngIf="hasVariations">
-        <app-has-variation-form></app-has-variation-form>
+        <app-has-variation-form (productSubmission)="productSubmission($event)"></app-has-variation-form>
     </mat-step>
     <mat-step label="Without Variations" *ngIf="!hasVariations">
         <app-no-variation-form></app-no-variation-form>
