@@ -6,10 +6,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./variation-choice.component.css']
 })
 export class VariationChoiceComponent implements OnInit {
+  chosen:boolean;
 
   @Output() variationChoice = new EventEmitter<boolean>();
 
   chooseVariation(choice:boolean){
+    this.chosen = true;
     this.variationChoice.emit(choice)
   }
   constructor() { }
