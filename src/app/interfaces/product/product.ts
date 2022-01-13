@@ -1,6 +1,7 @@
 import { Brand } from "../brand/brand";
 import { Shop } from "../shop/shop";
 import { Type } from "../type/type";
+import { Category } from "../category/category";
 
 export interface Product {
     id:number;
@@ -9,11 +10,11 @@ export interface Product {
     description:string;
     price:string;
     discount_price:string;
-    volume:number;
+    volume:"";
     weight:string;
     sku:string;
     brand:Brand;
-    category:number;
+    category:Category;
     type:Type;
     owner:Shop;
     parent?:number;

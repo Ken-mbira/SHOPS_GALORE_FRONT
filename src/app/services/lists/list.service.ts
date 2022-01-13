@@ -7,6 +7,7 @@ import { TreeData } from 'mat-tree-select-input';
 import { environment } from 'src/environments/environment';
 import { Brand } from 'src/app/interfaces/brand/brand';
 import { Type } from 'src/app/interfaces/type/type';
+import { Category } from 'src/app/interfaces/category/category';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,13 @@ export class ListService {
         return o
       }
     )
+  }
+
+  constructSingleCategoryData(data){
+    return {
+      id:data.id,
+      name:data.name
+    }
   }
 
   getCategories(){
