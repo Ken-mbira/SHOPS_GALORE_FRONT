@@ -36,12 +36,14 @@ import { VariationChoiceComponent } from './seller-shop/new-shop-product/variati
 import { HasVariationFormComponent } from './seller-shop/new-shop-product/has-variation-form/has-variation-form.component';
 import { NoVariationFormComponent } from './seller-shop/new-shop-product/no-variation-form/no-variation-form.component';
 import { SuccessComponent } from './seller-shop/new-shop-product/success/success.component';
+import { ListService } from '../services/lists/list.service';
 
 
 @NgModule({
   providers: [
     ShopService,
     LocationService,
+    ListService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
