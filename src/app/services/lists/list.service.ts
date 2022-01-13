@@ -34,5 +34,30 @@ export class ListService {
       console.log(error)
     })
   }
+
+  private categories = new BehaviorSubject<TreeData[]>([]);
+  currentCategories = this.categories.asObservable();
+
+  constructTreeData(data){
+    return data.map(
+      (item)=>{
+        let o = {
+          name: item.name,
+          value: item.id,
+          children: item.children.length ? this.constructTreeData(item.children) : []
+        }
+        return o
+      }
+    )
+  }
+
+  getCategories(){
+    this.http.get(`${environment.BASE_URL}shop/category/`).subscribe(response => {
+      this.categories.next(this.constructTreeData(response))
+    },error=>{
+      console.log(error)
+    })
+  }
+
   constructor(private http:HttpClient) { }
 }

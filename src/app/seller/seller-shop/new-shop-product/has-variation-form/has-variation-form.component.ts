@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { TreeData } from 'mat-tree-select-input';
 
 import { ListService } from 'src/app/services/lists/list.service';
 import { Brand } from 'src/app/interfaces/brand/brand';
@@ -12,6 +13,7 @@ import { Brand } from 'src/app/interfaces/brand/brand';
 export class HasVariationFormComponent implements OnInit {
 
   brands:Brand[];
+  categories:TreeData[];
 
   constructor(private fb:FormBuilder,private listService:ListService) { }
 
@@ -25,6 +27,8 @@ export class HasVariationFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.listService.currentBrands.subscribe(brands => this.brands = brands)
+    this.listService.currentCategories.subscribe(categories => this.categories = categories)
+    this.listService.getCategories()
     this.listService.getBrands()
   }
 

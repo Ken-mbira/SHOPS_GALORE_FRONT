@@ -22,13 +22,8 @@
                 </mat-form-field>
             </div>
             <div>
-                <mat-form-field appearance="outline">
-                    <mat-label>Category</mat-label>
-                    <mat-select formControlName="category">
-                        <mat-option value="Category1">Category1</mat-option>
-                        <mat-option value="Category2">Category2</mat-option>
-                    </mat-select>
-                </mat-form-field>
+                <ngx-mat-tree-select-input [options]="categories" [placeholder]="'Choose Category'" [heading]="'Child of '" [canSelectParentNode]="false" [controlName]="'category'">
+                </ngx-mat-tree-select-input>
             </div>
             <div>
                 <mat-form-field appearance="outline">
