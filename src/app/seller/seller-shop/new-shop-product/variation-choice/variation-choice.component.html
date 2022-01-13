@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center justify-content-center">
+    <div>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="bold" (click)="chooseVariation(true)">Has Variations</mat-button-toggle>
+            <mat-button-toggle value="italic" (click)="chooseVariation(false)">Has No Variations</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="p-2 d-flex justify-content-center">
+            <button mat-raised-button matStepperNext>Next</button>
+        </div>
+    </div>
+</div>
