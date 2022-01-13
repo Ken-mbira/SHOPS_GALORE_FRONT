@@ -1,1 +1,40 @@
-<p>has-variation-form works!</p>
+<div class="d-flex justify-content-center">
+    <div>
+        <form>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Ex. Leather Jacket" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Brand</mat-label>
+                    <mat-select>
+                        <mat-option value="hello">Hello</mat-option>
+                        <mat-option value="hello">World</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <mat-select>
+                        <mat-option value="Category1">Category1</mat-option>
+                        <mat-option value="Category2">Category2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </form>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </div>
+</div>

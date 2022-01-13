@@ -3,34 +3,7 @@
         <app-variation-choice (variationChoice)="checkVariation($event)"></app-variation-choice>
     </mat-step>
     <mat-step label="Enter Product Details" *ngIf="hasVariations">
-        <form class="d-flex flex-column">
-            <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Ex. Leather Jacket" required>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Description</mat-label>
-                <input matInput required>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Brand</mat-label>
-                <mat-select>
-                    <mat-option value="hello">Hello</mat-option>
-                    <mat-option value="hello">World</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Category</mat-label>
-                <mat-select>
-                    <mat-option value="Category1">Category1</mat-option>
-                    <mat-option value="Category2">Category2</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </form>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-        </div>
+        <app-has-variation-form></app-has-variation-form>
     </mat-step>
     <mat-step label="Without Variations" *ngIf="!hasVariations">
         <form class="d-flex flex-column">
