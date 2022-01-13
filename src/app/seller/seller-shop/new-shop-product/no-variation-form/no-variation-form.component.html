@@ -1,64 +1,78 @@
 <div class="d-flex justify-content-center">
     <div>
-        <form>
+        <form [formGroup]="productForm">
             <div class="row">
                 <div class="col-md-6">
                     <div>
                         <mat-form-field appearance="outline">
                             <mat-label>Name</mat-label>
-                            <input matInput placeholder="Ex. Leather Jacket" required>
+                            <input matInput placeholder="Ex. Leather Jacket" formControlName="name">
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="outline">
                             <mat-label>Description</mat-label>
-                            <input matInput required>
+                            <textarea matInput formControlName="description"></textarea>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="outline">
                             <mat-label>Brand</mat-label>
-                            <mat-select>
-                                <mat-option value="hello">Hello</mat-option>
-                                <mat-option value="hello">World</mat-option>
+                            <mat-select formControlName="brand">
+                                <mat-option *ngFor="let brand of brands;let i = index" value="{{brand.id}}">{{brand.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <ngx-mat-tree-select-input [options]="categories" [placeholder]="'Choose Category'" [heading]="'Child of '" [canSelectParentNode]="false" [controlName]="'category'">
+                        </ngx-mat-tree-select-input>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>SKU</mat-label>
+                            <input matInput placeholder="Ex. leather-jacket-1" formControlName="sku">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Type</mat-label>
+                            <mat-select formControlName="type">
+                                <mat-option *ngFor="let type of types" value="{{type.id}}">{{type.name}}</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field appearance="outline">
-                            <mat-label>Category</mat-label>
-                            <mat-select>
-                                <mat-option value="Category1">Category1</mat-option>
-                                <mat-option value="Category2">Category2</mat-option>
-                            </mat-select>
+                            <mat-label>Weight</mat-label>
+                            <input type="number" matInput formControlName="weight" placeholder="Weight in kilograms">
                         </mat-form-field>
                     </div>
-                </div>
-                <div class="col-md-6">
                     <div class="d-flex dimensions">
                         <mat-form-field appearance="outline">
-                            <mat-label>Width</mat-label>
-                            <input type="number" matInput required>
+                            <mat-label>Width(m)</mat-label>
+                            <input type="number" matInput [(ngModel)]="width" name="width" (change)="checkVolume()" [ngModelOptions]="{standalone: true}" placeholder="in metres (m)">
                         </mat-form-field>
                         <mat-form-field appearance="outline">
-                            <mat-label>Length</mat-label>
-                            <input type="number" matInput required>
+                            <mat-label>Length(m)</mat-label>
+                            <input type="number" matInput required [(ngModel)]="length" name="length" (change)="checkVolume()" [ngModelOptions]="{standalone: true}" placeholder="in metres (m)">
                         </mat-form-field>
                         <mat-form-field appearance="outline">
-                            <mat-label>Height</mat-label>
-                            <input type="number" matInput required>
+                            <mat-label>Height(m)</mat-label>
+                            <input type="number" matInput required [(ngModel)]="height" name="height" (change)="checkVolume()" [ngModelOptions]="{standalone: true}" placeholder="in metres (m)">
                         </mat-form-field>
                     </div>
                     <mat-form-field appearance="outline">
                         <mat-label>Price</mat-label>
-                        <input type="number" matInput required>
+                        <input type="number" matInput formControlName="price" placeholder="Kenyan Shillings">
                     </mat-form-field>
                 </div>
             </div>
         </form>
         <div class="m-2">
             <button mat-raised-button class="me-2" matStepperPrevious>Back</button>
-            <button mat-raised-button matStepperNext>Next</button>
+            <button mat-raised-button matStepperNext [disabled]="!productForm.valid">Next</button>
         </div>
     </div>
 </div>
