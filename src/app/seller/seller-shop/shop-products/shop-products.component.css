@@ -10,6 +10,7 @@
     padding: 1em;
     animation: slideInUp;
     animation-duration: 1s;
+    cursor: pointer;
 }
 
 .shop-card:hover {
