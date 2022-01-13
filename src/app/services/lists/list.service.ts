@@ -6,6 +6,7 @@ import { TreeData } from 'mat-tree-select-input';
 
 import { environment } from 'src/environments/environment';
 import { Brand } from 'src/app/interfaces/brand/brand';
+import { Type } from 'src/app/interfaces/type/type';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,31 @@ export class ListService {
   getCategories(){
     this.http.get(`${environment.BASE_URL}shop/category/`).subscribe(response => {
       this.categories.next(this.constructTreeData(response))
+    },error=>{
+      console.log(error)
+    })
+  }
+
+
+  private types = new BehaviorSubject<Type[]>([]);
+  currentTypes =this.types.asObservable();
+
+  constructTypeData(data){
+    return data.map(
+      (item)=>{
+        let o = {
+          name : item.name,
+          id : item.id,
+          description : item.description
+        }
+        return o
+      }
+    )
+  }
+
+  getTypes(){
+    this.http.get(`${environment.BASE_URL}shop/type/`).subscribe(response=>{
+      this.types.next(this.constructTypeData(response))
     },error=>{
       console.log(error)
     })

@@ -29,8 +29,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Type</mat-label>
                     <mat-select formControlName="type">
-                        <mat-option value="Type1">Type1</mat-option>
-                        <mat-option value="Type2">Type1</mat-option>
+                        <mat-option *ngFor="let type of types" value="{{type.id}}">{{type.name}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
