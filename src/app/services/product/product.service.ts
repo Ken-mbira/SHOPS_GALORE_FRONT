@@ -45,8 +45,6 @@ export class ProductService {
   getProducts(){
     this.http.get(`${environment.BASE_URL}shop/${localStorage.getItem("shop_id")}/product/`).subscribe(response=>{
       this.productList.next(this.constructProductData(response))
-      console.log(response)
-      console.log(this.productList)
     },error=>{
       console.log(error)
     })
