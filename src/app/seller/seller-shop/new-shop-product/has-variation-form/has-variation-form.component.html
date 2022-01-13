@@ -1,22 +1,22 @@
 <div class="d-flex justify-content-center">
     <div>
-        <form>
+        <form [formGroup]="productForm">
             <div>
                 <mat-form-field appearance="outline">
                     <mat-label>Name</mat-label>
-                    <input matInput placeholder="Ex. Leather Jacket" required>
+                    <input matInput placeholder="Ex. Leather Jacket" formControlName="name">
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field appearance="outline">
                     <mat-label>Description</mat-label>
-                    <input matInput required>
+                    <textarea matInput formControlName="description"></textarea>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field appearance="outline">
                     <mat-label>Brand</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="brand">
                         <mat-option value="hello">Hello</mat-option>
                         <mat-option value="hello">World</mat-option>
                     </mat-select>
@@ -25,16 +25,25 @@
             <div>
                 <mat-form-field appearance="outline">
                     <mat-label>Category</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="category">
                         <mat-option value="Category1">Category1</mat-option>
                         <mat-option value="Category2">Category2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Type</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option value="Type1">Type1</mat-option>
+                        <mat-option value="Type2">Type1</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
         </form>
         <div class="m-2">
             <button mat-raised-button class="me-2" matStepperPrevious>Back</button>
-            <button mat-raised-button matStepperNext>Next</button>
+            <button mat-raised-button matStepperNext [disabled]="!productForm.valid">Next</button>
         </div>
     </div>
 </div>

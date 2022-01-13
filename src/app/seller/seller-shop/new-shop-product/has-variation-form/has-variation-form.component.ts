@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-has-variation-form',
   templateUrl: './has-variation-form.component.html',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HasVariationFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
+
+  productForm = this.fb.group({
+    name:['',Validators.required],
+    brand:['',Validators.required],
+    category:['',Validators.required],
+    type:['',Validators.required],
+    description:['',Validators.required]
+  })
 
   ngOnInit(): void {
   }
