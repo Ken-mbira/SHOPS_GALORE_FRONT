@@ -15,7 +15,3 @@ mat-step {
 mat-form-field {
     width: 60vmin
 }
-
-.dimensions mat-form-field {
-    width: 100px;
-}

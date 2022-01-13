@@ -1,0 +1,12 @@
+.dimensions mat-form-field {
+    width: 100px;
+    margin-right: 1em;
+}
+
+@media (max-width:400px) {
+    .dimensions mat-form-field {
+        width: 70px;
+        margin-right: .7em;
+        font-size: .8rem
+    }
+}

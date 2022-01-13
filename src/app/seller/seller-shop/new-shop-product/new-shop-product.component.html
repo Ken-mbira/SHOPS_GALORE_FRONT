@@ -6,58 +6,7 @@
         <app-has-variation-form></app-has-variation-form>
     </mat-step>
     <mat-step label="Without Variations" *ngIf="!hasVariations">
-        <form class="d-flex flex-column">
-            <div class="row">
-                <div class="col-md-6">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Name</mat-label>
-                        <input matInput placeholder="Ex. Leather Jacket" required>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Description</mat-label>
-                        <input matInput required>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Brand</mat-label>
-                        <mat-select>
-                            <mat-option value="hello">Hello</mat-option>
-                            <mat-option value="hello">World</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Category</mat-label>
-                        <mat-select>
-                            <mat-option value="Category1">Category1</mat-option>
-                            <mat-option value="Category2">Category2</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex dimensions">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Width</mat-label>
-                            <input type="number" matInput required>
-                        </mat-form-field>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Length</mat-label>
-                            <input type="number" matInput required>
-                        </mat-form-field>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Height</mat-label>
-                            <input type="number" matInput required>
-                        </mat-form-field>
-                    </div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Price</mat-label>
-                        <input type="number" matInput required>
-                    </mat-form-field>
-                </div>
-            </div>
-        </form>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-        </div>
+        <app-no-variation-form></app-no-variation-form>
     </mat-step>
     <mat-step label="Complete">
         <app-success></app-success>

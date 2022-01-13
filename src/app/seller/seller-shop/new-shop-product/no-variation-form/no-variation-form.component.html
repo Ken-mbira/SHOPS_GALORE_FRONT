@@ -1,1 +1,64 @@
-<p>no-variation-form works!</p>
+<div class="d-flex justify-content-center">
+    <div>
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Ex. Leather Jacket" required>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Brand</mat-label>
+                            <mat-select>
+                                <mat-option value="hello">Hello</mat-option>
+                                <mat-option value="hello">World</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Category</mat-label>
+                            <mat-select>
+                                <mat-option value="Category1">Category1</mat-option>
+                                <mat-option value="Category2">Category2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex dimensions">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Width</mat-label>
+                            <input type="number" matInput required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Length</mat-label>
+                            <input type="number" matInput required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Height</mat-label>
+                            <input type="number" matInput required>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Price</mat-label>
+                        <input type="number" matInput required>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </div>
+</div>
