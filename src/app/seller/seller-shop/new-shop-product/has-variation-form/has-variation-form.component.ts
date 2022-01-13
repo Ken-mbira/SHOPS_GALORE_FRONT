@@ -26,7 +26,6 @@ export class HasVariationFormComponent implements OnInit {
   ngOnInit(): void {
     this.listService.currentBrands.subscribe(brands => this.brands = brands)
     this.listService.getBrands()
-    console.log(this.brands)
   }
 
 }

@@ -17,8 +17,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Brand</mat-label>
                     <mat-select formControlName="brand">
-                        <mat-option value="hello">Hello</mat-option>
-                        <mat-option value="hello">World</mat-option>
+                        <mat-option *ngFor="let brand of brands;let i = index" value="{{brand.id}}">{{brand.name}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
