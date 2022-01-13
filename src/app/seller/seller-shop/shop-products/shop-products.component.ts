@@ -19,6 +19,7 @@ export class ShopProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.shopService.currentShop.subscribe(shop => this.shop = shop)
+    this.productService.currentProducts.subscribe(products => this.products = products)
     this.productService.getProducts()
   }
 
