@@ -4,6 +4,10 @@ import { StepperOrientation } from '@angular/material/stepper';
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { TreeData } from 'mat-tree-select-input';
+import { FormGroup } from '@angular/forms';
+
+import { ShopService } from '../../services/shop.service';
+import { Shop } from 'src/app/interfaces/shop/shop'
 
 @Component({
   selector: 'app-new-shop-product',
@@ -12,13 +16,25 @@ import { TreeData } from 'mat-tree-select-input';
 })
 export class NewShopProductComponent implements OnInit {
 
+  shop:Shop;
+
+  stagedProduct:FormGroup;
+
   checkVariation(boolean:boolean){
     this.hasVariations = boolean
   }
   hasVariations = false;
 
   productSubmission(event){
-    console.log(event)
+    this.stagedProduct=event;
+  }
+
+  submitProduct(){
+    if(this.hasVariations){
+      this.shopService.createProductWithVariations(this.stagedProduct,this.shop.id)
+    }else{
+      this.shopService.createProductWithoutVariations(this.stagedProduct,this.shop.id)
+    }
   }
 
 
@@ -26,7 +42,7 @@ export class NewShopProductComponent implements OnInit {
 
   stepperOrientation:Observable<StepperOrientation>
 
-  constructor(breakpointbserver:BreakpointObserver) {
+  constructor(breakpointbserver:BreakpointObserver,private shopService:ShopService) {
     this.stepperOrientation = breakpointbserver
     .observe('(min-width:600px)')
     .pipe(map(({matches}) => (matches ? 'horizontal' :
@@ -35,5 +51,6 @@ export class NewShopProductComponent implements OnInit {
 
 
   ngOnInit() {
+    this.shopService.currentShop.subscribe(shop => this.shop = shop)
   }
 }

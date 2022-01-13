@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'; import { TreeData } from 'mat-tree-select-input';
 
@@ -16,6 +16,13 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./no-variation-form.component.css']
 })
 export class NoVariationFormComponent implements OnInit {
+
+  @Output() productSubmission = new EventEmitter<FormGroup>();
+
+  stageProduct(){
+    this.productForm.patchValue({"category":this.productForm.value.category['value']})
+    this.productSubmission.emit(this.productForm);
+  }
 
   constructor(private fb:FormBuilder, private listService:ListService) { }
 
@@ -39,7 +46,7 @@ export class NoVariationFormComponent implements OnInit {
   })
 
   checkVolume(){
-    this.productForm.value.volume = (this.width * this.height * this.length)
+    this.productForm.value.volume = (this.width * this.height * this.length).toFixed(2)
   }
 
   brands:Brand[];

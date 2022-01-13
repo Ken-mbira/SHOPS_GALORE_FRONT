@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-success',
@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class SuccessComponent implements OnInit {
 
   constructor() { }
+
+  @Output() productCreation = new EventEmitter();
+  
+  createProduct(){
+    this.productCreation.emit();
+  }
 
   ngOnInit(): void {
   }

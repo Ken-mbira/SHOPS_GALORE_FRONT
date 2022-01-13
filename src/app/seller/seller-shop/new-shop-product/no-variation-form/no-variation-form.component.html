@@ -72,7 +72,7 @@
         </form>
         <div class="m-2">
             <button mat-raised-button class="me-2" matStepperPrevious>Back</button>
-            <button mat-raised-button matStepperNext [disabled]="!productForm.valid">Next</button>
+            <button mat-raised-button matStepperNext [disabled]="!productForm.valid" (click)="stageProduct()">Next</button>
         </div>
     </div>
 </div>

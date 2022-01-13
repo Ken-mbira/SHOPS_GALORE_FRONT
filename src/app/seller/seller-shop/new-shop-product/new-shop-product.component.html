@@ -6,9 +6,9 @@
         <app-has-variation-form (productSubmission)="productSubmission($event)"></app-has-variation-form>
     </mat-step>
     <mat-step label="Without Variations" *ngIf="!hasVariations">
-        <app-no-variation-form></app-no-variation-form>
+        <app-no-variation-form (productSubmission)="productSubmission($event)"></app-no-variation-form>
     </mat-step>
     <mat-step label="Complete">
-        <app-success></app-success>
+        <app-success (productCreation)="submitProduct()"></app-success>
     </mat-step>
 </mat-stepper>
