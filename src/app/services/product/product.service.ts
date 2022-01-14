@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { FormGroup } from '@angular/forms';
 
 import { Product } from 'src/app/interfaces/product/product';
 import { Category } from 'src/app/interfaces/category/category';
@@ -124,6 +125,14 @@ export class ProductService {
   })
 
   currentProduct = this.product.asObservable();
+
+  createImage(product_id:number,image:FormData){
+    return this.http.post(`${environment.BASE_URL}shop/product/${product_id}`,image)
+  }
+
+  changeDefaultImage(product_id:number,image:FormGroup){
+    return this.http.post(`${environment.BASE_URL}shop/product/image/${product_id}/`,image.value)
+  }
 
   constructor(private http:HttpClient,private listService:ListService,private shopService:ShopService) { }
 }

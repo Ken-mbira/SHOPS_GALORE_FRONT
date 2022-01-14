@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ProductService } from 'src/app/services/product/product.service';
 import { Product } from 'src/app/interfaces/product/product';
+import { Image } from 'src/app/interfaces/image/image';
 
 @Component({
   selector: 'app-single-shop-product',
@@ -19,6 +20,7 @@ export class SingleShopProductComponent implements OnInit {
   constructor(private route:ActivatedRoute,private productService:ProductService) { }
 
   hasVariation = false;
+
 
   ngOnInit(): void {
     this.productService.currentProduct.subscribe(product => this.product = product)
