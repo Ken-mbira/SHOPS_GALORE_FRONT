@@ -134,5 +134,9 @@ export class ProductService {
     return this.http.post(`${environment.BASE_URL}shop/product/image/${product_id}/`,image.value)
   }
 
+  deleteImage(image_id){
+    return this.http.delete(`${environment.BASE_URL}shop/product/image/delete/${image_id}`)
+  }
+
   constructor(private http:HttpClient,private listService:ListService,private shopService:ShopService) { }
 }

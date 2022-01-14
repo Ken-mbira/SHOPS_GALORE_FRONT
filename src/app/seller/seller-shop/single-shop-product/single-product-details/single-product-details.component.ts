@@ -66,6 +66,16 @@ export class SingleProductDetailsComponent implements OnInit {
     })
   }
 
+  delete_image(index:number){
+    let image = this.product.product_images[index]
+    this.productService.deleteImage(image.id).subscribe(response => {
+      this.matSnackBar.open(`${response}`,"Okay",{duration:3000})
+      this.product.product_images.splice(index,1)
+    },error =>{
+      console.log(error)
+    })
+  }
+
   ngOnInit(): void {
   }
 
