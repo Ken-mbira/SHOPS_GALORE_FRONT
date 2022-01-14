@@ -28,6 +28,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
 
@@ -74,7 +75,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatMenuModule,
     MatRadioModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ScrollingModule
   ]
 })
 export class CustomAngularMaterialModule { }

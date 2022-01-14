@@ -4,7 +4,7 @@
     </div>
     <div class="d-none d-md-block">
         <a class="nav-link dropdown-toggle d-flex align-items-center" style="height:100%" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <mat-icon [ngStyle]="{'color':'#E86105'}">person</mat-icon><span class="ms-2" style="font-size:smaller">Mbira Ken</span>
+            <mat-icon [ngStyle]="{'color':'#E86105'}">person</mat-icon><span class="ms-2" style="font-size:smaller">{{user.first_name + " " + user.last_name}}</span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Settings</a></li>

@@ -44,7 +44,7 @@ export class NewShopComponent implements OnInit {
   submitForm(event:FormGroup){
     this.shopService.createShop(event).subscribe(response=>{
       this.snackBar.open("Your shop was created successfully!","Congratulations",{duration:3000})
-      console.log(response)
+      this.shopService.addShop(response)
     },error => {
       this.snackBar.open("There was a problem creating your shop","Sorry",{duration:3000})
       console.log(error)

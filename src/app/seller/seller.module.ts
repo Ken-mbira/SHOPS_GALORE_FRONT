@@ -32,12 +32,20 @@ import { LocationService } from '../services/location/location.service';
 import { NewShopComponent } from './seller-main/new-shop/new-shop.component';
 import { NewShopFormComponent } from './seller-main/new-shop/new-shop-form/new-shop-form.component';
 import { SelectLocationComponent } from './seller-main/new-shop/select-location/select-location.component';
+import { VariationChoiceComponent } from './seller-shop/new-shop-product/variation-choice/variation-choice.component';
+import { HasVariationFormComponent } from './seller-shop/new-shop-product/has-variation-form/has-variation-form.component';
+import { NoVariationFormComponent } from './seller-shop/new-shop-product/no-variation-form/no-variation-form.component';
+import { SuccessComponent } from './seller-shop/new-shop-product/success/success.component';
+import { ListService } from '../services/lists/list.service';
+import { ProductService } from '../services/product/product.service';
 
 
 @NgModule({
   providers: [
     ShopService,
     LocationService,
+    ListService,
+    ProductService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
@@ -67,7 +75,11 @@ import { SelectLocationComponent } from './seller-main/new-shop/select-location/
     SingleProductDetailsComponent,
     NewShopComponent,
     NewShopFormComponent,
-    SelectLocationComponent
+    SelectLocationComponent,
+    VariationChoiceComponent,
+    HasVariationFormComponent,
+    NoVariationFormComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,
