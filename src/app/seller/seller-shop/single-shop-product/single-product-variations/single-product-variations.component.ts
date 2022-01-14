@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Product } from 'src/app/interfaces/product/product'
 
 @Component({
   selector: 'app-single-product-variations',
@@ -7,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleProductVariationsComponent implements OnInit {
 
+  @Input() product:Product;
+  
   constructor() { }
 
   ngOnInit(): void {
