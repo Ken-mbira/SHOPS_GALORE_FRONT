@@ -26,31 +26,30 @@ import { SummaryDestinationComponent } from './destination/summary-destination/s
 
 
 @NgModule({
-  declarations: [
-    DeliveryComponent,
-    NavbarComponent,
-    SidenavComponent,
-    DashboardComponent,
-    DeliveriesComponent,
-    PickupComponent,
-    DropoffComponent,
-    TransitComponent,
-    NotificationComponent,
-    DestinationComponent,
-    MeansComponent,
-    FillIdComponent,
-    AccountComponent,
-    AccountSideNavComponent,
-    NewDeliveryMeansComponent,
-    SummaryDeliveryMeansComponent,
-    NewDestinationComponent,
-    SummaryDestinationComponent
-  ],
-  imports: [
-    CommonModule,
-    DeliveryRoutingModule,
-    CustomAngularMaterialModule,
-  ],
-  entryComponents: [FillIdComponent]
+    declarations: [
+        DeliveryComponent,
+        NavbarComponent,
+        SidenavComponent,
+        DashboardComponent,
+        DeliveriesComponent,
+        PickupComponent,
+        DropoffComponent,
+        TransitComponent,
+        NotificationComponent,
+        DestinationComponent,
+        MeansComponent,
+        FillIdComponent,
+        AccountComponent,
+        AccountSideNavComponent,
+        NewDeliveryMeansComponent,
+        SummaryDeliveryMeansComponent,
+        NewDestinationComponent,
+        SummaryDestinationComponent
+    ],
+    imports: [
+        CommonModule,
+        DeliveryRoutingModule,
+        CustomAngularMaterialModule,
+    ]
 })
 export class DeliveryModule { }
