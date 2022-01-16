@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LoaderService } from '../services/loader/loader.service';
-
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
@@ -9,7 +7,7 @@ import { LoaderService } from '../services/loader/loader.service';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor(public loaderService:LoaderService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
