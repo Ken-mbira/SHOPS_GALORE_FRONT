@@ -27,6 +27,7 @@ import { SingleProductVariationsComponent } from './seller-shop/single-shop-prod
 import { SingleProductDetailsComponent } from './seller-shop/single-shop-product/single-product-details/single-product-details.component';
 
 import { AuthInterceptor } from '../interceptors/auth.interceptor';
+import { LoaderInterceptor } from '../interceptors/loader/loader.interceptor';
 import { ShopService } from './services/shop.service';
 import { LocationService } from '../services/location/location.service';
 import { NewShopComponent } from './seller-main/new-shop/new-shop.component';
@@ -50,7 +51,13 @@ import { ProductService } from '../services/product/product.service';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
+
   ],
   declarations: [
     SellerComponent,
