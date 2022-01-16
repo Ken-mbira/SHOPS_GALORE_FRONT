@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomAngularMaterialModule } from './custom-angular-material/custom-angular-material.module';
+import { ProgressComponent } from './components/progress/progress.component';
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
+    ProgressComponent,
   ],
   imports: [
     BrowserModule,
