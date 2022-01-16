@@ -47,3 +47,13 @@ p {
     animation: pulse;
     animation-duration: .7s
 }
+
+.login-link {
+    color: #e86105;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-link:hover {
+    color: #2b2a38;
+}
