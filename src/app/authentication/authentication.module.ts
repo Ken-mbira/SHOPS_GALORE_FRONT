@@ -14,6 +14,10 @@ import { PasswordComponent } from './password/password.component';
 import { ForgotComponent } from './password/forgot/forgot.component';
 import { ResetComponent } from './password/reset/reset.component';
 
+import { LoaderInterceptor } from '../interceptors/loader/loader.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthService } from '../services/authentication/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { ResetComponent } from './password/reset/reset.component';
     CommonModule,
     AuthenticationRoutingModule,
     CustomAngularMaterialModule
+  ],
+  providers: [
+    AuthService,
+    { provide:HTTP_INTERCEPTORS , useClass: LoaderInterceptor, multi: true}
   ]
 })
 export class AuthenticationModule { }
