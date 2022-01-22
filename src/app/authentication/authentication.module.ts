@@ -19,6 +19,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from '../services/authentication/auth.service';
 import { RegistrationService } from 'src/app/services/registration/registration.service';
 import { RoleService } from '../services/roles/role.service';
+import { PasswordService } from '../services/Passwords/password.service';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { RoleService } from '../services/roles/role.service';
     AuthService,
     RegistrationService,
     RoleService,
+    PasswordService,
     { provide:HTTP_INTERCEPTORS , useClass: LoaderInterceptor, multi: true}
   ]
 })

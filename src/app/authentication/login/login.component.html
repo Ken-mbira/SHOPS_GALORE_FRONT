@@ -21,7 +21,7 @@
                             <mat-label>Password</mat-label>
                             <input matInput [type]="hide ? 'password' : 'text'" class="example-right-align" formControlName="password">
                             <span matPrefix><mat-icon style="color:#e86105">lock</mat-icon></span>
-                            <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]=" 'Hide password' " [attr.aria-pressed]="hide">
+                            <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]=" 'Hide password' " type="button" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
                         </mat-form-field>
@@ -31,7 +31,7 @@
                             <mat-checkbox class="remember-me">Remember me</mat-checkbox>
                         </div>
                         <div>
-                            <a routerLink="../forgot" style="color:#e86105 !important">Forgot Password?</a>
+                            <a routerLink="../reset" style="color:#e86105 !important;font-size:1em">Forgot Password?</a>
                         </div>
                     </div>
                     <div class="mt-3">
