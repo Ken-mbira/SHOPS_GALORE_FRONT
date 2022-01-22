@@ -1,19 +1,22 @@
-<div class="row container-fluid">
-    <div class="role-choice col-md-8 col-lg-6">
-        <p id="forgot">Forgot Password</p>
-        <div class="hero-title row container-fluid">
-            <div style="font-size:3vmin">
-                <p>Enter your<span style="color:#E86105; font-weight:normal;"> Shops Galore </span> email below and
-                    check your
-                    email to receive instructions on resetting your password.
-            </div>
-            <div class="col-12 placeholder-icon">
-                <img src="../../../../assets/Mail.svg" alt="" height="20px">
-                <input type="email" class="form-control " placeholder="Your e-mail goes here ...">
-            </div>
-            <div class="mt-5 mb-5">
-                <button routerLink="../reset" class="btn btn-register">PROCEED</button>
-            </div>
+<div class="d-flex justify-content-center align-items-center" style="height:70vh">
+    <div>
+        <div class="text-center mb-3">
+            <p style="color:#e86105;font-size: 1.5em;">New Password</p>
+        </div>
+        <div class="text-center">
+            <p>Enter your <span style="color: #e86105;">Shops Galore</span> email below and<br> check your email to receive instructions<br> on resetting your password.</p>
+        </div>
+        <div class="text-center mt-3">
+            <form>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="Your e-mail goes here...">
+                    <span matPrefix><mat-icon style="color:#e86105 ">mail</mat-icon></span>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button style="background-color:#e86105;color:white">Proceed</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
