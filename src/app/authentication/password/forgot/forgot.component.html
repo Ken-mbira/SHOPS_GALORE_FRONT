@@ -7,16 +7,16 @@
             <p>Enter your <span style="color: #e86105;">Shops Galore</span> email below and<br> check your email to receive instructions<br> on resetting your password.</p>
         </div>
         <div class="text-center mt-3">
-            <form>
+            <form [formGroup]="passwordForm" (ngSubmit)="sendEmail()">
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>Email</mat-label>
-                        <input matInput type="email" placeholder="Your e-mail goes here...">
+                        <input formControlName="email" matInput type="email" placeholder="Your e-mail goes here...">
                         <span matPrefix><mat-icon style="color:#e86105 ">mail</mat-icon></span>
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-raised-button style="background-color:#e86105;color:white;width: 100%;" matStepperNext>Proceed</button>
+                    <button [disabled]="!passwordForm.valid" type="submit" mat-raised-button style="background-color:#e86105;color:white;width: 100%;">Proceed</button>
                 </div>
             </form>
         </div>
