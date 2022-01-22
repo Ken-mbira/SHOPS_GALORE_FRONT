@@ -4,18 +4,18 @@
             <p style="color:#e86105;font-size: 1.5em;">Reset Password</p>
         </div>
         <div class="text-center mt-3">
-            <form>
+            <form [formGroup]="resetForm" (ngSubmit)="sendOutForm()">
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>OTP</mat-label>
-                        <input matInput type="password" placeholder="One Time Password">
+                        <input matInput type="password" formControlName="token" placeholder="One Time Password">
                         <span matPrefix><mat-icon style="color:#e86105 ">vpn_key</mat-icon></span>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>New Password</mat-label>
-                        <input matInput type="password" placeholder="Enter your new password here...">
+                        <input matInput type="password" formControlName="password" placeholder="Enter your new password here...">
                         <span matPrefix><mat-icon style="color:#e86105 ">lock</mat-icon></span>
                     </mat-form-field>
                 </div>
@@ -27,7 +27,7 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-raised-button style="background-color:#e86105;color:white;width: 100%;">Reset</button>
+                    <button mat-raised-button style="background-color:#e86105;color:white;width: 100%;" type="submit" [disabled]="!resetForm.valid">Reset</button>
                 </div>
             </form>
         </div>
