@@ -21,4 +21,5 @@ export interface Product {
     parent?:number;
     children?:Product[];
     product_images:Image[];
+    featured_image?:Image;
 }

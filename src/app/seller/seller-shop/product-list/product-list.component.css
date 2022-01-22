@@ -1,0 +1,19 @@
+.product:hover {
+    transform: scale(1.02);
+    transition-duration: 0.8s;
+}
+
+.product {
+    animation: slideInRight;
+    animation-duration: 1s
+}
+
+.list-product {
+    animation: slideInUp;
+    animation-duration: 1s;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
