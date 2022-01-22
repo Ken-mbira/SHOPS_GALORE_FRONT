@@ -39,6 +39,7 @@ import { NoVariationFormComponent } from './seller-shop/new-shop-product/no-vari
 import { SuccessComponent } from './seller-shop/new-shop-product/success/success.component';
 import { ListService } from '../services/lists/list.service';
 import { ProductService } from '../services/product/product.service';
+import { ProductListComponent } from './seller-shop/product-list/product-list.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { ProductService } from '../services/product/product.service';
     VariationChoiceComponent,
     HasVariationFormComponent,
     NoVariationFormComponent,
-    SuccessComponent
+    SuccessComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,
