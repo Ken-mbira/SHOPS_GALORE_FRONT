@@ -8,13 +8,15 @@
         </div>
         <div class="text-center mt-3">
             <form>
-                <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email" placeholder="Your e-mail goes here...">
-                    <span matPrefix><mat-icon style="color:#e86105 ">mail</mat-icon></span>
-                </mat-form-field>
                 <div>
-                    <button mat-raised-button style="background-color:#e86105;color:white">Proceed</button>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" placeholder="Your e-mail goes here...">
+                        <span matPrefix><mat-icon style="color:#e86105 ">mail</mat-icon></span>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-raised-button style="background-color:#e86105;color:white;width: 100%;" matStepperNext>Proceed</button>
                 </div>
             </form>
         </div>
