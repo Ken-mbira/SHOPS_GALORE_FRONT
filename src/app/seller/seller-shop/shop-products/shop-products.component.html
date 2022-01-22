@@ -12,7 +12,7 @@
             <mat-option value="two">Out Of Stock</mat-option>
         </mat-select>
     </mat-form-field>
-    <div class="row mt-3">
+    <!-- <div class="row mt-3">
         <div *ngFor="let product of products" class="col-md-4 g-1">
             <div class="shop-card" routerLink="../products/{{product.id}}" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg');">
                 <p style="font-size:larger;color: #E86105;">{{product.name}}</p>
@@ -20,5 +20,8 @@
                 <small>Request Product Feature</small>
             </div>
         </div>
+    </div> -->
+    <div>
+        <app-product-list [products]="products"></app-product-list>
     </div>
 </div>
