@@ -3,15 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationComponent } from './authentication.component';
 
 import { LoginComponent } from './login/login.component';
-
 import { RegisterComponent } from './register/register.component';
-import { RoleChoiceComponent } from './register/role-choice/role-choice.component';
-import { FormComponent } from './register/form/form.component';
-import { SuccessfullComponent } from './register/successfull/successfull.component';
-
 import { PasswordComponent } from './password/password.component';
-import { ResetComponent } from './password/reset/reset.component';
-import { ForgotComponent } from './password/forgot/forgot.component';
 
 const routes: Routes = [
   { 
@@ -24,12 +17,8 @@ const routes: Routes = [
         component: RegisterComponent
       },
       {
-        path: '',
+        path: 'reset',
         component: PasswordComponent,
-        children: [
-          {path: 'forgot', component:ForgotComponent},
-          {path: 'reset', component:ResetComponent}
-        ]
       }
     ]
   },
