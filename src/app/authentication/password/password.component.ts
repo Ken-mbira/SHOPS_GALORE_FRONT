@@ -32,8 +32,7 @@ export class PasswordComponent implements OnInit {
       this.snackBar.open("The password was successfully reset","Log in",{duration:3000})
       this.router.navigate(['auth/login']);
     },error => {
-      console.log(error)
-      this.snackBar.open("There was a problem resetting the password","Sorry",{duration:3000})
+      this.snackBar.open("There was a problem resetting the password, please make sure the password is more than 8 characters and is not purely digits","Sorry",{duration:3000})
     })
   }
 
