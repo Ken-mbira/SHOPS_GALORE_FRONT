@@ -1,4 +1,4 @@
-<mat-stepper style="width:80vw;min-height:85vh" class="main" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
+<mat-stepper style="min-height:85vh" class="main" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
     <mat-step>
         <app-variation-choice (variationChoice)="checkVariation($event)"></app-variation-choice>
     </mat-step>
