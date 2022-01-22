@@ -13,11 +13,9 @@
     <div class="row grid-view" *ngIf="gridView">
         <div *ngFor="let product of products; let i = index" class="col-md-3 col-xl-2 product col-6 mt-2">
             <div style="cursor: pointer;" routerLink="../products/{{product.id}}" class="card">
-                <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="card-img-top img-fluid" alt="...">
+                <img *ngIf="product.featured_image" src="{{product.featured_image.image}}" class="card-img-top img-fluid" alt="...">
                 <div class="m-1">
                     <p class="card-text" style="font-size:0.83rem">{{product.name}}</p>
-                    <h5 *ngIf="product.price" class="card-title" style="font-size:0.83rem;color:#e86105">KES {{product.price}}</h5>
-                    <p *ngIf="product.discount_price" class="card-text" style="font-size:0.83rem;text-decoration: line-through;">KES {{product.discount_price}}</p>
                 </div>
             </div>
         </div>
@@ -27,7 +25,7 @@
             <hr style="background-color: #2b2a38;">
             <div class="list-view row mt-3">
                 <div class="col-sm-3">
-                    <img src="../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" alt="" class="img-fluid">
+                    <img src="{{product.featured_image.image}}" alt="" class="img-fluid">
                 </div>
                 <div class="col-sm-4">
                     <div>

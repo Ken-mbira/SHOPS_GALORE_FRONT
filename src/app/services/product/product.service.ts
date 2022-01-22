@@ -8,6 +8,7 @@ import { Category } from 'src/app/interfaces/category/category';
 import { environment } from 'src/environments/environment';
 import { ListService } from '../lists/list.service';
 import { ShopService } from 'src/app/seller/services/shop.service';
+import { Image } from 'src/app/interfaces/image/image';
 
 
 @Injectable({
@@ -37,7 +38,8 @@ export class ProductService {
           owner:this.shopService.constructSingleShopData(item.owner),
           parent:item.parent ? item.parent : null,
           children:item.children.length ? this.constructProductData(item.children) : [],
-          product_images:this.listService.constructImageData(item.product_images)
+          product_images:this.listService.constructImageData(item.product_images),
+          featured_image:item.featured_image ? this.listService.constructSingleImageData(item.featured_image): null,
         }
         return o
       }
@@ -61,7 +63,8 @@ export class ProductService {
       owner:this.shopService.constructSingleShopData(item.owner),
       parent:item.parent ? item.parent : null,
       children:item.children.length ? this.constructProductData(item.children) : [],
-      product_images:this.listService.constructImageData(item.product_images)
+      product_images:this.listService.constructImageData(item.product_images),
+      featured_image:item.featured_image ? this.listService.constructSingleImageData(item.featured_image): null,
     }
     return o
   }
@@ -122,6 +125,7 @@ export class ProductService {
     parent:null,
     children:[],
     product_images:[],
+    featured_image:null,
   })
 
   currentProduct = this.product.asObservable();
