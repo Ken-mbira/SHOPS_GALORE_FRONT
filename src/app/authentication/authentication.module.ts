@@ -21,6 +21,9 @@ import { RegistrationService } from 'src/app/services/registration/registration.
 import { RoleService } from '../services/roles/role.service';
 import { PasswordService } from '../services/Passwords/password.service';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {GoogleLoginProvider,FacebookLoginProvider} from 'angularx-social-login';
+
 
 @NgModule({
   declarations: [
@@ -37,14 +40,33 @@ import { PasswordService } from '../services/Passwords/password.service';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    CustomAngularMaterialModule
+    CustomAngularMaterialModule,
+    SocialLoginModule
   ],
   providers: [
     AuthService,
     RegistrationService,
     RoleService,
     PasswordService,
-    { provide:HTTP_INTERCEPTORS , useClass: LoaderInterceptor, multi: true}
+    { provide:HTTP_INTERCEPTORS , useClass: LoaderInterceptor, multi: true},
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '384590964304-pegv7gph8ckru3urlpuvqc1ltnjlr1gs.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('941298796756294')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
   ]
 })
 export class AuthenticationModule { }
