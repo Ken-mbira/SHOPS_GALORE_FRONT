@@ -13,6 +13,9 @@ import {map} from 'rxjs/operators';
 
 import { Role } from 'src/app/classes/role/role';
 import { RegistrationService } from 'src/app/services/registration/registration.service';
+import { SocialAuthService } from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+import { AuthService } from 'src/app/services/authentication/auth.service';
 
 
 @Component({
@@ -24,7 +27,7 @@ export class RegisterComponent implements OnInit {
 
   stepperOrientation: Observable<StepperOrientation>;
 
-  constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private registrationService:RegistrationService,private snackBar:MatSnackBar) {
+  constructor(breakpointObserver: BreakpointObserver,private fb:FormBuilder,private registrationService:RegistrationService,private snackBar:MatSnackBar,private socialAuthService: SocialAuthService,private authService:AuthService) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 500px)')
       .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
@@ -45,12 +48,24 @@ export class RegisterComponent implements OnInit {
 
   submitForm(event:FormGroup,stepper:MatStepper){
     this.registrationService.register(event).subscribe(response => {
-      console.log(response)
       this.snackBar.open(`${response}`,"Thank you",{duration: 3000})
       stepper.next()
     },error=>{
       this.snackBar.open("There was a problem creating your account","Sorry",{duration: 3000})
     })
+  }
+
+  googleSignIn(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(result => {
+      let form = new FormData()
+      form.append("role",this.registrationForm.value.role)
+      form.append("auth_token",result['idToken'])
+      this.registrationService.googleRegistration(form).subscribe(response =>{
+        this.authService.socialAuthLogin(response)
+      },error=>{
+        this.snackBar.open(`${error['error'][0]}`,"Sorry",{duration: 3000})
+      })
+    });
   }
 
   ngOnInit(): void {

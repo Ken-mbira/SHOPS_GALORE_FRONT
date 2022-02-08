@@ -86,6 +86,12 @@ export class AuthService {
     })
   }
 
+  socialAuthLogin(response:any){
+    this.setToken(response['access'],'access_token')
+    this.setToken(response['refresh'],'refresh_token')
+    this.getInstance()
+  }
+
   setToken(token:string,name:string){
     localStorage.setItem(name,token)
   }

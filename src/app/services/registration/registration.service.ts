@@ -16,4 +16,8 @@ export class RegistrationService {
   register(form:FormGroup){
     return this.http.post(`${environment.BASE_URL}user/`,form.value)
   }
+
+  googleRegistration(data:FormData){
+    return this.http.post(`${environment.BASE_URL}user/google_signup/`,data)
+  }
 }
