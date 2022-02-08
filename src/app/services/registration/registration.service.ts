@@ -20,4 +20,8 @@ export class RegistrationService {
   googleRegistration(data:FormData){
     return this.http.post(`${environment.BASE_URL}user/google_signup/`,data)
   }
+
+  facebookRegistration(data:FormData){
+    return this.http.post(`${environment.BASE_URL}user/facebook_signup/`,data)
+  }
 }

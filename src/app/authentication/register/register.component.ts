@@ -68,6 +68,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  facebookSignIn(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then((result)=>{
+      let form = new FormData()
+      form.append("role",this.registrationForm.value.role)
+      form.append("auth_token",result['authToken'])
+      
+      this.registrationService.facebookRegistration(form).subscribe(response=>{
+        this.authService.socialAuthLogin(response)  
+      },error=>{
+        this.snackBar.open(`${error['error'][0]}`,"Sorry",{duration: 3000})
+      })
+    });
+  }
+
   ngOnInit(): void {
   }
 

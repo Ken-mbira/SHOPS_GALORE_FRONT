@@ -22,9 +22,7 @@ export class FormComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((result)=>{
-      console.log(result)
-    });
+    this.facebookSignIn.emit()
   }
 
   firstPasswordHide:boolean = true;
@@ -33,6 +31,8 @@ export class FormComponent implements OnInit {
   @Output() formSubmission = new EventEmitter<FormGroup>()
 
   @Output() googleSignIn = new EventEmitter()
+
+  @Output() facebookSignIn = new EventEmitter();
 
   submitForm(){
     this.formSubmission.emit(this.registrationForm)

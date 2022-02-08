@@ -4,7 +4,7 @@
             <app-role-choice (newRole)="chooseRole($event,stepper)"></app-role-choice>
         </mat-step>
         <mat-step label="Fill out your information">
-            <app-form (formSubmission)="submitForm($event,stepper)" (googleSignIn)="googleSignIn()"></app-form>
+            <app-form (formSubmission)="submitForm($event,stepper)" (googleSignIn)="googleSignIn()" (facebookSignIn)="facebookSignIn()"></app-form>
         </mat-step>
         <mat-step label="Success">
             <app-successfull></app-successfull>
