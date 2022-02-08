@@ -118,4 +118,12 @@ export class AuthService {
     })
   }
 
+  googleLogin(data:FormData){
+    return this.http.post(`${environment.BASE_URL}user/google_login/`,data)
+  }
+
+  facebookLogin(data:FormData){
+    return this.http.post(`${environment.BASE_URL}user/facebook_login/`,data)
+  }
+
 }
