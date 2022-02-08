@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+import { environment } from 'src/environments/environment';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationComponent } from './authentication.component';
@@ -57,12 +58,12 @@ import {GoogleLoginProvider,FacebookLoginProvider} from 'angularx-social-login';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '384590964304-pegv7gph8ckru3urlpuvqc1ltnjlr1gs.apps.googleusercontent.com'
+              environment.GOOGLELOGINPROVIDER
             )
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('941298796756294')
+            provider: new FacebookLoginProvider(environment.FACEBOOKLOGINPROVIDER)
           }
         ]
       } as SocialAuthServiceConfig,
