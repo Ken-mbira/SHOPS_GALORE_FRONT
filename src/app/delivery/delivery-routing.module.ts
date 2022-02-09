@@ -10,7 +10,6 @@ import { DestinationComponent } from './destination/destination.component';
 import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard'},
   {
     path: '',
     component: DeliveryComponent,
@@ -23,6 +22,7 @@ const routes: Routes = [
       {path: 'account', component:AccountComponent}
     ]
   },
+  { path: '', redirectTo: 'dashboard'},
 ];
 
 @NgModule({
