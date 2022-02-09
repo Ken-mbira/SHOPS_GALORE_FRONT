@@ -86,6 +86,12 @@ export class AuthService {
     })
   }
 
+  socialAuthLogin(response:any){
+    this.setToken(response['access'],'access_token')
+    this.setToken(response['refresh'],'refresh_token')
+    this.getInstance()
+  }
+
   setToken(token:string,name:string){
     localStorage.setItem(name,token)
   }
@@ -110,6 +116,14 @@ export class AuthService {
     return this.http.post<any>(`${environment.BASE_URL}api/token/refresh/`, {
       'refresh': this.getRefreshToken()
     })
+  }
+
+  googleLogin(data:FormData){
+    return this.http.post(`${environment.BASE_URL}user/google_login/`,data)
+  }
+
+  facebookLogin(data:FormData){
+    return this.http.post(`${environment.BASE_URL}user/facebook_login/`,data)
   }
 
 }

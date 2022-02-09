@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  BASE_URL:'http://127.0.0.1:8000/'
+  BASE_URL:'http://127.0.0.1:8000/',
+  GOOGLELOGINPROVIDER:'384590964304-pegv7gph8ckru3urlpuvqc1ltnjlr1gs.apps.googleusercontent.com',
+  FACEBOOKLOGINPROVIDER:'941298796756294',
 };
 
 /*
