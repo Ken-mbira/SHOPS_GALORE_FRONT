@@ -1,0 +1,42 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.means-details {
+    background: #ffffff;
+}
+
+.means-cover {
+    border: 2px solid rgba(43, 42, 56, 0.15);
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.means-image>img {
+    border-radius: 5px 5px 0px 0px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.row {
+    grid-auto-flow: column;
+}
+
+.new-means {
+    background: #ffffff;
+    border: 1px dashed #2B2A38;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-means:hover {
+    transform: scale(1.013);
+    transition-duration: 0.3s;
+}
+
+.custom-mat-icon-means {
+    transform: scale(4)
+}
