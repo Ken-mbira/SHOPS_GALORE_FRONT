@@ -1,0 +1,40 @@
+.means-list-divider {
+    background-color: rgba(232, 97, 5, 1)
+}
+
+.means-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.means-name {
+    font-size: 1.8rem;
+    color: rgba(43, 42, 56, 1);
+}
+
+.means-details {
+    font-size: 1rem;
+    color: rgba(43, 42, 56, 1)
+}
+
+.view-means-button {
+    background-color: rgba(43, 42, 56, 1);
+    color: #ffffff;
+    width: 150px;
+}
+
+.row {
+    grid-auto-flow: column;
+}
+
+.means-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.means {
+    margin-bottom: 2em;
+}
