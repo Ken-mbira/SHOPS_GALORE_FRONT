@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
@@ -10,7 +10,11 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class NewDeliveryMeansComponent implements OnInit {
 
-  constructor() {}
+  constructor(public meansDialog: MatDialogRef<NewDeliveryMeansComponent>) {}
+
+  cancelClick(){
+    this.meansDialog.close();
+  }
 
   ngOnInit() {
   }
