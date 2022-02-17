@@ -36,7 +36,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 
-
 import { NgChartsModule } from 'ng2-charts'
 import { MatTreeSelectInputModule } from 'mat-tree-select-input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -81,7 +80,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSnackBarModule,
     ScrollingModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
   ]
 })
 export class CustomAngularMaterialModule { }
