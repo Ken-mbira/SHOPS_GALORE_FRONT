@@ -13,7 +13,6 @@ export class MeansComponent implements OnInit {
 
   openDialog():void {
     this.dialog.open(NewDeliveryMeansComponent,{
-      width: '300px'
     })
   }
 
