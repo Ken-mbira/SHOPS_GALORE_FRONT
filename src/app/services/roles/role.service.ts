@@ -14,16 +14,12 @@ export class RoleService {
 
 
   getRoles(){
-    let myRoles:Role[] = []
-    this.http.get(`${environment.BASE_URL}user/roles/`).subscribe(response => {
-      let roles:any = response
-      for (let index = 0; index < roles.length; index++) {
-        let role = new Role(roles[index].id,roles[index].name)
-        myRoles.push(role)
-      }
-    },error=>{
-      console.log(error)
-    })
+    let myRoles:Role[] = [
+      {id:1,name:"STAFF"},
+      {id:2,name:"DELIVERY"},
+      {id:3,name:"CUSTOMER"},
+      {id:4,name:"STORE_OWNER"}
+    ]
     this.rolesList.next(myRoles)
   }
 

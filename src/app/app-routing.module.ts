@@ -11,8 +11,7 @@ import { HasroleGuard } from './guards/hasrole.guard'
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule),
-    canActivate: [LoggedinGuard]
+    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
     path: '',
@@ -22,12 +21,12 @@ const routes: Routes = [
   { 
     path: 'customer',
     loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule,),
-    canActivate: [HasroleGuard]
+    // canActivate: [HasroleGuard]
   },
   {
     path: 'store_owner',
     loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule),
-    canActivate:[LoggedGuard,RoleGuard],
+    // canActivate:[LoggedGuard,RoleGuard],
     data: {
       role : 'store_owner'
     }
@@ -35,7 +34,7 @@ const routes: Routes = [
   {
     path: 'delivery',
     loadChildren: () => import('./delivery/delivery.module').then(m => m.DeliveryModule),
-    canActivate:[LoggedGuard,RoleGuard],
+    // canActivate:[LoggedGuard,RoleGuard],
     data: {
       role : "delivery"
     }
@@ -43,7 +42,7 @@ const routes: Routes = [
   { 
     path: 'staff',
     loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule),
-    canActivate:[LoggedGuard],
+    // canActivate:[LoggedGuard],
     data: {
       role : "staff"
     }
@@ -51,7 +50,7 @@ const routes: Routes = [
   {
     path: 'buyer',
     loadChildren: () => import('./buyer/buyer.module').then(m => m.BuyerModule),
-    canActivate:[LoggedGuard],
+    // canActivate:[LoggedGuard],
     data: {
       role : "buyer"
     }
