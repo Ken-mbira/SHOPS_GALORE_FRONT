@@ -11,7 +11,8 @@ import { HasroleGuard } from './guards/hasrole.guard'
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
+    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule),
+    canActivate: [LoggedinGuard]
   },
   {
     path: '',
@@ -26,7 +27,7 @@ const routes: Routes = [
   {
     path: 'store_owner',
     loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule),
-    // canActivate:[LoggedGuard],
+    canActivate:[LoggedGuard],
     data: {
       role : 'store_owner'
     }

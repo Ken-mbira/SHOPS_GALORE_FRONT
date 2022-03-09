@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   checkAuth(){
-    if(localStorage.getItem("access_token") && this.checkTokenExpiration()){
+    if(localStorage.getItem("access_token")){
       this.isAuthenticated.next(true)
     }else{
       this.isAuthenticated.next(false)
