@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'store_owner',
     loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule),
-    // canActivate:[LoggedGuard,RoleGuard],
+    // canActivate:[LoggedGuard],
     data: {
       role : 'store_owner'
     }

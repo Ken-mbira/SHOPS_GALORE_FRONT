@@ -15,13 +15,7 @@ export class RoleChoiceComponent implements OnInit {
   @Output() newRole = new EventEmitter<Role>();
 
   chooseRole(id:number){
-    let role:Role;
-    for(let i = 0; i < this.roles.length; i++){
-      if(this.roles[i].id === id){
-        role = this.roles[i]
-      }
-    }
-    this.newRole.emit(role);
+    this.newRole.emit(this.roles.find(role => role.id === id));
   }
 
   constructor(private roleService:RoleService) { }

@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   checkAuth(){
-    if(localStorage.getItem("access_token")){
+    if(localStorage.getItem("access_token") && this.checkTokenExpiration()){
       this.isAuthenticated.next(true)
     }else{
       this.isAuthenticated.next(false)
@@ -67,7 +67,6 @@ export class AuthService {
       ))
 
       if(this.redirectUrl){
-        console.log(this.redirectUrl)
         this.route.navigate([this.redirectUrl])
         this.redirectUrl = null;
       }else{
