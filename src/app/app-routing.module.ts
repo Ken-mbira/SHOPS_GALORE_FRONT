@@ -6,7 +6,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoggedGuard } from './guards/logged.guard';
 import { RoleGuard } from './guards/role.guard';
 import { LoggedinGuard } from './guards/loggedin.guard';
-import { HasroleGuard } from './guards/hasrole.guard'
 
 const routes: Routes = [
   {

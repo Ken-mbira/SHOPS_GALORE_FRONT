@@ -12,16 +12,24 @@ import { RoleService } from '../services/roles/role.service';
   providedIn: 'root'
 })
 export class RoleGuard implements CanActivate {
-  roles:Role[] = []
+  roles:Role[] = [];
+  isAuthenticated:boolean = false;
+
   constructor(private authService:AuthService,private router:Router,private snackBar:MatSnackBar,private roleService:RoleService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       this.roleService.currentRoles.subscribe(roles => this.roles = roles)
-      let currentRole = this.roles.find(role => role.name === localStorage.getItem("user_role"))
-      if(route.data['role'] !== currentRole.route){
-        this.router.navigate([currentRole.route])
-        return false
+      this.authService.authStatus.subscribe(status => this.isAuthenticated = status)
+      this.authService.checkAuth()
+      if(this.isAuthenticated){
+          let currentRole = this.roles.find(role => role.name === localStorage.getItem("user_role"))
+        if(route.data['role'] !== currentRole.route){
+          this.router.navigate([currentRole.route])
+          return false
+        }else{
+          return true
+        }
       }else{
         return true
       }
