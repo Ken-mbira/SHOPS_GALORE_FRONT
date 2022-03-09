@@ -27,7 +27,6 @@ export class RoleChoiceComponent implements OnInit {
   constructor(private roleService:RoleService) { }
 
   ngOnInit(): void {
-    this.roleService.getRoles()
     this.roleService.currentRoles.subscribe(roles => this.roles = roles)
   }
 
