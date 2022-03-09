@@ -8,11 +8,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomAngularMaterialModule } from './custom-angular-material/custom-angular-material.module';
 import { ProgressComponent } from './components/progress/progress.component';
+import { ImageUploaderComponent } from './shared_components/image-uploader/image-uploader.component';
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
     ProgressComponent,
+    ImageUploaderComponent,
   ],
   imports: [
     BrowserModule,
