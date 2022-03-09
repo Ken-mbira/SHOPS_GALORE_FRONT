@@ -31,7 +31,6 @@ export class ShopService {
       logo:"",
       email_contact:"",
       phone_contact:"",
-      subscription_end_date:new Date(),
       active:false,
       owner:0,
       products:0
@@ -87,7 +86,6 @@ export class ShopService {
       logo:response['logo'],
       email_contact:response['email_contact'],
       phone_contact:response['phone_contact'],
-      subscription_end_date:response['subscription_end_date'],
       active:response['functional'],
       owner:response['owner'],
       products:response['products']
@@ -105,7 +103,6 @@ export class ShopService {
         logo:response['logo'],
         email_contact:response['email_contact'],
         phone_contact:response['phone_contact'],
-        subscription_end_date:response['subscription_end_date'],
         active:response['functional'],
         owner:response['owner'],
         products:response['products']
@@ -127,7 +124,6 @@ export class ShopService {
       logo:response['logo'],
       email_contact:response['email_contact'],
       phone_contact:response['phone_contact'],
-      subscription_end_date:response['subscription_end_date'],
       active:response['functional'],
       owner:response['owner'],
       products:response['products']

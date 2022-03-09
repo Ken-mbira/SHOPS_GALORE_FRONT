@@ -6,7 +6,6 @@ export interface Shop {
     logo:string,
     phone_contact:string,
     email_contact:string,
-    subscription_end_date:Date,
     active:boolean;
     owner:number;
     products:number

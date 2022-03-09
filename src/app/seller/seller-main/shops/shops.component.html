@@ -12,7 +12,7 @@
                 <p style="font-size:1.1rem;color: #E86105;">{{shop.name}}</p>
                 <p><span style="font-size: 3rem;">{{shop.products}}</span> Products</p>
                 <p>Active:<span style="color:#E86105" class="ms-1">{{shop.active}}</span></p>
-                <small *ngIf="shop.subscription_end_date">Subscription ends on {{shop.subscription_end_date | date}}</small>
+                <small>Created on {{shop.created_on | date}}</small>
             </div>
         </div>
     </div>
