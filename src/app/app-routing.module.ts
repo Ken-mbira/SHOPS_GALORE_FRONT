@@ -22,7 +22,10 @@ const routes: Routes = [
   { 
     path: 'customer',
     loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule,),
-    // canActivate: [HasroleGuard]
+    canActivate: [RoleGuard],
+    data: {
+      role: 'customer'
+    }
   },
   {
     path: 'store_owner',

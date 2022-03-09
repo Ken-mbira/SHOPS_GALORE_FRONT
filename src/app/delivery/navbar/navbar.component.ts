@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from 'src/app/services/authentication/auth.service';
+import { ShopService } from 'src/app/seller/services/shop.service';
 import { User } from 'src/app/classes/user/user';
 
 @Component({
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   isAuthenticated:boolean;
   user:User;
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService,private shopService:ShopService) { }
 
   logoutUser(){
     this.authService.logout();
@@ -21,7 +22,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.authService.authStatus.subscribe(user => this.isAuthenticated = user)
     this.authService.userStatus.subscribe(user => this.user = user)
-    this.authService.getInstance()
+    this.shopService.getOwnerInstance()
   }
 
 }

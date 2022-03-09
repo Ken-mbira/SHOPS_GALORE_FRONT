@@ -151,7 +151,7 @@ export class ShopService {
   }
 
   createShop(data:FormGroup){
-    return this.http.post(`${environment.BASE_URL}shop/`,data.value)
+    return this.http.post(`${environment.BASE_URL}store/shop/`,data.value)
   }
 
   createProductWithVariations(data:FormGroup,shop_id:number){
