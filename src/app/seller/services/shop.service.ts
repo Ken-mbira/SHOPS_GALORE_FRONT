@@ -32,7 +32,7 @@ export class ShopService {
       email_contact:"",
       phone_contact:"",
       subscription_end_date:new Date(),
-      functional:false,
+      active:false,
       owner:0,
       products:0
     }
@@ -68,24 +68,10 @@ export class ShopService {
   }
     
   getShopList(){
-    this.http.get(`${environment.BASE_URL}shop/`).subscribe((response:any) => {
-      let shops:Shop[] = []
-      for(let i = 0;i<response.length; i++){
-        let shop:Shop = {
-          name:response[i]['name'],
-          id:response[i]['id'],
-          bio:response[i]['bio'],
-          created_on:response[i]['created_on'],
-          logo:response[i]['logo'],
-          email_contact:response[i]['email_contact'],
-          phone_contact:response[i]['phone_contact'],
-          subscription_end_date:response[i]['subscription_end_date'],
-          functional:response[i]['functional'],
-          owner:response[i]['owner'],
-          products:response[i]['products']
-        }
-        shops.push(shop)
-      }
+    this.http.get(`${environment.BASE_URL}store/shop/`).subscribe((response:any) => {
+      let shops:Shop[] = response.map(shop => {
+        return shop
+      })
       this.shops.next(shops)
     },error=>{
       console.log(error)
@@ -102,7 +88,7 @@ export class ShopService {
       email_contact:response['email_contact'],
       phone_contact:response['phone_contact'],
       subscription_end_date:response['subscription_end_date'],
-      functional:response['functional'],
+      active:response['functional'],
       owner:response['owner'],
       products:response['products']
     }
@@ -120,7 +106,7 @@ export class ShopService {
         email_contact:response['email_contact'],
         phone_contact:response['phone_contact'],
         subscription_end_date:response['subscription_end_date'],
-        functional:response['functional'],
+        active:response['functional'],
         owner:response['owner'],
         products:response['products']
       }
@@ -142,7 +128,7 @@ export class ShopService {
       email_contact:response['email_contact'],
       phone_contact:response['phone_contact'],
       subscription_end_date:response['subscription_end_date'],
-      functional:response['functional'],
+      active:response['functional'],
       owner:response['owner'],
       products:response['products']
     }

@@ -118,7 +118,7 @@ export class ProductService {
       email_contact:"",
       phone_contact:"",
       subscription_end_date:new Date(),
-      functional:false,
+      active:false,
       owner:0,
       products:0
     },

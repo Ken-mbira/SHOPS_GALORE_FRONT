@@ -11,7 +11,7 @@
             <div class="shop-card" routerLink="../shop/{{shop.id}}" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg');">
                 <p style="font-size:1.1rem;color: #E86105;">{{shop.name}}</p>
                 <p><span style="font-size: 3rem;">{{shop.products}}</span> Products</p>
-                <p>Functional:<span style="color:#E86105" class="ms-1">{{shop.functional}}</span></p>
+                <p>Active:<span style="color:#E86105" class="ms-1">{{shop.active}}</span></p>
                 <small *ngIf="shop.subscription_end_date">Subscription ends on {{shop.subscription_end_date | date}}</small>
             </div>
         </div>

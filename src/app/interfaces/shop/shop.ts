@@ -7,7 +7,7 @@ export interface Shop {
     phone_contact:string,
     email_contact:string,
     subscription_end_date:Date,
-    functional:boolean;
+    active:boolean;
     owner:number;
     products:number
 }
