@@ -33,7 +33,7 @@ export class ShopService {
       phone_contact:"",
       active:false,
       owner:0,
-      products:0
+      product_count:0
     }
   );
   currentShop = this.singleShop.asObservable();
@@ -88,7 +88,7 @@ export class ShopService {
       phone_contact:response['phone_contact'],
       active:response['functional'],
       owner:response['owner'],
-      products:response['products']
+      product_count:response['product_count']
     }
     return shop
   }
@@ -105,7 +105,7 @@ export class ShopService {
         phone_contact:response['phone_contact'],
         active:response['functional'],
         owner:response['owner'],
-        products:response['products']
+        product_count:response['product_count']
       }
       this.singleShop.next(shop)
       localStorage.setItem("shop_id",shop.id.toString())
@@ -126,7 +126,7 @@ export class ShopService {
       phone_contact:response['phone_contact'],
       active:response['functional'],
       owner:response['owner'],
-      products:response['products']
+      product_count:response['product_count']
     }
     let updatedShops = [...currentShops,shop]
     this.shops.next(updatedShops)

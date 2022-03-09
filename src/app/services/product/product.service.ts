@@ -119,7 +119,7 @@ export class ProductService {
       phone_contact:"",
       active:false,
       owner:0,
-      products:0
+      product_count:0
     },
     parent:null,
     children:[],

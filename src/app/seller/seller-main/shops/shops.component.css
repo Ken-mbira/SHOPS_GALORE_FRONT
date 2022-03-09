@@ -5,9 +5,6 @@
 }
 
 .shop-card {
-    border-radius: 3px;
-    color: white;
-    padding: 1em;
     animation: slideInUp;
     animation-duration: 1s;
     cursor: pointer;
@@ -15,10 +12,31 @@
 
 .shop-card:hover {
     transform: scale(1.01);
-    transition-duration: 1s;
+    transition-duration: .5s;
 }
 
 p {
     margin: 0;
     padding: 0;
+}
+
+.shop-name {
+    font-size: 1.4rem;
+}
+
+.status-badge {
+    padding: .2em;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.active-badge {
+    background: #E86105;
+}
+
+.inactive-badge {
+    background: #F44336;
 }

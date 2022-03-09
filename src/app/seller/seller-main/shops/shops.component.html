@@ -1,4 +1,4 @@
-<div style="width:80vw;min-height:90vh" class="p-2 dashboard">
+<div>
     <div class="d-flex justify-content-between">
         <div>
             <h6>Shops</h6>
@@ -6,13 +6,34 @@
         </div>
         <button class="btn new-shop" style="height:fit-content" routerLink="new-shop">New Shop</button>
     </div>
-    <div class="row mt-3">
-        <div class="col-md-4 g-1" *ngFor="let shop of shops; let i = index">
-            <div class="shop-card" routerLink="../shop/{{shop.id}}" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg');">
-                <p style="font-size:1.1rem;color: #E86105;">{{shop.name}}</p>
-                <p><span style="font-size: 3rem;">{{shop.products}}</span> Products</p>
-                <p>Active:<span style="color:#E86105" class="ms-1">{{shop.active}}</span></p>
-                <small>Created on {{shop.created_on | date}}</small>
+    <div class="row">
+        <div class="col-6 col-md-3" *ngFor="let shop of shops">
+            <div class="shadow rounded-3 shop-card" routerLink="../shop/{{shop.id}}">
+                <div>
+                    <img *ngIf="shop.logo" src={{shop.logo}} alt="shop-image" class="img-fluid">
+                    <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" alt="shop-image" class="img-fluid">
+                </div>
+                <div class="p-2">
+                    <div>
+                        <p class="shop-name">{{shop.name}}</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="product-count">{{shop.product_count === 0 ? "no products" : shop.product_count > 1 ? "{{shop.product_count}} products" : "1 product"}}</p>
+                        </div>
+                        <div>
+                            <div *ngIf="shop.active" class="active-badge status-badge">
+                                <small>Active</small>
+                            </div>
+                            <div *ngIf="!shop.active" class="inactive-badge status-badge">
+                                <small>In Active</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <small>Created on {{shop.created_on | date}}</small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

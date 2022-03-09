@@ -8,5 +8,5 @@ export interface Shop {
     email_contact:string,
     active:boolean;
     owner:number;
-    products:number
+    product_count:number
 }
