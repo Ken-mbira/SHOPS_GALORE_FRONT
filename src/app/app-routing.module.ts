@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: 'store_owner',
     loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule),
-    canActivate:[LoggedGuard],
+    canActivate:[LoggedGuard,RoleGuard],
     data: {
       role : 'store_owner'
     }
@@ -35,7 +35,7 @@ const routes: Routes = [
   {
     path: 'delivery',
     loadChildren: () => import('./delivery/delivery.module').then(m => m.DeliveryModule),
-    // canActivate:[LoggedGuard,RoleGuard],
+    canActivate:[LoggedGuard,RoleGuard],
     data: {
       role : "delivery"
     }
@@ -43,7 +43,7 @@ const routes: Routes = [
   { 
     path: 'staff',
     loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule),
-    // canActivate:[LoggedGuard],
+    canActivate:[LoggedGuard],
     data: {
       role : "staff"
     }
