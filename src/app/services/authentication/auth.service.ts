@@ -27,6 +27,10 @@ export class AuthService {
   private userInstance = new BehaviorSubject<User>(new User("",new Role(0,"",""),"","",new Date(),"","","","","",false))
   userStatus = this.userInstance.asObservable();
 
+  updateUserInstance(instance){
+    this.userInstance.next(instance);
+  }
+
   checkTokenExpiration(){
     const helper = new JwtHelperService()
     this.isAuthenticated.next(!helper.isTokenExpired(localStorage.getItem("access_token")))

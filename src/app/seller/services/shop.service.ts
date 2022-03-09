@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
-import { Shop } from 'src/app/interfaces/shop/shop'
+import { Shop } from 'src/app/interfaces/shop/shop';
+import { Role } from 'src/app/classes/role/role';
+import { RoleService } from 'src/app/services/roles/role.service';
+import { User } from 'src/app/classes/user/user';
+import { AuthService } from 'src/app/services/authentication/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +39,34 @@ export class ShopService {
   );
   currentShop = this.singleShop.asObservable();
 
-  constructor(private http:HttpClient,private snackBar:MatSnackBar,private router:Router) { }
+  constructor(private roleService:RoleService,private authService:AuthService,private http:HttpClient,private snackBar:MatSnackBar,private router:Router) { }
 
+  getOwnerInstance(){
+    let myRoles : Role[] = [];
+    this.roleService.currentRoles.subscribe(roles => myRoles = roles)
+
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${localStorage.getItem('access_token')}`
+    })
+
+    this.http.get(`${environment.BASE_URL}account/instance/`,{"headers":headers}).subscribe(response => {
+
+      this.authService.updateUserInstance(new User(
+        response['email'],
+        myRoles.find(value => value.name === response['role']),
+        response['first_name'],
+        response['last_name'],
+        response['member_since'],
+        response['profile']['phone_number'],
+        response['profile']['bio'],
+        response['profile']['location'],
+        response['profile']['avatar'],
+        response['profile']['gender'],
+        response['profile']['receive_notifications_via_email']
+      ))
+    })
+  }
+    
   getShopList(){
     this.http.get(`${environment.BASE_URL}shop/`).subscribe((response:any) => {
       let shops:Shop[] = []
