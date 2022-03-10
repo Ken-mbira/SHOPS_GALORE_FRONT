@@ -5,10 +5,10 @@
             <small>Update your shop details here</small>
         </div>
         <div class="me-md-5">
-            <mat-slide-toggle [(ngModel)]="whenTrue">Active</mat-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="!shop.active">Active</mat-slide-toggle>
         </div>
     </div>
-    <form class="mt-2 pe-md-5" [formGroup]="profileForm" (ngSubmit)="submitForm()">
+    <form #profileForm="ngForm" class="mt-2 pe-md-5">
         <div class="d-flex justify-content-between shop-profile-field">
             <div class="form-labels">
                 <p>Name</p>
@@ -16,7 +16,7 @@
             </div>
             <div>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="name">
+                    <input matInput name="name" [(ngModel)]="shop.name" name="shop-name">
                 </mat-form-field>
             </div>
         </div>
@@ -26,7 +26,7 @@
             </div>
             <div>
                 <mat-form-field appearance="outline">
-                    <textarea matInput formControlName="bio"></textarea>
+                    <textarea matInput [(ngModel)]="shop.bio" name="shop-bio"></textarea>
                 </mat-form-field>
             </div>
         </div>
@@ -37,10 +37,10 @@
             </div>
             <div>
                 <mat-form-field appearance="outline">
-                    <span matPrefix>+254</span>
+                    <span *ngIf="!profileForm.pristine" matPrefix>+254</span>
                     <mat-label>Phone Number</mat-label>
-                    <input formControlName="phone_contact" matInput type="text" placeholder="eg. 7123..">
-                    <mat-error *ngIf="!profileForm.value.phone_contact.valid">Please enter a correct phone number</mat-error>
+                    <input matInput type="text" placeholder="eg. 7123.." name="shop-phone" [(ngModel)]="shop.phone_contact">
+                    <mat-error>Please enter a correct phone number</mat-error>
                     <mat-hint>How people will reach you</mat-hint>
                 </mat-form-field>
             </div>
@@ -52,7 +52,7 @@
             </div>
             <div>
                 <mat-form-field appearance="outline">
-                    <input type="email" matInput formControlName="email_contact">
+                    <input type="email" matInput [(ngModel)]="shop.email_contact" name="shop-email">
                 </mat-form-field>
             </div>
         </div>
@@ -63,7 +63,8 @@
             </div>
             <div class="d-flex align-items-center" style="height:fit-content">
                 <div class="me-3 me-md-5">
-                    <img [src]="url" alt="shop-logo" id="shop-logo">
+                    <img *ngIf="shop.logo" src={{shop.logo}} alt="shop-logo" id="shop-logo">
+                    <img *ngIf="!shop.logo" src={{url}} alt="shop-logo" id="shop-logo">
                 </div>
                 <div>
                     <button mat-raised-button id="update_logo_button" (click)="enterImage()">Update</button>
@@ -78,14 +79,14 @@
             <div>
                 <div>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="pickup_location" [readonly]="true">
+                        <input matInput [readonly]="true">
                     </mat-form-field>
                 </div>
                 <div>
-                    <div>
+                    <!-- <div>
                         <ngx-mat-tree-select-input [options]="locations" [placeholder]="'Update Location'" [heading]="'Within'" [canSelectParentNode]="false" [controlName]="'pickup_location'">
                         </ngx-mat-tree-select-input>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

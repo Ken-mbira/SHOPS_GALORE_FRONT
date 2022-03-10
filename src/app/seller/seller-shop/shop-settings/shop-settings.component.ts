@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TreeData } from 'mat-tree-select-input';
 
 import { LocationService } from 'src/app/services/location/location.service';
+import { Shop } from 'src/app/interfaces/shop/shop';
+import { ShopService } from '../../services/shop.service';
 
 import { ImageUploaderComponent } from 'src/app/shared_components/image-uploader/image-uploader.component';
 import { validatePhoneNumber } from 'src/app/seller/seller-main/new-shop/new-shop.component';
@@ -31,39 +33,43 @@ export class ShopSettingsComponent implements OnInit {
         this.url = reader.result;
       };
 
-      this.profileForm.patchValue({
-        logo : images[0]
-      })
-
     })
   }
-  constructor(public imageDialog:MatDialog,private fb:FormBuilder,private locationService:LocationService) { }
+  constructor(public imageDialog:MatDialog,private fb:FormBuilder,private locationService:LocationService,private shopService:ShopService) { }
+
+  shop:Shop = {
+    name:"",
+    id:0,
+    bio:"",
+    created_on:new Date(),
+    logo:"",
+    email_contact:"",
+    phone_contact:"",
+    active:false,
+    owner:0,
+    product_count:0
+  };
 
   whenTrue:boolean = true;
-  profileForm = this.fb.group({
-    name:['',Validators.required],
-    bio:['',Validators.required],
-    phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9),validatePhoneNumber()]],
-    email_contact:['',[Validators.required,Validators.email]],
-    pickup_location:[""],
-    logo:[null],
-    active:[true,Validators.required]
-  })
-  submitForm(){
-    this.profileForm.controls.phone_contact.clearValidators()
-    this.profileForm.patchValue({phone_contact:`+254${this.profileForm.value.phone_contact}`})
-    this.profileForm.patchValue({pickup_location:this.profileForm.value.pickup_location.value})
-    console.log(this.profileForm.value)
-  }
+
+  // submitForm(){
+  //   // this.profileForm.controls.phone_contact.clearValidators()
+  //   // this.profileForm.patchValue({phone_contact:`+254${this.profileForm.value.phone_contact}`})
+  //   // this.profileForm.patchValue({pickup_location:this.profileForm.value.pickup_location.value})
+  //   // console.log(this.profileForm.value)
+  // }
   ngOnInit(): void {
-    this.locationService.currentLocations.subscribe(value => this.locations= value)
-    this.locationService.getLocations()
+    this.locationService.currentLocations.subscribe(value => this.locations= value);
+    this.locationService.getLocations();
+    this.shopService.currentShop.subscribe(value => this.shop = value);
+    this.shopService.getShopDetails(parseInt(localStorage.getItem("shop_id")))
+    console.log(this.shop)
   }
 
   signal(event){
     console.log(event)
   }
 
-  locations:TreeData[] = []
+  locations:TreeData[] = [];
 
 }
