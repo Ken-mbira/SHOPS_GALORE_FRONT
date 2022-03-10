@@ -94,7 +94,7 @@ export class ShopService {
   }
 
   getShopDetails(id:number){
-    this.http.get(`${environment.BASE_URL}shop/${id}/`).subscribe(response => {
+    this.http.get(`${environment.BASE_URL}store/shop/${id}`).subscribe(response => {
       let shop:Shop = {
         name:response['name'],
         id:response['id'],

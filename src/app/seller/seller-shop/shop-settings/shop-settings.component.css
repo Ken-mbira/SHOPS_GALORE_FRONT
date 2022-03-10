@@ -46,3 +46,11 @@ p {
         height: 200px;
     }
 }
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgba(43, 42, 56, 1);
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: rgba(43, 42, 56, 1);
+}

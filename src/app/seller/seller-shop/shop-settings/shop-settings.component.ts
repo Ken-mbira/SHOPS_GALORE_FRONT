@@ -39,13 +39,15 @@ export class ShopSettingsComponent implements OnInit {
   }
   constructor(public imageDialog:MatDialog,private fb:FormBuilder,private locationService:LocationService) { }
 
+  whenTrue:boolean = true;
   profileForm = this.fb.group({
     name:['',Validators.required],
     bio:['',Validators.required],
     phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9),validatePhoneNumber()]],
     email_contact:['',[Validators.required,Validators.email]],
     pickup_location:[""],
-    logo:[null]
+    logo:[null],
+    active:[true,Validators.required]
   })
   submitForm(){
     this.profileForm.controls.phone_contact.clearValidators()
@@ -56,6 +58,10 @@ export class ShopSettingsComponent implements OnInit {
   ngOnInit(): void {
     this.locationService.currentLocations.subscribe(value => this.locations= value)
     this.locationService.getLocations()
+  }
+
+  signal(event){
+    console.log(event)
   }
 
   locations:TreeData[] = []

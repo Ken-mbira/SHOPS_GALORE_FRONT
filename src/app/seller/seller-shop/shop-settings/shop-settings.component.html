@@ -1,7 +1,12 @@
 <div>
-    <div class="page-title">
-        <p>Shop Profile</p>
-        <small>Update your shop details here</small>
+    <div class="d-flex justify-content-between align-items-center" style="height:fit-content">
+        <div class="page-title">
+            <p>Shop Profile</p>
+            <small>Update your shop details here</small>
+        </div>
+        <div class="me-md-5">
+            <mat-slide-toggle [(ngModel)]="whenTrue">Active</mat-slide-toggle>
+        </div>
     </div>
     <form class="mt-2 pe-md-5" [formGroup]="profileForm" (ngSubmit)="submitForm()">
         <div class="d-flex justify-content-between shop-profile-field">
