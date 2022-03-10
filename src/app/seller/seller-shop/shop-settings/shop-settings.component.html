@@ -3,7 +3,7 @@
         <p>Shop Profile</p>
         <small>Update your shop details here</small>
     </div>
-    <form class="mt-2 pe-md-5" [formGroup]="profileForm">
+    <form class="mt-2 pe-md-5" [formGroup]="profileForm" (ngSubmit)="submitForm()">
         <div class="d-flex justify-content-between shop-profile-field">
             <div class="form-labels">
                 <p>Name</p>
@@ -32,7 +32,11 @@
             </div>
             <div>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="phone_contact">
+                    <span matPrefix>+254</span>
+                    <mat-label>Phone Number</mat-label>
+                    <input formControlName="phone_contact" matInput type="text" placeholder="eg. 7123..">
+                    <mat-error *ngIf="!profileForm.value.phone_contact.valid">Please enter a correct phone number</mat-error>
+                    <mat-hint>How people will reach you</mat-hint>
                 </mat-form-field>
             </div>
         </div>
@@ -54,7 +58,7 @@
             </div>
             <div class="d-flex align-items-center" style="height:fit-content">
                 <div class="me-3 me-md-5">
-                    <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" alt="shop-logo" id="shop-logo">
+                    <img [src]="url" alt="shop-logo" id="shop-logo">
                 </div>
                 <div>
                     <button mat-raised-button id="update_logo_button" (click)="enterImage()">Update</button>
@@ -72,8 +76,8 @@
                 </mat-form-field>
             </div>
         </div>
-        <div class="d-flex justify-content-end submit-profile">
-            <button mat-raised-button>Save Changes</button>
+        <div *ngIf="!profileForm.pristine" class="d-flex justify-content-end submit-profile">
+            <button mat-raised-button type="submit">Save Changes</button>
         </div>
     </form>
 </div>

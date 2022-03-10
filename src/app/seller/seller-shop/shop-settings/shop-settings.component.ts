@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import {MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -12,12 +12,27 @@ import { validatePhoneNumber } from 'src/app/seller/seller-main/new-shop/new-sho
 })
 export class ShopSettingsComponent implements OnInit {
 
+  url:any =  "../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg";
+
 
   enterImage():void{
     const dialogRef = this.imageDialog.open(ImageUploaderComponent,{
       width:'250px'
     });
-    dialogRef.afterClosed().subscribe((result) => console.log(result))
+    dialogRef.afterClosed().subscribe((result) => {
+      let images = result.target.files;
+
+      const reader = new FileReader();
+      reader.readAsDataURL(images[0]);
+      reader.onload = (_event) => {
+        this.url = reader.result;
+      };
+
+      this.profileForm.patchValue({
+        logo : images[0]
+      })
+
+    })
   }
   constructor(public imageDialog:MatDialog,private fb:FormBuilder) { }
 
@@ -26,8 +41,14 @@ export class ShopSettingsComponent implements OnInit {
     bio:['',Validators.required],
     phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9),validatePhoneNumber()]],
     email_contact:['',[Validators.required,Validators.email]],
-    pickup_location:[""]
+    pickup_location:[""],
+    logo:[null]
   })
+  submitForm(){
+    this.profileForm.controls.phone_contact.clearValidators()
+    this.profileForm.patchValue({phone_contact:`+254${this.profileForm.value.phone_contact}`})
+    console.log(this.profileForm.value)
+  }
   ngOnInit(): void {
   }
 
