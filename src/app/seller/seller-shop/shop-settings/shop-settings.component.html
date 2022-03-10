@@ -65,18 +65,26 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex mt-md-3 justify-content-between shop-profile-field">
+        <div class="d-flex mt-md-3 justify-content-between shop-profile-field" id="profile-location-field">
             <div class="form-labels">
                 <p>Pickup Location</p>
                 <small>Where your products will be picked up</small>
             </div>
             <div>
-                <mat-form-field appearance="outline">
-                    <input matInput formControlName="pickup_location">
-                </mat-form-field>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="pickup_location" [readonly]="true">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div>
+                        <ngx-mat-tree-select-input [options]="locations" [placeholder]="'Update Location'" [heading]="'Within'" [canSelectParentNode]="false" [controlName]="'pickup_location'">
+                        </ngx-mat-tree-select-input>
+                    </div>
+                </div>
             </div>
         </div>
-        <div *ngIf="!profileForm.pristine" class="d-flex justify-content-end submit-profile">
+        <div class="d-flex justify-content-end submit-profile">
             <button mat-raised-button type="submit">Save Changes</button>
         </div>
     </form>

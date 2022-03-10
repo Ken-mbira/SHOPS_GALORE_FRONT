@@ -1,6 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TreeData } from 'mat-tree-select-input';
+
+import { LocationService } from 'src/app/services/location/location.service';
 
 import { ImageUploaderComponent } from 'src/app/shared_components/image-uploader/image-uploader.component';
 import { validatePhoneNumber } from 'src/app/seller/seller-main/new-shop/new-shop.component';
@@ -34,7 +37,7 @@ export class ShopSettingsComponent implements OnInit {
 
     })
   }
-  constructor(public imageDialog:MatDialog,private fb:FormBuilder) { }
+  constructor(public imageDialog:MatDialog,private fb:FormBuilder,private locationService:LocationService) { }
 
   profileForm = this.fb.group({
     name:['',Validators.required],
@@ -47,9 +50,14 @@ export class ShopSettingsComponent implements OnInit {
   submitForm(){
     this.profileForm.controls.phone_contact.clearValidators()
     this.profileForm.patchValue({phone_contact:`+254${this.profileForm.value.phone_contact}`})
+    this.profileForm.patchValue({pickup_location:this.profileForm.value.pickup_location.value})
     console.log(this.profileForm.value)
   }
   ngOnInit(): void {
+    this.locationService.currentLocations.subscribe(value => this.locations= value)
+    this.locationService.getLocations()
   }
+
+  locations:TreeData[] = []
 
 }
