@@ -40,3 +40,15 @@ p {
 .inactive-badge {
     background: #F44336;
 }
+
+.shop-card img {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+@media (max-width: 768px) {
+    .shop-card img {
+        height: 150px;
+    }
+}
