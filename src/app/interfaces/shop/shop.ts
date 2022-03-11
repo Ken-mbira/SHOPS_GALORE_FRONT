@@ -9,5 +9,5 @@ export interface Shop {
     active:boolean;
     owner:number;
     product_count:number;
-    pickup_location?:number
+    pickup_location?:number;
 }

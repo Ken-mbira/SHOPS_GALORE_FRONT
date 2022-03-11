@@ -22,9 +22,9 @@ export class ImageUploaderComponent {
     const mimeType = images[0].type;
     if (mimeType.match(/image\/*/) == null) {
         this.snackBar.open("Only images are allowed!","Try Again",{duration:3000});
-        return;
+    }else{
+      this.dialogRef.close(event);
     }
-    this.dialogRef.close(event);
   }
 
 }

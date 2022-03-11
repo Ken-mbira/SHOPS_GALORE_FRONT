@@ -31,13 +31,17 @@ export class ShopSettingsComponent implements OnInit {
       width:'250px'
     });
     dialogRef.afterClosed().subscribe((result) => {
-      let images = result.target.files;
-
-      const reader = new FileReader();
-      reader.readAsDataURL(images[0]);
-      reader.onload = (_event) => {
-        this.url = reader.result;
-      };
+      if(result){
+        let images = result.target.files;
+        let form = new FormData();
+        form.append("logo",images[0],images.name);
+        this.shopService.updateShopLogo(form,this.shop.id).subscribe((response:any) => {
+          this.shop.logo = response['logo'];
+        },error=> {
+          console.log(error)
+          this.snackBar.open("There was a problem updating the shop logo!","",{duration:3000})
+        })
+      }
 
     })
   }

@@ -125,6 +125,10 @@ export class ShopService {
     return this.http.put(`${environment.BASE_URL}store/shop/${shop_id}`,data)
   }
 
+  updateShopLogo(data:FormData,shop_id){
+    return this.http.put(`${environment.BASE_URL}store/shop/logo/${shop_id}`,data)
+  }
+
   createShop(data:FormGroup){
     return this.http.post(`${environment.BASE_URL}store/shop/`,data.value)
   }
@@ -147,5 +151,9 @@ export class ShopService {
       this.snackBar.open("Sorry, there was a problem creating your product!","Sorry",{duration:3000})
       console.log(error)
     })
+  }
+
+  getLocation(id:number){
+    return this.http.get(`${environment.BASE_URL}store/location/`,{params:{id:`${id}`}})
   }
 }
