@@ -134,7 +134,17 @@ export class ShopService {
   }
 
   createProductWithVariations(data:FormGroup,shop_id:number){
-    this.http.post(`${environment.BASE_URL}shop/new_parent_product/${shop_id}`,data.value).subscribe(response=>{
+    this.http.post(`${environment.BASE_URL}store/product/${shop_id}`,data.value).subscribe(response=>{
+      this.snackBar.open("Your product was created successfully!","Congratulations",{duration:3000})
+      this.router.navigate([`store_owner/shop/${shop_id}/products/${response['id']}`])
+    },error => {
+      this.snackBar.open("Sorry, there was a problem creating your product!","Sorry",{duration:3000})
+      console.log(error)
+    })
+  }
+
+  createProduct(data:FormGroup,shop_id:number){
+    this.http.post(`${environment.BASE_URL}store/product/`,data.value).subscribe(response =>{
       this.snackBar.open("Your product was created successfully!","Congratulations",{duration:3000})
       this.router.navigate([`store_owner/shop/${shop_id}/products/${response['id']}`])
     },error => {
@@ -144,7 +154,7 @@ export class ShopService {
   }
 
   createProductWithoutVariations(data:FormGroup,shop_id:number){
-    this.http.post(`${environment.BASE_URL}shop/new_single_product/${shop_id}`,data.value).subscribe(response=>{
+    this.http.post(`${environment.BASE_URL}store/product/${shop_id}`,data.value).subscribe(response=>{
       this.snackBar.open("Your product was created successfully!","Congratulations",{duration:3000})
       this.router.navigate([`store_owner/shop/${shop_id}/products/${response['id']}`])
     },error => {

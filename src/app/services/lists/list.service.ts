@@ -39,7 +39,7 @@ export class ListService {
     return brand
   }
   getBrands(){
-    this.http.get(`${environment.BASE_URL}shop/brand/`).subscribe(response=>{
+    this.http.get(`${environment.BASE_URL}store/brand/`).subscribe(response=>{
       this.brands.next(this.constructBrandData(response))
     },error=>{
       console.log(error)
@@ -86,7 +86,7 @@ export class ListService {
   }
 
   getCategories(){
-    this.http.get(`${environment.BASE_URL}shop/category/`).subscribe(response => {
+    this.http.get(`${environment.BASE_URL}store/category/`).subscribe(response => {
       this.categories.next(this.constructTreeData(response))
     },error=>{
       console.log(error)
@@ -120,7 +120,7 @@ export class ListService {
   }
 
   getTypes(){
-    this.http.get(`${environment.BASE_URL}shop/type/`).subscribe(response=>{
+    this.http.get(`${environment.BASE_URL}store/type/`).subscribe(response=>{
       this.types.next(this.constructTypeData(response))
     },error=>{
       console.log(error)

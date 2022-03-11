@@ -30,7 +30,7 @@ export class NewShopProductComponent implements OnInit {
 
   submitProduct(){
     if(this.hasVariations){
-      this.shopService.createProductWithVariations(this.stagedProduct,this.shop.id)
+      this.shopService.createProduct(this.stagedProduct,this.shop.id)
     }else{
       this.shopService.createProductWithoutVariations(this.stagedProduct,this.shop.id)
     }
