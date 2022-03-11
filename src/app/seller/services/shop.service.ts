@@ -94,22 +94,11 @@ export class ShopService {
   }
 
   getShopDetails(id:number){
-    this.http.get(`${environment.BASE_URL}store/shop/${id}`).subscribe(response => {
-      let shop:Shop = {
-        name:response['name'],
-        id:response['id'],
-        bio:response['bio'],
-        created_on:response['created_on'],
-        logo:response['logo'],
-        email_contact:response['email_contact'],
-        phone_contact:response['phone_contact'],
-        active:response['functional'],
-        owner:response['owner'],
-        product_count:response['product_count']
-      }
-      this.singleShop.next(shop)
-      localStorage.setItem("shop_id",shop.id.toString())
+    this.http.get(`${environment.BASE_URL}store/shop/${id}`).subscribe((response:Shop) => {
+      this.singleShop.next(response)
+      localStorage.setItem("shop_id",response['id'].toString())
     },error=>{
+      this.snackBar.open("Sorry but there seems to be a problem retrieving your shop information","sorry",{duration:3000})
       console.log(error)
     })
   }
@@ -130,6 +119,10 @@ export class ShopService {
     }
     let updatedShops = [...currentShops,shop]
     this.shops.next(updatedShops)
+  }
+
+  updateShop(data:FormData,shop_id){
+    return this.http.put(`${environment.BASE_URL}store/shop/${shop_id}`,data)
   }
 
   createShop(data:FormGroup){
