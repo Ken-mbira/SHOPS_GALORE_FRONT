@@ -63,7 +63,7 @@
             <div class="d-flex align-items-center" style="height:fit-content">
                 <div class="me-3 me-md-5">
                     <img *ngIf="shop.logo" src={{shop.logo}} alt="shop-logo" id="shop-logo">
-                    <img *ngIf="!shop.logo" src={{url}} alt="shop-logo" id="shop-logo">
+                    <img *ngIf="!shop.logo" src="../../../../assets/image.webp" alt="shop-logo" id="shop-logo">
                 </div>
                 <div>
                     <button mat-raised-button id="update_logo_button" type="button" (click)="enterImage()">Update</button>
