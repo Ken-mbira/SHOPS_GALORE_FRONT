@@ -35,14 +35,16 @@ export class NoVariationFormComponent implements OnInit {
 
   productForm = this.fb.group({
     name:['',Validators.required],
+    sku:[''],
     brand:['',Validators.required],
     category:['',Validators.required],
     type:['',Validators.required],
     description:['',Validators.required],
-    price:['',Validators.required],
+    price:['',Validators.required,],
     volume:[0,[Validators.required]],
-    sku:['',Validators.required],
-    weight:['',Validators.required]
+    weight:['',Validators.required],
+    owner:[localStorage.getItem("shop_id")],
+    attribute_value:[[]]
   })
 
   checkVolume(){

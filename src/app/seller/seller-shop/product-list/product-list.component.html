@@ -23,26 +23,27 @@
     </div>
     <div *ngIf="!gridView">
         <div class="list-product" *ngFor="let product of products;let i = index">
-            <hr style="background-color: #2b2a38;">
-            <div class="list-view row mt-3">
-                <div class="col-sm-3">
-                    <img src="{{product.featured_image.image}}" alt="" class="img-fluid">
+            <div class="list-view row mt-2 mb-2">
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <img *ngIf="product.featured_image" src="{{product.featured_image.image}}" alt="" class="img-fluid">
+                    <img *ngIf="!product.featured_image" src="../../../../assets/image.webp" alt="" class="img-fluid">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-4">
                     <div>
-                        <p style="font-size:1.2rem;font-weight: 600;">{{product.name}}</p>
+                        <p style="font-size:0.8rem;font-weight: 600;">{{product.name}}</p>
                     </div>
                     <div>
                         <p *ngIf="product.price" class="card-title" style="font-size:0.9rem;color:#e86105">KES {{product.price}}</p>
                     </div>
                 </div>
-                <div class="col-sm-5 mt-3 mt-sm-0">
-                    <div class="mt-sm-3 mt-2">
+                <div class="col-3">
+                    <div>
                         <button mat-raised-button routerLink="../products/{{product.id}}"><span style="color:#2b2a38">View</span></button>
                     </div>
                 </div>
+                <div class="col-1"></div>
             </div>
-            <hr style="background-color: #2b2a38;">
         </div>
     </div>
 </div>
