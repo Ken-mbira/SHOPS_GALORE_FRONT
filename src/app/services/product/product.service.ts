@@ -70,8 +70,8 @@ export class ProductService {
   }
 
   getProducts(){
-    this.http.get(`${environment.BASE_URL}shop/${localStorage.getItem("shop_id")}/product/`).subscribe(response=>{
-      this.productList.next(this.constructProductData(response))
+    this.http.get(`${environment.BASE_URL}store/product/`).subscribe((response:Product[])=>{
+      this.productList.next(response)
     },error=>{
       console.log(error)
     })

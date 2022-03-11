@@ -81,7 +81,7 @@ export class ListService {
     return {
       id:data.id,
       image:data.image,
-      isDefault:data.is_default
+      is_default:data.is_default
     }
   }
 

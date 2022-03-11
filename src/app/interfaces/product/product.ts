@@ -6,14 +6,14 @@ import { Image } from "../image/image";
 
 export interface Product {
     id:number;
+    sku:string;
     name:string;
     added_on:Date;
     description:string;
     price:string;
     discount_price:string;
-    volume:"";
+    volume:string;
     weight:string;
-    sku:string;
     brand:Brand;
     category:Category;
     type:Type;
