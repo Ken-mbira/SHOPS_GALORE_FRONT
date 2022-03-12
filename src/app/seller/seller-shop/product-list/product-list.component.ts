@@ -7,6 +7,7 @@ import { Product } from 'src/app/interfaces/product/product';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent implements OnInit {
 
   @Input() products:Product[];
