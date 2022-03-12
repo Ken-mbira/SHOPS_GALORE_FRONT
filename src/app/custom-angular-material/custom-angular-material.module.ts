@@ -31,7 +31,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -81,7 +81,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSnackBarModule,
     ScrollingModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule,
+    MatSlideToggleModule
   ]
 })
 export class CustomAngularMaterialModule { }

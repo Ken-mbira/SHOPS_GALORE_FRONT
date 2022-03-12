@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
+
 export class LocationService {
 
   private locations = new BehaviorSubject<TreeData[]>([]);

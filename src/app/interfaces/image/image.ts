@@ -1,5 +1,5 @@
 export interface Image {
     id:number,
     image: string,
-    isDefault:boolean
+    is_default:boolean
 }

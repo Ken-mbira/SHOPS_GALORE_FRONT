@@ -1,0 +1,13 @@
+<mat-dialog-content class="d-flex justify-content-center align-items-center p-2" style="height:fit-content">
+    <div class="dropzone">
+        <input type="file" #fileDropRef multiple (change)="showImage($event)">
+        <div>
+            <div>
+                <mat-icon id="upload_icon">cloud_upload</mat-icon>
+            </div>
+            <div>
+                <p id="upload_text">Drag and Drop to upload image<br> or<br> <span id="click-me">click me</span> </p>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

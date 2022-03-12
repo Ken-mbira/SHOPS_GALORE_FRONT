@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 
 import { Product } from 'src/app/interfaces/product/product';
@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 import { ListService } from '../lists/list.service';
 import { ShopService } from 'src/app/seller/services/shop.service';
 import { Image } from 'src/app/interfaces/image/image';
+import { SearchParams } from 'src/app/interfaces/searchParams/search-params';
 
 
 @Injectable({
@@ -69,17 +70,23 @@ export class ProductService {
     return o
   }
 
-  getProducts(){
-    this.http.get(`${environment.BASE_URL}shop/${localStorage.getItem("shop_id")}/product/`).subscribe(response=>{
-      this.productList.next(this.constructProductData(response))
+  getShopProducts(parameters?:SearchParams[]){
+    let params = new HttpParams().set("owner__id",localStorage.getItem("shop_id"));
+    if(parameters && parameters.length > 0){
+      parameters.forEach((param) => {
+        params = params.set(param.key,param.value)
+      })
+    }
+    this.http.get(`${environment.BASE_URL}store/product/`,{params}).subscribe((response:Product[])=>{
+      this.productList.next(response)
     },error=>{
       console.log(error)
     })
   }
 
-  focusProduct(id:number){
-    this.http.get(`${environment.BASE_URL}shop/product/${id}`).subscribe(response => {
-      this.product.next(this.constructSingleProductData(response))
+  focusProduct(sku:string){
+    this.http.get(`${environment.BASE_URL}store/product/${sku}`).subscribe((response:Product) => {
+      this.product.next(response)
     },error=>{
       console.log(error)
     })
@@ -117,10 +124,9 @@ export class ProductService {
       logo:"",
       email_contact:"",
       phone_contact:"",
-      subscription_end_date:new Date(),
-      functional:false,
+      active:false,
       owner:0,
-      products:0
+      product_count:0
     },
     parent:null,
     children:[],

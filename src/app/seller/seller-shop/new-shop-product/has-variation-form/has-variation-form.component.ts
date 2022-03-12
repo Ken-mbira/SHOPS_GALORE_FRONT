@@ -28,10 +28,13 @@ export class HasVariationFormComponent implements OnInit {
 
   productForm = this.fb.group({
     name:['',Validators.required],
+    sku:[''],
     brand:['',Validators.required],
     category:['',Validators.required],
     type:['',Validators.required],
-    description:['',Validators.required]
+    description:['',Validators.required],
+    owner:[parseInt(localStorage.getItem("shop_id")),Validators.required],
+    attribute_value:[[]]
   })
 
   ngOnInit(): void {

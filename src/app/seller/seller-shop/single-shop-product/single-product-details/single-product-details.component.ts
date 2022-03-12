@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,ViewChild } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -26,7 +26,7 @@ export class SingleProductDetailsComponent implements OnInit {
   default():Image {
     let image:Image;
     for(let i=0;i<this.product.product_images.length;i++){
-      if(this.product.product_images[i].isDefault){
+      if(this.product.product_images[i].is_default){
         image = this.product.product_images[i]
       }
     }
@@ -36,7 +36,7 @@ export class SingleProductDetailsComponent implements OnInit {
   setDefault(id:number){
     for(let i=0;i<this.product.product_images.length;i++){
       if(this.product.product_images[i].id === id){
-        this.product.product_images[i].isDefault=true;
+        this.product.product_images[i].is_default=true;
       }
     }
   }
