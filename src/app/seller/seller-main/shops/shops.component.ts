@@ -19,7 +19,6 @@ export class ShopsComponent implements OnInit {
     this.shopService.currentShops.subscribe(value => {
       this.shops = value
     })
-    console.log(this.shops)
   }
 
 }
