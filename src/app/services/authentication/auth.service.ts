@@ -10,21 +10,26 @@ import { User } from 'src/app/classes/user/user';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Role } from 'src/app/classes/role/role';
+import { RoleService } from '../roles/role.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http:HttpClient,private snackBar:MatSnackBar,private route:Router) {}
+  constructor(private http:HttpClient,private snackBar:MatSnackBar,private route:Router,private roleService:RoleService) {}
 
   public redirectUrl:string;
 
   private isAuthenticated = new BehaviorSubject<boolean>(false)
   authStatus = this.isAuthenticated.asObservable()
 
-  private userInstance = new BehaviorSubject<User>(new User("",new Role(0,""),"","",new Date(),"","","","","",false))
+  private userInstance = new BehaviorSubject<User>(new User("",new Role(0,"",""),"","",new Date(),"","","","","",false))
   userStatus = this.userInstance.asObservable();
+
+  updateUserInstance(instance){
+    this.userInstance.next(instance);
+  }
 
   checkTokenExpiration(){
     const helper = new JwtHelperService()
@@ -41,20 +46,19 @@ export class AuthService {
   }
 
   getInstance(){
+    let myRoles : Role[] = [];
+    this.roleService.currentRoles.subscribe(roles => myRoles = roles)
 
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${localStorage.getItem('access_token')}`
     })
 
-    this.http.get(`${environment.BASE_URL}user/instance/`,{"headers":headers}).subscribe(response => {
-      this.setToken(response['role']['name'],'user_role')
+    this.http.get(`${environment.BASE_URL}account/instance/`,{"headers":headers}).subscribe(response => {
+      this.setToken(response['role'],'user_role')
 
       this.userInstance.next(new User(
         response['email'],
-        new Role(
-          response['role']['id'],
-          response['role']['name']
-        ),
+        myRoles.find(value => value.name === response['role']),
         response['first_name'],
         response['last_name'],
         response['member_since'],
@@ -67,11 +71,10 @@ export class AuthService {
       ))
 
       if(this.redirectUrl){
-        console.log(this.redirectUrl)
         this.route.navigate([this.redirectUrl])
         this.redirectUrl = null;
       }else{
-        this.route.navigate([response['role']['name']])
+        this.route.navigate([this.userInstance.value.role.route])
       }
     })
   }

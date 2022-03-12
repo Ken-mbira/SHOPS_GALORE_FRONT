@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
@@ -10,19 +10,13 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class NewDeliveryMeansComponent implements OnInit {
 
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  constructor(public meansDialog: MatDialogRef<NewDeliveryMeansComponent>) {}
 
-  constructor(private _formBuilder: FormBuilder) {}
+  cancelClick(){
+    this.meansDialog.close();
+  }
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
   }
 
 }

@@ -9,6 +9,13 @@
             </div>
             <div>
                 <mat-form-field appearance="outline">
+                    <mat-label>SKU</mat-label>
+                    <input matInput placeholder="men-trouser-1" formControlName="sku">
+                    <mat-hint>If you dont give one, one will be automatically generated for you!</mat-hint>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
                     <mat-label>Description</mat-label>
                     <textarea matInput formControlName="description"></textarea>
                 </mat-form-field>

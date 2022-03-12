@@ -1,50 +1,98 @@
-<div class="main">
-    <div class="d-flex justify-content-center align-items-center" style="width:100%;height:fit-content">
-        <div class="logo">
-            <img src="../../../../assets/andrew-pons-cLHPacdtpSY-unsplash (1).jpg" class="img-fluid rounded-2">
-            <p class="editable" (click)="open(content)">edit</p>
+<div>
+    <div class="d-flex justify-content-between align-items-center" style="height:fit-content">
+        <div class="page-title">
+            <p>Shop Profile</p>
+            <small>Update your shop details here</small>
+        </div>
+        <div class="me-md-5">
+            <div>
+                <mat-slide-toggle [(ngModel)]="shop.active" (change)="triggerConfirmation($event)">Active</mat-slide-toggle>
+            </div>
         </div>
     </div>
-    <div class="bio p-3">
-        <h6><b>Bio</b></h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta porro, nobis aliquid labore necessitatibus nulla harum enim alias at quibusdam perspiciatis mollitia facere repellendus distinctio voluptates aspernatur accusamus nemo culpa?</p>
-        <small class="editable">edit</small>
-    </div>
-    <div class="mt-3 details">
-        <p><b>Created On:</b><span>23/34/3433</span></p>
-    </div>
-    <div class="details">
-        <p><b>Pickup Location:</b><span>Kiserian,Kajiado</span></p>
-        <small class="editable">edit</small>
-    </div>
-    <div class="details">
-        <p><b>Phone Contact:</b><span>0722442604</span></p>
-        <small class="editable">edit</small>
-    </div>
-    <div class="details">
-        <p><b>Email Contact:</b><span>mbiraken17@gmail.com</span></p>
-        <small class="editable">edit</small>
-    </div>
-</div>
-<ng-template #content let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Update Shop Logo</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-        <form>
-            <div class="dropzone">
-                <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target)">
-                <img src="../../../../assets/bell.svg" alt="">
-                <h3>Drag and drop file here</h3>
-                <h3>or</h3>
-                <label for="fileDropRef">Browse for file</label>
+    <form #profileForm="ngForm" (ngSubmit)="submitForm()" class="mt-2 pe-md-5">
+        <div class="d-flex justify-content-between shop-profile-field">
+            <div class="form-labels">
+                <p>Name</p>
+                <small>Name of your shop</small>
             </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    </div>
-</ng-template>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput name="name" [(ngModel)]="shop.name" name="shop-name">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between shop-profile-field">
+            <div class="form-labels">
+                <p>Bio</p>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <textarea matInput [(ngModel)]="shop.bio" name="shop-bio"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between shop-profile-field">
+            <div class="form-labels">
+                <p>Phone Contact</p>
+                <small>Will be used to contact you</small>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput type="text" placeholder="eg. 7123.." name="shop-phone" [(ngModel)]="shop.phone_contact">
+                    <mat-error>Please enter a correct phone number</mat-error>
+                    <mat-hint>Please use the format "+254..."</mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between shop-profile-field">
+            <div class="form-labels">
+                <p>Email Contact</p>
+                <small>Will be used to contact you</small>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input type="email" matInput [(ngModel)]="shop.email_contact" name="shop-email">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between shop-profile-field">
+            <div class="form-labels">
+                <p>Logo</p>
+                <small>Will be displayed on your shop page</small>
+            </div>
+            <div class="d-flex align-items-center" style="height:fit-content">
+                <div class="me-3 me-md-5">
+                    <img *ngIf="shop.logo" src={{shop.logo}} alt="shop-logo" id="shop-logo">
+                    <img *ngIf="!shop.logo" src="../../../../assets/image.webp" alt="shop-logo" id="shop-logo">
+                </div>
+                <div>
+                    <button mat-raised-button id="update_logo_button" type="button" (click)="enterImage()">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-md-3 justify-content-between shop-profile-field" id="profile-location-field">
+            <div class="form-labels">
+                <p>Pickup Location</p>
+                <small>Where your products will be picked up</small>
+            </div>
+            <div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <input matInput [readonly]="true">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div>
+                        <ngx-mat-tree-select-input-ngmodel (selectionChanged)="onSelectionChanged()" [canSelectParentNode]="false" [(select)]="pickup_location" [options]="locations" [heading]="'Within of'" [placeholder]="'Update Location'">
+                        </ngx-mat-tree-select-input-ngmodel>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end submit-profile">
+            <button mat-raised-button type="submit">Save Changes</button>
+        </div>
+    </form>
+</div>

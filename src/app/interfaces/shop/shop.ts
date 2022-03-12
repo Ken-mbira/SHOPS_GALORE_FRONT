@@ -3,11 +3,11 @@ export interface Shop {
     name:string,
     bio:string,
     created_on:Date,
-    logo:string,
+    logo?:string,
     phone_contact:string,
     email_contact:string,
-    subscription_end_date:Date,
-    functional:boolean;
+    active:boolean;
     owner:number;
-    products:number
+    product_count:number;
+    pickup_location?:number;
 }

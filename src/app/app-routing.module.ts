@@ -6,7 +6,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoggedGuard } from './guards/logged.guard';
 import { RoleGuard } from './guards/role.guard';
 import { LoggedinGuard } from './guards/loggedin.guard';
-import { HasroleGuard } from './guards/hasrole.guard'
 
 const routes: Routes = [
   {
@@ -22,7 +21,10 @@ const routes: Routes = [
   { 
     path: 'customer',
     loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule,),
-    canActivate: [HasroleGuard]
+    canActivate: [RoleGuard],
+    data: {
+      role: 'customer'
+    }
   },
   {
     path: 'store_owner',
@@ -51,7 +53,7 @@ const routes: Routes = [
   {
     path: 'buyer',
     loadChildren: () => import('./buyer/buyer.module').then(m => m.BuyerModule),
-    canActivate:[LoggedGuard],
+    // canActivate:[LoggedGuard],
     data: {
       role : "buyer"
     }

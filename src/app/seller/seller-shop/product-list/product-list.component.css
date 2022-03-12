@@ -17,3 +17,15 @@ p {
     margin: 0;
     padding: 0;
 }
+
+.product img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.list-view img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}

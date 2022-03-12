@@ -9,6 +9,10 @@ export class ShopSidenavComponent implements OnInit {
 
   constructor() { }
 
+  removeShopSpec(){
+    localStorage.removeItem("shop_id");
+  }
+
   ngOnInit(): void {
   }
 

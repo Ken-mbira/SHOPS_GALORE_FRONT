@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.userStatus.subscribe(user => this.user = user)
-    this.authService.getInstance()
+    this.shopService.getOwnerInstance()
     this.getGreeting()
   }
 

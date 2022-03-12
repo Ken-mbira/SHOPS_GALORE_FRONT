@@ -7,9 +7,9 @@
     </div>
     <mat-form-field appearance="fill" style="font-size:13px" class="mt-2">
         <mat-label>Filter</mat-label>
-        <mat-select>
-            <mat-option value="one">All</mat-option>
-            <mat-option value="two">Out Of Stock</mat-option>
+        <mat-select (selectionChange)="filterSearch($event)">
+            <mat-option value="active:true">Active</mat-option>
+            <mat-option value="active:true">Inactive</mat-option>
         </mat-select>
     </mat-form-field>
     <div>

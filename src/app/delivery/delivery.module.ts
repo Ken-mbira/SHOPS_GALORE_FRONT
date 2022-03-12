@@ -22,6 +22,9 @@ import { NewDeliveryMeansComponent } from './means/new-delivery-means/new-delive
 import { SummaryDeliveryMeansComponent } from './means/summary-delivery-means/summary-delivery-means.component';
 import { NewDestinationComponent } from './destination/new-destination/new-destination.component';
 import { SummaryDestinationComponent } from './destination/summary-destination/summary-destination.component';
+import { MeansListComponent } from './means/means-list/means-list.component';
+import { MeansListViewComponent } from './means/means-list/means-list-view/means-list-view.component';
+import { MeansGridViewComponent } from './means/means-list/means-grid-view/means-grid-view.component';
 
 
 
@@ -44,7 +47,10 @@ import { SummaryDestinationComponent } from './destination/summary-destination/s
         NewDeliveryMeansComponent,
         SummaryDeliveryMeansComponent,
         NewDestinationComponent,
-        SummaryDestinationComponent
+        SummaryDestinationComponent,
+        MeansListComponent,
+        MeansListViewComponent,
+        MeansGridViewComponent
     ],
     imports: [
         CommonModule,

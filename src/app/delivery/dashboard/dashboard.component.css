@@ -1,8 +1,4 @@
 @media (max-width:900px) {
-    .dashboard,
-    .stats {
-        width: 100vw !important;
-    }
     .delivery-chart {
         width: 100% !important;
     }

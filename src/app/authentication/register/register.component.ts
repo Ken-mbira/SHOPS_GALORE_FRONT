@@ -42,16 +42,16 @@ export class RegisterComponent implements OnInit {
   })
 
   chooseRole(event:Role,stepper:MatStepper){
-    this.registrationForm.patchValue({role:event.id})
+    this.registrationForm.patchValue({role:event.name})
     stepper.next()
   }
 
   submitForm(event:FormGroup,stepper:MatStepper){
     this.registrationService.register(event).subscribe(response => {
-      this.snackBar.open(`${response}`,"Thank you",{duration: 3000})
+      this.snackBar.open(`Your account was successfully created!`,"Thank you",{duration: 3000})
       stepper.next()
     },error=>{
-      this.snackBar.open("There was a problem creating your account","Sorry",{duration: 3000})
+      this.snackBar.open(`There was a problem creating your account`,"Sorry",{duration: 3000})
     })
   }
 

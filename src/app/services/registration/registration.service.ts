@@ -14,7 +14,7 @@ export class RegistrationService {
   constructor(private http:HttpClient,private snackBar:MatSnackBar) { }
 
   register(form:FormGroup){
-    return this.http.post(`${environment.BASE_URL}user/`,form.value)
+    return this.http.post(`${environment.BASE_URL}account/`,form.value)
   }
 
   googleRegistration(data:FormData){
