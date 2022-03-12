@@ -10,6 +10,7 @@ import { ShopService } from '../../services/shop.service';
 
 import { ImageUploaderComponent } from 'src/app/shared_components/image-uploader/image-uploader.component';
 import { validatePhoneNumber } from 'src/app/seller/seller-main/new-shop/new-shop.component';
+import { ConfirmationModalComponent } from 'src/app/shared_components/confirmation-modal/confirmation-modal.component';
 
 @Component({
   selector: 'app-shop-settings',
@@ -25,9 +26,30 @@ export class ShopSettingsComponent implements OnInit {
     this.shop.pickup_location = this.pickup_location.value;
   }
 
+  triggerConfirmation(event){
+    let confirmationMessage:string;
+    if(event.checked){
+      confirmationMessage = "Are you sure you want to activate this shop, all valid products will be seen by customers!"
+    }else{
+      confirmationMessage = "Are you sure you want to deactivate this shop, none of the products from this shop will be seen by customers!"
+    }
+
+    let confirmationDialog = this.dialogRef.open(ConfirmationModalComponent,{
+      width:"250px",
+      data:{message:confirmationMessage}
+    })
+    confirmationDialog.afterClosed().subscribe((response?:boolean) => {
+      if(response){
+        this.submitForm()
+      }else{
+        this.shop.active = !this.shop.active
+      }
+    })
+  }
+
 
   enterImage():void{
-    const dialogRef = this.imageDialog.open(ImageUploaderComponent,{
+    const dialogRef = this.dialogRef.open(ImageUploaderComponent,{
       width:'250px'
     });
     dialogRef.afterClosed().subscribe((result) => {
@@ -45,7 +67,7 @@ export class ShopSettingsComponent implements OnInit {
 
     })
   }
-  constructor(public imageDialog:MatDialog,private fb:FormBuilder,private locationService:LocationService,private shopService:ShopService,private snackBar:MatSnackBar) { }
+  constructor(public dialogRef:MatDialog,private fb:FormBuilder,private locationService:LocationService,private shopService:ShopService,private snackBar:MatSnackBar) { }
 
   shop:Shop = {
     name:"",
