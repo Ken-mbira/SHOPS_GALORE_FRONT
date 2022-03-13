@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeansListComponent implements OnInit {
 
-  gridView:boolean = false;
+  gridView:boolean = true;
 
   constructor() { }
 
