@@ -9,6 +9,7 @@ import { LoaderInterceptor } from '../interceptors/loader/loader.interceptor';
 
 import { DeliveryService } from './services/delivery.service';
 import { ListService } from '../services/lists/list.service';
+import { LocationService } from '../services/location/location.service';
 
 import { DeliveryRoutingModule } from './delivery-routing.module';
 import { DeliveryComponent } from './delivery.component';
@@ -38,6 +39,7 @@ import { MeansGridViewComponent } from './means/means-list/means-grid-view/means
 @NgModule({
     providers:[
         DeliveryService,
+        LocationService,
         ListService,
         {
             provide: HTTP_INTERCEPTORS,

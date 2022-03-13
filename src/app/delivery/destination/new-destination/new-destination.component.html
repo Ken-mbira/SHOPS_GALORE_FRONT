@@ -1,26 +1,20 @@
 <div [formGroup]="destinationForm">
     <mat-stepper orientation="vertical" #stepper>
         <mat-step>
-            <ng-template matStepLabel>Choose the county</ng-template>
-            <mat-form-field appearance="fill">
-                <mat-label>Select the county</mat-label>
-                <mat-select>
-                    <mat-option value="one">Kiserian</mat-option>
-                    <mat-option value="two">Ngong</mat-option>
-                </mat-select>
-            </mat-form-field>
+            <ng-template matStepLabel>Select the from location</ng-template>
+            <div>
+                <ngx-mat-tree-select-input [options]="locations" [placeholder]="'From'" [heading]="'Within'" [controlName]="'location_from'">
+                </ngx-mat-tree-select-input>
+            </div>
             <div>
                 <button mat-raised-button matStepperNext>Next</button>
             </div>
         </mat-step>
-        <mat-step label="Select the starting point">
-            <mat-form-field appearance="fill">
-                <mat-label>Select the actual location</mat-label>
-                <mat-select>
-                    <mat-option value="one">Kiserian</mat-option>
-                    <mat-option value="two">Ngong</mat-option>
-                </mat-select>
-            </mat-form-field>
+        <mat-step label="Select the to location">
+            <div>
+                <ngx-mat-tree-select-input [options]="locations" [placeholder]="'To'" [heading]="'Within'" [controlName]="'location_to'">
+                </ngx-mat-tree-select-input>
+            </div>
             <div>
                 <button mat-raised-button matStepperPrevious>Back</button>
                 <button mat-raised-button matStepperNext>Next</button>

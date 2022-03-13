@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { TreeData } from 'mat-tree-select-input';
+// import { Location } from 'src/app/interfaces/location/location';
+import { LocationService } from 'src/app/services/location/location.service';
 
 @Component({
   selector: 'app-new-destination',
@@ -11,6 +14,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class NewDestinationComponent implements OnInit {
 
+  locations:TreeData[] = [];
+
   destinationForm = this.fb.group({
     price:[0,Validators.required],
     means:[0,Validators.required],
@@ -18,10 +23,14 @@ export class NewDestinationComponent implements OnInit {
     location_to:[0,Validators.required]
   })
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private locationService:LocationService) {
 }
 
   ngOnInit() {
+    if(this.locations.length<1){
+      this.locationService.currentLocations.subscribe(locations => this.locations = locations)
+      this.locationService.getLocations()
+    }
   }
 
 }
