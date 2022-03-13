@@ -8,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class MeansListComponent implements OnInit {
 
   gridView:boolean = true;
+  changeGrid(value:boolean){
+    localStorage.setItem("meansGridView",JSON.stringify(value))
+    this.gridView = value;
+  }
 
   constructor() { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("meansGridView")){
+      this.gridView = Boolean(JSON.parse(localStorage.getItem("meansGridView")));
+    }
   }
 
 }

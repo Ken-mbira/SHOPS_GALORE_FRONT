@@ -2,12 +2,12 @@
     <div class="d-flex justify-content-end">
         <div class="d-flex">
             <div class="me-3">
-                <button (click)="gridView = false" mat-icon-button aria-label="Example icon button with a open in new tab icon">
+                <button (click)="changeGrid(false)" mat-icon-button aria-label="Example icon button with a open in new tab icon">
                     <mat-icon class="view-icons">view_list</mat-icon>
                   </button>
             </div>
             <div>
-                <button (click)="gridView = true" mat-icon-button aria-label="Example icon button with a open in new tab icon">
+                <button (click)="changeGrid(true)" mat-icon-button aria-label="Example icon button with a open in new tab icon">
                     <mat-icon class="view-icons">grid_on</mat-icon>
                   </button>
             </div>
