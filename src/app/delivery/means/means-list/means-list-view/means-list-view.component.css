@@ -1,15 +1,11 @@
-.means-list-divider {
-    background-color: rgba(232, 97, 5, 1)
-}
-
 .means-image {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
 }
 
 .means-name {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: rgba(43, 42, 56, 1);
 }
 
@@ -21,7 +17,6 @@
 .view-means-button {
     background-color: rgba(43, 42, 56, 1);
     color: #ffffff;
-    width: 150px;
 }
 
 .row {
@@ -32,9 +27,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: fit-content;
 }
 
 .means {
-    margin-bottom: 2em;
+    margin-bottom: .5em;
+}
+
+@media (max-width: 600px) {
+    .means-details {
+        font-size: .8rem
+    }
+    .means-name {
+        font-size: 1rem
+    }
 }
