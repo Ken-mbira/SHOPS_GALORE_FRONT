@@ -1,7 +1,12 @@
-@media (max-width:900px) {
+/* @media (max-width:900px) {
     .delivery-chart {
         width: 100% !important;
     }
+} */
+
+p {
+    margin: 0;
+    padding: 0
 }
 
 .shadow {
@@ -17,7 +22,7 @@
 
 h6 {
     color: #E86105;
-    font-size: smaller;
+    font-size: .8rem;
 }
 
 span {
