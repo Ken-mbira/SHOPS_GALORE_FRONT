@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MatDialog,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -9,19 +11,17 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class NewDestinationComponent implements OnInit {
 
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  destinationForm = this.fb.group({
+    price:[0,Validators.required],
+    means:[0,Validators.required],
+    location_from:[0,Validators.required],
+    location_to:[0,Validators.required]
+  })
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
   }
 
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Destination } from 'src/app/interfaces/destination/destination';
+import { MatDialog,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { NewDestinationComponent } from './new-destination/new-destination.component';
 
 @Component({
   selector: 'app-destination',
@@ -7,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DestinationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
+
+  newDestinationDialog(){
+    this.dialog.open(NewDestinationComponent)
+  }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,6 @@
-<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-    <mat-step>
-        <form>
+<div [formGroup]="destinationForm">
+    <mat-stepper orientation="vertical" #stepper>
+        <mat-step>
             <ng-template matStepLabel>Choose the county</ng-template>
             <mat-form-field appearance="fill">
                 <mat-label>Select the county</mat-label>
@@ -10,12 +10,10 @@
                 </mat-select>
             </mat-form-field>
             <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-raised-button matStepperNext>Next</button>
             </div>
-        </form>
-    </mat-step>
-    <mat-step label="Select the actual location">
-        <form>
+        </mat-step>
+        <mat-step label="Select the starting point">
             <mat-form-field appearance="fill">
                 <mat-label>Select the actual location</mat-label>
                 <mat-select>
@@ -24,13 +22,11 @@
                 </mat-select>
             </mat-form-field>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
             </div>
-        </form>
-    </mat-step>
-    <mat-step label="Choose one of your delivery means">
-        <form>
+        </mat-step>
+        <mat-step label="Choose one of your delivery means">
             <mat-form-field appearance="fill">
                 <mat-label>Select the delivery means</mat-label>
                 <mat-select>
@@ -39,29 +35,27 @@
                 </mat-select>
             </mat-form-field>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
             </div>
-        </form>
-    </mat-step>
-    <mat-step label="Enter your price for this location">
-        <form>
+        </mat-step>
+        <mat-step label="Enter your price for this location">
             <mat-form-field appearance="fill">
-                <mat-label>Enter your pricing for this location</mat-label>
-                <input matInput placeholder="Ex. 1 Main St, New York, NY" required>
+                <mat-label>Enter your price</mat-label>
+                <input matInput type="number" formControlName="price" placeholder="Kenyan Shillings" required>
             </mat-form-field>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
             </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-    </mat-step>
-</mat-stepper>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Finish</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-raised-button matStepperPrevious style="color:#2a2b38">Back</button>
+                <button mat-raised-button (click)="stepper.reset()" style="background:#2a2b38;color:white">Create</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>

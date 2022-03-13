@@ -15,23 +15,3 @@ mat-sidenav-container {
     background: none;
     height: 90vh;
 }
-
-
-/* .content {
-    display: flex;
-    height: fit-content;
-    justify-content: center;
-    padding-top: 10px;
-    overflow-y: scroll;
-} */
-
-.content::-webkit-scrollbar {
-    display: none;
-}
-
-.content {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
