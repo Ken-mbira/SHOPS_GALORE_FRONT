@@ -1,4 +1,4 @@
-<div class="contaier-md" [formGroup]="registrationForm">
+<div [formGroup]="registrationForm">
     <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!" #stepper>
         <mat-step label="Choose your role">
             <app-role-choice (newRole)="chooseRole($event,stepper)"></app-role-choice>
