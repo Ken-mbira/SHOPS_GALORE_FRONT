@@ -14,9 +14,9 @@
         </div>
     </div>
     <div *ngIf="!gridView">
-        <app-means-list-view></app-means-list-view>
+        <app-means-list-view [registeredMeans]="registeredMeans"></app-means-list-view>
     </div>
     <div *ngIf="gridView">
-        <app-means-grid-view></app-means-grid-view>
+        <app-means-grid-view [registeredMeans]="registeredMeans"></app-means-grid-view>
     </div>
 </div>
