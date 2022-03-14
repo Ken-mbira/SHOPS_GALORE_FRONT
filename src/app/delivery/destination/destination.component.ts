@@ -26,7 +26,9 @@ export class DestinationComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((response?:FormGroup)=>{
       if(response){
-        this.deliveryService.createDestination(response).subscribe((response:Destination) => this.destinations.push(response),error => {
+        this.deliveryService.createDestination(response).subscribe((response:Destination) => {
+          this.destinations.push(response)
+        },error => {
           console.log(error)
           this.snackBar.open("Sorry there was a problem creating this destination","Sorry",{duration:3000})
         })

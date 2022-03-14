@@ -3,8 +3,8 @@ import { RegisteredMeans } from './../registered-means/registered-means';
 
 export interface Destination {
     id:number,
-    means:RegisteredMeans,
-    location_from:Location,
-    location_to:Location,
+    registered_means:RegisteredMeans,
+    from_location:Location,
+    to_location:Location,
     price:number
 }
