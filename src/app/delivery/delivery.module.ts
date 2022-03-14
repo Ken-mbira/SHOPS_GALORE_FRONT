@@ -35,7 +35,6 @@ import { MeansListViewComponent } from './means/means-list/means-list-view/means
 import { MeansGridViewComponent } from './means/means-list/means-grid-view/means-grid-view.component';
 
 
-
 @NgModule({
     providers:[
         DeliveryService,
