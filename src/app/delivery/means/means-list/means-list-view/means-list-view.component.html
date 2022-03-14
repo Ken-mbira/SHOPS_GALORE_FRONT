@@ -1,16 +1,16 @@
 <div class="mt-3">
     <div class="means">
-        <mat-divider class="means-list-divider"></mat-divider>
-        <div class="row p-2">
+        <div *ngFor="let means of registeredMeans" class="row p-2">
             <div class="col-3">
                 <div class="means-info">
-                    <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg" alt="" class="means-image">
+                    <img *ngIf="means.image" src={{means.image}} alt="" class="means-image">
+                    <img *ngIf="!means.image" src="../../../../../assets/image.webp" alt="" class="means-image">
                 </div>
             </div>
             <div class="col-3">
                 <div class="means-info">
                     <p class="means-name">
-                        Truck
+                        {{means.delivery_means.name}}
                     </p>
                 </div>
             </div>
@@ -27,6 +27,5 @@
                 </div>
             </div>
         </div>
-        <mat-divider class="means-list-divider"></mat-divider>
     </div>
 </div>

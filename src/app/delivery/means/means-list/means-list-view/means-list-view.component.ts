@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { RegisteredMeans } from 'src/app/interfaces/registered-means/registered-means';
 
 @Component({
   selector: 'app-means-list-view',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./means-list-view.component.css']
 })
 export class MeansListViewComponent implements OnInit {
+
+  @Input() registeredMeans:RegisteredMeans[] = [];
 
   constructor() { }
 

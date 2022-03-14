@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CustomAngularMaterialModule } from '../custom-angular-material/custom-angular-material.module';
+
+import { AuthInterceptor } from '../interceptors/auth.interceptor';
+import { LoaderInterceptor } from '../interceptors/loader/loader.interceptor';
+
+import { DeliveryService } from './services/delivery.service';
+import { ListService } from '../services/lists/list.service';
+import { LocationService } from '../services/location/location.service';
 
 import { DeliveryRoutingModule } from './delivery-routing.module';
 import { DeliveryComponent } from './delivery.component';
@@ -29,6 +37,21 @@ import { MeansGridViewComponent } from './means/means-list/means-grid-view/means
 
 
 @NgModule({
+    providers:[
+        DeliveryService,
+        LocationService,
+        ListService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
+          },
+          {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoaderInterceptor,
+            multi: true,
+        },
+    ],
     declarations: [
         DeliveryComponent,
         NavbarComponent,
