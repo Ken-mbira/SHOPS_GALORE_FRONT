@@ -33,8 +33,6 @@ import { SummaryDestinationComponent } from './destination/summary-destination/s
 import { MeansListComponent } from './means/means-list/means-list.component';
 import { MeansListViewComponent } from './means/means-list/means-list-view/means-list-view.component';
 import { MeansGridViewComponent } from './means/means-list/means-grid-view/means-grid-view.component';
-import { DestinationListComponent } from './destination/destination-list/destination-list.component';
-
 
 
 @NgModule({
@@ -74,8 +72,7 @@ import { DestinationListComponent } from './destination/destination-list/destina
         SummaryDestinationComponent,
         MeansListComponent,
         MeansListViewComponent,
-        MeansGridViewComponent,
-        DestinationListComponent
+        MeansGridViewComponent
     ],
     imports: [
         CommonModule,
