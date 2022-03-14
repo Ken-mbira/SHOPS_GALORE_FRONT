@@ -1,4 +1,4 @@
-<div [formGroup]="destinationForm">
+<form [formGroup]="destinationForm" (ngSubmit)="stageCreation()">
     <mat-stepper orientation="vertical" #stepper>
         <mat-step>
             <ng-template matStepLabel>Select the from location</ng-template>
@@ -7,7 +7,7 @@
                 </ngx-mat-tree-select-input>
             </div>
             <div>
-                <button mat-raised-button matStepperNext>Next</button>
+                <button type="button" mat-raised-button matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step label="Select the to location">
@@ -16,21 +16,20 @@
                 </ngx-mat-tree-select-input>
             </div>
             <div>
-                <button mat-raised-button matStepperPrevious>Back</button>
-                <button mat-raised-button matStepperNext>Next</button>
+                <button type="button" mat-raised-button matStepperPrevious>Back</button>
+                <button type="button" mat-raised-button matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step label="Choose one of your delivery means">
             <mat-form-field appearance="fill">
                 <mat-label>Select the delivery means</mat-label>
-                <mat-select>
-                    <mat-option value="one">Kiserian</mat-option>
-                    <mat-option value="two">Ngong</mat-option>
+                <mat-select formControlName="means">
+                    <mat-option *ngFor="let data of data" value={{data.id}}>{{data.delivery_means.name}}</mat-option>
                 </mat-select>
             </mat-form-field>
             <div>
-                <button mat-raised-button matStepperPrevious>Back</button>
-                <button mat-raised-button matStepperNext>Next</button>
+                <button type="button" mat-raised-button matStepperPrevious>Back</button>
+                <button type="button" mat-raised-button matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step label="Enter your price for this location">
@@ -39,8 +38,8 @@
                 <input matInput type="number" formControlName="price" placeholder="Kenyan Shillings" required>
             </mat-form-field>
             <div>
-                <button mat-raised-button matStepperPrevious>Back</button>
-                <button mat-raised-button matStepperNext>Next</button>
+                <button type="button" mat-raised-button matStepperPrevious>Back</button>
+                <button type="button" mat-raised-button matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step>
@@ -48,8 +47,8 @@
             <p>You are now done.</p>
             <div>
                 <button mat-raised-button matStepperPrevious style="color:#2a2b38">Back</button>
-                <button mat-raised-button (click)="stepper.reset()" style="background:#2a2b38;color:white">Create</button>
+                <button mat-raised-button type="submit" style="background:#2a2b38;color:white">Create</button>
             </div>
         </mat-step>
     </mat-stepper>
-</div>
+</form>

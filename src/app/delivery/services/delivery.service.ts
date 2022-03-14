@@ -5,6 +5,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 import { BehaviorSubject } from 'rxjs';
 
+import { Destination } from 'src/app/interfaces/destination/destination';
 import { Role } from 'src/app/classes/role/role';
 import { RoleService } from 'src/app/services/roles/role.service';
 import { environment } from 'src/environments/environment';
@@ -18,6 +19,17 @@ import { DeliveryMeans } from 'src/app/interfaces/means/delivery-means';
 export class DeliveryService {
 
   constructor(private roleService:RoleService,private http:HttpClient,private authService:AuthService) { }
+
+  private destinations = new BehaviorSubject<Destination[]>([]);
+  currentDestinations = this.destinations.asObservable();
+
+  getDestinations(){
+    this.http.get(`${environment.BASE_URL}delivery/destination/`).subscribe((response:Destination[]) => this.destinations.next(response))
+  }
+
+  createDestination(form:FormGroup){
+    return this.http.post(`${environment.BASE_URL}delivery/destination/`,form.value)
+  }
 
   private registeredMeans = new BehaviorSubject<RegisteredMeans[]>([]);
   currentRegisteredMeans = this.registeredMeans.asObservable();
