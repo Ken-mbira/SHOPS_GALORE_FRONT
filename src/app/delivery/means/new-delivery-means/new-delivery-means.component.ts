@@ -35,8 +35,8 @@ export class NewDeliveryMeansComponent implements OnInit {
   createMeans(){
     this.deliveryService.createMeans(this.meansForm).subscribe((response:RegisteredMeans) => {
       if(this.hasImage){
-        this.deliveryService.updateMeansImage(this.imageForm,response.id).subscribe((imageResponse:string) =>{
-          response.image = imageResponse;
+        this.deliveryService.updateMeansImage(this.imageForm,response.id).subscribe((imageResponse:any) =>{
+          response.image = imageResponse.image;
         },error => {
           console.log(error)
           this.snackBar.open("There was a problem uploading your means image, please try again in the edit section","Try Again",{duration:3000})
@@ -46,6 +46,7 @@ export class NewDeliveryMeansComponent implements OnInit {
     },error=>{
       this.snackBar.open("There was a problem creating your means!","Sorry",{duration:3000})
       console.log(error)
+      this.meansDialog.close()
     })
   }
 
