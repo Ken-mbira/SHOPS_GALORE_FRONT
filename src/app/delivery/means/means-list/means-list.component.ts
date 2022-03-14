@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { RegisteredMeans } from './../../../interfaces/registered-means/registered-means';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-means-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./means-list.component.css']
 })
 export class MeansListComponent implements OnInit {
+
+  @Input() registeredMeans:RegisteredMeans[] = [];
 
   gridView:boolean = true;
   changeGrid(value:boolean){

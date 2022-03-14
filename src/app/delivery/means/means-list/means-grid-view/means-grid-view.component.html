@@ -1,13 +1,14 @@
 <div>
     <div class="row pt-3">
-        <div class="col-xl-2 col-sm-4 col-6 mb-3">
+        <div *ngFor="let means of registeredMeans" class="col-xl-2 col-sm-4 col-6 mb-3">
             <div class="means-cover">
                 <div class="means-image">
-                    <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg" alt="image" width="100%">
+                    <img *ngIf="means.image" src={{means.image}} alt="image" width="100%">
+                    <img *ngIf="!means.image" src="../../../../../assets/image.webp" alt="image" width="100%">
                 </div>
                 <div class="p-1 means-details">
                     <div>
-                        <p>Truck</p>
+                        <p>{{means.delivery_means.name}}</p>
                     </div>
                     <div>
                         <small>Last order 12/21/1212</small>
@@ -15,36 +16,5 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-sm-4 col-6 mb-3">
-            <div class="means-cover">
-                <div class="means-image">
-                    <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg" alt="image" width="100%">
-                </div>
-                <div class="p-1 means-details">
-                    <div>
-                        <p>Truck</p>
-                    </div>
-                    <div>
-                        <small>Last order 12/21/1212</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-2 col-sm-4 col-6 mb-3">
-            <div class="means-cover">
-                <div class="means-image">
-                    <img src="../../../../../assets/andrew-pons-cLHPacdtpSY-unsplash.jpg" alt="image" width="100%">
-                </div>
-                <div class="p-1 means-details">
-                    <div>
-                        <p>Truck</p>
-                    </div>
-                    <div>
-                        <small>Last order 12/21/1212</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
