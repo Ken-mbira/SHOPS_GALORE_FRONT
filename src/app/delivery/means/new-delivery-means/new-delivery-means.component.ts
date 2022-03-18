@@ -17,6 +17,7 @@ export class NewDeliveryMeansComponent implements OnInit {
 
   means : DeliveryMeans[] = [];
   hasImage:boolean = false;
+  imageUrl:any = "../../../../../assets/image.webp";
 
   constructor(public meansDialog: MatDialogRef<NewDeliveryMeansComponent>,private fb:FormBuilder,private snackBar:MatSnackBar,private deliveryService:DeliveryService) {}
 
@@ -24,6 +25,12 @@ export class NewDeliveryMeansComponent implements OnInit {
     let image = (event.target as HTMLInputElement).files[0];
     this.imageForm.append("image",image,event.target.files.name)
     this.hasImage = true;
+
+    let reader = new FileReader();
+    reader.readAsDataURL(image);
+    reader.onload = (_event) => {
+      this.imageUrl = reader.result;
+    }
   }
   imageForm = new FormData();
   meansForm = this.fb.group({
@@ -41,6 +48,7 @@ export class NewDeliveryMeansComponent implements OnInit {
           console.log(error)
           this.snackBar.open("There was a problem uploading your means image, please try again in the edit section","Try Again",{duration:3000})
         })
+        this.hasImage = false;
       }
       this.meansDialog.close(response)
     },error=>{
