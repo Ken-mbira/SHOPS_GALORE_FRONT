@@ -1,5 +1,6 @@
 mat-toolbar {
     background-color: #2b2a38;
+    height: 60px;
 }
 
 mat-sidenav {
@@ -12,6 +13,7 @@ mat-sidenav {
 
 mat-sidenav-container {
     background: none;
+    min-height: calc(100vh - 60px);
 }
 
 @media (min-width:901px) {
