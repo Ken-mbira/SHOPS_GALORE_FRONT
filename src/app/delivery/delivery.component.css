@@ -1,6 +1,5 @@
 mat-toolbar {
     background-color: none;
-    height: 10vh;
 }
 
 mat-sidenav {
@@ -13,5 +12,4 @@ mat-sidenav {
 
 mat-sidenav-container {
     background: none;
-    height: 90vh;
 }

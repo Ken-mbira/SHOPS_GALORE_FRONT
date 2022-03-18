@@ -7,6 +7,7 @@ import { DeliveryMeans } from 'src/app/interfaces/means/delivery-means';
 import { ListService } from 'src/app/services/lists/list.service';
 import { DeliveryService } from '../../services/delivery.service'; 
 import { RegisteredMeans } from 'src/app/interfaces/registered-means/registered-means';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-new-delivery-means',
@@ -17,6 +18,7 @@ export class NewDeliveryMeansComponent implements OnInit {
 
   means : DeliveryMeans[] = [];
   hasImage:boolean = false;
+  imageUrl:any = "../../../../../assets/image.webp";
 
   constructor(public meansDialog: MatDialogRef<NewDeliveryMeansComponent>,private fb:FormBuilder,private snackBar:MatSnackBar,private deliveryService:DeliveryService) {}
 
@@ -24,6 +26,16 @@ export class NewDeliveryMeansComponent implements OnInit {
     let image = (event.target as HTMLInputElement).files[0];
     this.imageForm.append("image",image,event.target.files.name)
     this.hasImage = true;
+
+    let reader = new FileReader();
+    reader.readAsDataURL(image);
+    reader.onload = (_event) => {
+      this.imageUrl = reader.result;
+    }
+  }
+  removeImageUpload(){
+    this.imageForm.delete("image");
+    this.hasImage = false;
   }
   imageForm = new FormData();
   meansForm = this.fb.group({
@@ -41,6 +53,7 @@ export class NewDeliveryMeansComponent implements OnInit {
           console.log(error)
           this.snackBar.open("There was a problem uploading your means image, please try again in the edit section","Try Again",{duration:3000})
         })
+        this.hasImage = false;
       }
       this.meansDialog.close(response)
     },error=>{

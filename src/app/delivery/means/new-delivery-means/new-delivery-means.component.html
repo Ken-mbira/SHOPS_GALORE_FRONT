@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="ms-3">
-                        <div class="dropzone">
+                        <div *ngIf="!hasImage" class="dropzone">
                             <input type="file" accept="image/*" #fileDropRef (change)="handleUpload($event)">
                             <div>
                                 <div>
@@ -45,6 +45,14 @@
                                 <div>
                                     <p id="upload_text">Drag and Drop to upload image<br> or<br> <span id="click-me">click me</span> </p>
                                 </div>
+                            </div>
+                        </div>
+                        <div *ngIf="hasImage">
+                            <img src={{imageUrl}} alt="image-upload" style="width: 200px;height:200px;object-fit: cover;">
+                            <div>
+                                <button mat-mini-fab (click)="removeImageUpload()" color="warn" aria-label="Example icon button with an x icon">
+                                    <mat-icon>close</mat-icon>
+                                  </button>
                             </div>
                         </div>
                         <div class="mt-3">
