@@ -28,7 +28,8 @@ export class DestinationComponent implements OnInit {
 
   newDestinationDialog(){
     const dialogRef = this.dialog.open(NewDestinationComponent,{
-      data:this.registeredMeans
+      data:this.registeredMeans,
+      minWidth: '360px',
     });
     dialogRef.afterClosed().subscribe((response?:Destination)=>{
       if(response){
