@@ -7,6 +7,7 @@ import { DeliveryMeans } from 'src/app/interfaces/means/delivery-means';
 import { ListService } from 'src/app/services/lists/list.service';
 import { DeliveryService } from '../../services/delivery.service'; 
 import { RegisteredMeans } from 'src/app/interfaces/registered-means/registered-means';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-new-delivery-means',
@@ -31,6 +32,10 @@ export class NewDeliveryMeansComponent implements OnInit {
     reader.onload = (_event) => {
       this.imageUrl = reader.result;
     }
+  }
+  removeImageUpload(){
+    this.imageForm.delete("image");
+    this.hasImage = false;
   }
   imageForm = new FormData();
   meansForm = this.fb.group({
