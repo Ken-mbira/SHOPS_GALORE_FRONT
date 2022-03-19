@@ -13,11 +13,10 @@
     </div>
     <div>
         <mat-form-field appearance="fill">
-            <span matPrefix>+254</span>
             <mat-label>Phone Number</mat-label>
-            <input formControlName="phone_contact" matInput type="text" placeholder="eg. 7123..">
+            <input formControlName="phone_contact" matInput type="text" placeholder="eg +254712345678">
             <mat-error *ngIf="!newShopForm.value.phone_contact.valid">Please enter a correct phone number</mat-error>
-            <mat-hint>How people will reach you</mat-hint>
+            <mat-hint>Please use the format "+254"</mat-hint>
         </mat-form-field>
     </div>
     <div>

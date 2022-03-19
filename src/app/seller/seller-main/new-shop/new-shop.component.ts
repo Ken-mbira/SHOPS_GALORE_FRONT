@@ -14,9 +14,9 @@ export function validatePhoneNumber():ValidatorFn{
   return (control:AbstractControl) : ValidationErrors | null => {
     const value = control.value;
 
-    const isAllNumbers = /^\d+$/.test(value);
+    const hasLetters = /^[^a-zA-Z]+$/.test(value);
 
-    return ! isAllNumbers ? {allNumbers:true} : null;
+    return !hasLetters ? {allNumbers:true} : null;
   }
 }
 
@@ -32,7 +32,7 @@ export class NewShopComponent implements OnInit {
   newShopForm = this.fb.group({
     name:['',Validators.required],
     bio:['',Validators.required],
-    phone_contact:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9),validatePhoneNumber()]],
+    phone_contact:['',[Validators.required,Validators.minLength(13),Validators.maxLength(13),validatePhoneNumber()]],
     email_contact:['',[Validators.required,Validators.email]],
     pickup_location:[""]
   })
