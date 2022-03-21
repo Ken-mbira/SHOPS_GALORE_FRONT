@@ -29,11 +29,11 @@ export class DashboardComponent implements OnInit {
   getGreeting(){
     let currentTime = new Date()
     if(currentTime.getHours() < 12){
-      this.greeting = "morning"
+      this.greeting = "Morning"
     }else if(currentTime.getHours() > 11 && currentTime.getHours() < 18){
-      this.greeting = "afternoon"
+      this.greeting = "Afternoon"
     }else{
-      this.greeting = "evening"
+      this.greeting = "Evening"
     }
   }
 
