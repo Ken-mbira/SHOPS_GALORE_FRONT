@@ -1,3 +1,4 @@
+import { Location } from "../location/location";
 export interface Shop {
     id:number,
     name:string,
@@ -9,5 +10,5 @@ export interface Shop {
     active:boolean;
     owner:number;
     product_count?:number;
-    pickup_location?:number;
+    shop_pickup_location?:Location;
 }
