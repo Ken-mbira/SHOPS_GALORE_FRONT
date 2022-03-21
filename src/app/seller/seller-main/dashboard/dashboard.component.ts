@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../services/shop.service'
 import { AuthService } from 'src/app/services/authentication/auth.service';
 import { User } from 'src/app/classes/user/user';
+import { Shop } from 'src/app/interfaces/shop/shop';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,13 @@ import { User } from 'src/app/classes/user/user';
 export class DashboardComponent implements OnInit {
 
   user:User;
+
+  shops:Shop[] = [
+    {id:0,name:"Orient Suppliers",bio:"Were here for you",created_on:new Date(),active:true,owner:1},
+    {id:0,name:"Orient Suppliers",bio:"Were here for you",created_on:new Date(),active:true,owner:1},
+    {id:0,name:"Orient Suppliers",bio:"Were here for you",created_on:new Date(),active:true,owner:1},
+    {id:0,name:"Orient Suppliers",bio:"Were here for you",created_on:new Date(),active:true,owner:1}
+  ]
 
   now:Date = new Date()
   greeting:string;

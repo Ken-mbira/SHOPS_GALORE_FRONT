@@ -58,11 +58,9 @@
                     <mat-icon class="orange-text">emoji_events</mat-icon> Top 3 Shops
                 </div>
                 <div>
-                    <ol class="orange-text">
-                        <li><span class="purple-text">Orient Suppliers</span></li>
-                        <li><span class="purple-text">Orient Suppliers</span></li>
-                        <li><span class="purple-text">Orient Suppliers</span></li>
-                    </ol>
+                    <div *ngFor="let shop of shops;let i=index;" class="shop-card shadow-sm p-1 rounded-2 mt-2">
+                        <p class="regular purple-text"><span class="orange-text">{{i+1}}.</span> {{shop.name}}</p>
+                    </div>
                 </div>
             </div>
         </div>
