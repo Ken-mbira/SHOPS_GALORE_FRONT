@@ -17,7 +17,6 @@ export class NewShopFormComponent implements OnInit {
 
   fillForm(){
     this.newShopForm.controls.phone_contact.clearValidators()
-    this.newShopForm.patchValue({phone_contact:`+254${this.newShopForm.value.phone_contact}`})
     this.formSubmission.emit(this.newShopForm)
   }
 

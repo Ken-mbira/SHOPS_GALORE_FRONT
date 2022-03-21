@@ -1,71 +1,67 @@
 <div>
     <div>
-        <h6 class="greeting_text">Good {{greeting}} {{user.last_name}}, here's how we're doing</h6>
+        <p>Good {{greeting}} {{user && user.last_name ? user.last_name : user && user.first_name ? user.first_name : ''}}, here's how we're doing</p>
     </div>
-    <div class="row g-3">
-        <div class="col-md-4 col-6">
-            <div class="shadow p-2 stats" style="background-color:#2B2A38">
-                <h5 style="color:#E86105">5</h5>
-                <p style="color:white">Shops</p>
+    <div class="row">
+        <div class="col-lg-4 space-right col-6">
+            <div class="top purple">
+                <p class="regular white-text"><span class="titles orange-text">5</span> Shops</p>
             </div>
         </div>
-        <div class="col-md-4 col-6">
-            <div class="shadow p-2 stats" style="background-color:white">
-                <h5 style="color:#2B2A38">250K</h5>
-                <p style="color:#E86105">Sales this month</p>
-                <small>22% higher than last month</small>
+        <div class="col-lg-4 space-left col-6">
+            <div class="top white">
+                <p><span class="titles purple-text">250K</span><br><span class="regular orange-text">Sales this Month</span><br><span class="smallest">22% higher than last month</span></p>
             </div>
         </div>
-        <div class="col-md-4 col-12">
-            <div class="shadow p-2 stats" style="background-color:white">
-                <h5 style="color:#2B2A38">1.5M</h5>
-                <p style="color:#E86105">Income this month</p>
-                <small>18% hignher than last month</small>
+        <div class="col-lg-4 remnant">
+            <div class="top white">
+                <p><span class="titles purple-text">1.5M</span><br><span class="regular orange-text">Income this Month</span><br><span class="smallest">38% higher than last month</span></p>
             </div>
         </div>
-    </div>
-    <div class="row g-3 mt-3">
-        <div class="col-md-8 g-2 row">
-            <div class="col-6">
-                <div style="background:white" class="p-2 chores">
-                    <h6 style="color:#E86105">Notifications</h6>
-                    <div class="d-flex align-items-center" style="height:fit-content">
-                        <mat-icon [ngStyle]="{'color':'#E86105'}">ring_volume</mat-icon><span>3 unread notifications</span>
+        <div class="col-lg-8 bottom">
+            <div class="row">
+                <div class="col-6 space-right">
+                    <div class="white bottom-top">
+                        <div>
+                            <p class="regular orange-text">Notifications</p>
+                        </div>
+                        <div class="d-flex align-items-center kinda-small">
+                            <mat-icon class="orange-text">notifications</mat-icon>3 unread notifications
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 space-left">
+                    <div class="purple bottom-top">
+                        <div>
+                            <p class="regular orange-text">Shops</p>
+                        </div>
+                        <div class="d-flex align-items-center kinda-small white-text">
+                            <mat-icon class="orange-text">priority_high</mat-icon> 1 attention required
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 space-right">
+                    <div class="purple bottom-bottom">
+                        <p class="regular white-text"><span class="titles orange-text">2</span> Featured Shops</p>
+                    </div>
+                </div>
+                <div class="col-6 space-left">
+                    <div class="white bottom-bottom">
+                        <p><span class="titles purple-text">247</span><br><span class="regular orange-text">Sales Today</span><br><span class="smallest">12% lower than yesterday</span></p>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div style="background:#2B2A38" class="p-2 chores">
-                    <h6 style="color:#E86105">Shops</h6>
-                    <div class="d-flex align-items-center" style="height:fit-content">
-                        <mat-icon [ngStyle]="{'color':'#E86105'}">information</mat-icon><span>1 attention required</span>
+        </div>
+        <div class="col-lg-4 remnant">
+            <div class="white bottom isolated">
+                <div class="d-flex align-items-center kinda-large purple-text">
+                    <mat-icon class="orange-text">emoji_events</mat-icon> Top 3 Shops
+                </div>
+                <div>
+                    <div *ngFor="let shop of shops;let i=index;" class="shop-card shadow-sm p-1 rounded-2 mt-2">
+                        <p class="regular purple-text"><span class="orange-text">{{i+1}}.</span> {{shop.name}}</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div style="background:#2B2A38" class="p-2 chores">
-                    <h6 style="color:#E86105">2</h6>
-                    <p>Featured Shops</p>
-                </div>
-            </div>
-            <div class="col-6">
-                <div style="background:white" class="p-2 chores">
-                    <h6>274</h6>
-                    <p style="color:#E86105">Sales Today</p>
-                    <small>12% over than yesterday</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 p-2 left_out" style="background:white">
-            <div>
-                <div class="d-flex align-items-center">
-                    <mat-icon [ngStyle]="{'color':'#E86105'}">grade</mat-icon><span>Top 3 Shops</span>
-                </div>
-                <ol class="pt-2">
-                    <li style="color:#E86105 "><span style="color:black ">Orient Suppliers</span></li>
-                    <li style="color:#E86105 "><span style="color:black ">Cutlass Solutions</span></li>
-                    <li style="color:#E86105 "><span style="color:black ">Nova Pasteries</span></li>
-                </ol>
             </div>
         </div>
     </div>
