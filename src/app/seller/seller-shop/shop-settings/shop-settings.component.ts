@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocationService } from 'src/app/services/location/location.service';
 import { Shop } from 'src/app/interfaces/shop/shop';
 import { ShopService } from '../../services/shop.service';
+import { Location } from 'src/app/interfaces/location/location';
 
 import { ImageUploaderComponent } from 'src/app/shared_components/image-uploader/image-uploader.component';
 import { validatePhoneNumber } from 'src/app/seller/seller-main/new-shop/new-shop.component';
@@ -23,7 +24,11 @@ export class ShopSettingsComponent implements OnInit {
 
   pickup_location:any;
   onSelectionChanged(){
-    this.shop.pickup_location = this.pickup_location.value;
+    let newLocation:Location = {
+      id:this.pickup_location.value,
+      name:this.pickup_location.name
+    }
+    this.shop.shop_pickup_location = newLocation;
   }
 
   triggerConfirmation(event){
@@ -91,7 +96,7 @@ export class ShopSettingsComponent implements OnInit {
     form.append("phone_contact",this.shop.phone_contact),
     form.append("email_contact",this.shop.email_contact),
     form.append("active",JSON.stringify(this.shop.active)),
-    form.append("pickup_location",JSON.stringify(this.shop.pickup_location))
+    form.append("pickup_location",JSON.stringify(this.shop.shop_pickup_location.id))
 
 
     this.shopService.updateShop(form,this.shop.id).subscribe((data:Shop) => {

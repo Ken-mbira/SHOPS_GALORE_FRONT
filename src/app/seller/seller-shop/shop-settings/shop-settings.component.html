@@ -78,9 +78,9 @@
                 <small>Where your products will be picked up</small>
             </div>
             <div>
-                <div>
+                <div *ngIf="shop.shop_pickup_location">
                     <mat-form-field appearance="outline">
-                        <input matInput [readonly]="true">
+                        <input matInput [readonly]="true" [(ngModel)]="shop.shop_pickup_location.name" name="pickup-location">
                     </mat-form-field>
                 </div>
                 <div>
