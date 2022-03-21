@@ -14,7 +14,7 @@
                 </div>
                 <div class="p-2">
                     <div>
-                        <p class="shop-name">{{ (shop.name.length>20)? (shop.name | slice:0:20)+'..':(shop.name) }}
+                        <p class="shop-name">{{ (shop.name.length>15)? (shop.name | slice:0:15)+'..':(shop.name) }}
                         </p>
                     </div>
                     <div class="d-flex justify-content-between">
@@ -22,11 +22,8 @@
                             <p class="product-count">{{shop.product_count === 1 ? "1 product" : shop.product_count + " products"}}</p>
                         </div>
                         <div>
-                            <div *ngIf="shop.active" class="active-badge status-badge">
-                                <small>Active</small>
-                            </div>
-                            <div *ngIf="!shop.active" class="inactive-badge status-badge">
-                                <small>In Active</small>
+                            <div class="status-badge" [ngStyle]="{'background': shop.active ? '#E86105' : '#F44336'}">
+                                <small>{{shop.active ? "active" : "inactive"}}</small>
                             </div>
                         </div>
                     </div>
