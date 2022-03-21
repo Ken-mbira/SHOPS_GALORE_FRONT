@@ -1,6 +1,6 @@
 <div>
     <div>
-        <p>Good {{greeting}} Mbira, here's how we're doing</p>
+        <p>Good {{greeting}} {{user && user.last_name ? user.last_name : user && user.first_name ? user.first_name : ''}}, here's how we're doing</p>
     </div>
     <div class="row">
         <div class="col-lg-4 space-right col-6">
