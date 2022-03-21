@@ -1,3 +1,8 @@
+p {
+    margin: 0;
+    padding: 0
+}
+
 .row {
     grid-auto-flow: column;
 }
@@ -12,6 +17,10 @@
 
 .bottom-bottom {
     height: 150px;
+}
+
+.orange {
+    background-color: #E86105
 }
 
 .purple {
@@ -29,6 +38,7 @@
 .white,
 .purple {
     margin: .2rem;
+    padding: .7rem;
 }
 
 .space-right {
@@ -49,4 +59,38 @@
     .top {
         height: 200px;
     }
+}
+
+.purple-text {
+    color: rgba(43, 42, 56, 0.7);
+}
+
+.orange-text {
+    color: #E86105;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+.regular {
+    font-size: 1rem;
+}
+
+.smallest {
+    font-size: .8rem
+}
+
+.kinda-small {
+    font-size: .9rem
+}
+
+.titles {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.kinda-large {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
