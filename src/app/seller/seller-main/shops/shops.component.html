@@ -3,18 +3,18 @@
         <div>
             <h6>Shops</h6>
         </div>
-        <button class="btn new-shop" style="height:fit-content" routerLink="new-shop">New Shop</button>
+        <button mat-raised-button class="new-shop" routerLink="new-shop">New Shop</button>
     </div>
-    <div class="row">
-        <div class="col-6 col-md-3" *ngFor="let shop of shops">
+    <div *ngIf="shops.length>0" class="row mt-3">
+        <div class="col-6 col-md-3 col-xl-2 mb-3" *ngFor="let shop of shops">
             <div class="shadow rounded-3 shop-card" routerLink="../shop/{{shop.id}}">
                 <div>
-                    <img *ngIf="shop.logo" src={{shop.logo}} alt="shop-image" class="img-fluid">
-                    <img *ngIf="!shop.logo" src="../../../../assets/image.webp" alt="shop-image" class="img-fluid">
+                    <img *ngIf="shop.logo" src={{shop.logo}} alt="shop-image" class="shop-logo">
+                    <img *ngIf="!shop.logo" src="../../../../assets/image.webp" alt="shop-image" class="shop-logo">
                 </div>
                 <div class="p-2">
                     <div>
-                        <p class="shop-name">{{ (shop.name.length>10)? (shop.name | slice:0:10)+'..':(shop.name) }}
+                        <p class="shop-name">{{ (shop.name.length>20)? (shop.name | slice:0:20)+'..':(shop.name) }}
                         </p>
                     </div>
                     <div class="d-flex justify-content-between">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div>
-                        <small>Created on {{shop.created_on | date}}</small>
+                        <small class="created-on">Created on {{shop.created_on | date}}</small>
                     </div>
                 </div>
             </div>

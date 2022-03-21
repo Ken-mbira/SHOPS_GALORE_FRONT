@@ -15,10 +15,12 @@ export class ShopsComponent implements OnInit {
   constructor(private shopService:ShopService) { }
 
   ngOnInit(): void {
-    this.shopService.getShopList()
     this.shopService.currentShops.subscribe(value => {
       this.shops = value
     })
+    if(this.shops.length === 0 ){
+      this.shopService.getShopList()
+    }
   }
 
 }

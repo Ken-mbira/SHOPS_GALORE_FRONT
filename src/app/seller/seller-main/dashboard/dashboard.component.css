@@ -1,31 +1,96 @@
-@media (max-width:900px) {
-    .dashboard {
-        width: 100vw !important;
-    }
-}
-
-@media (min-width:768px) {
-    .stats {
-        height: 30vh
-    }
-    .chores {
-        height: 17vh
-    }
-}
-
 p {
     margin: 0;
     padding: 0
 }
 
-.stats,
-.chores,
-.left_out {
-    animation: slideInUp;
-    animation-duration: 1s;
+.row {
+    grid-auto-flow: column;
 }
 
-.greeting_text {
-    animation: fadeIn;
-    animation-duration: 3s;
+.top {
+    height: 160px;
+}
+
+.bottom-top {
+    height: 100px;
+}
+
+.bottom-bottom {
+    height: 150px;
+}
+
+.orange {
+    background-color: #E86105
+}
+
+.purple {
+    background-color: #2B2A38;
+}
+
+.white {
+    background-color: #ffffff
+}
+
+.isolated {
+    height: 100%;
+}
+
+.white,
+.purple {
+    margin: .2rem;
+    padding: .7rem;
+}
+
+.space-right {
+    padding-right: 0;
+}
+
+.space-left {
+    padding-left: 0;
+}
+
+@media (min-width:992px) {
+    .remnant {
+        padding-left: 0;
+    }
+    .space-left {
+        padding-right: 0;
+    }
+    .top {
+        height: 200px;
+    }
+}
+
+.purple-text {
+    color: rgba(43, 42, 56, 0.7);
+}
+
+.orange-text {
+    color: #E86105;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+.regular {
+    font-size: 1rem;
+}
+
+.smallest {
+    font-size: .8rem
+}
+
+.kinda-small {
+    font-size: .9rem
+}
+
+.titles {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.kinda-large {
+    font-size: 1.5rem;
+    font-weight: bold;
 }

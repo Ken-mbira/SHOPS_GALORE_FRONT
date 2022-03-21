@@ -1,12 +1,9 @@
 .new-shop {
     background-color: #2b2a38;
     color: white;
-    border-radius: 1px;
 }
 
 .shop-card {
-    animation: slideInUp;
-    animation-duration: 1s;
     cursor: pointer;
 }
 
@@ -15,13 +12,19 @@
     transition-duration: .5s;
 }
 
+.shop-logo {
+    height: 130px;
+    width: 100%;
+    object-fit: cover
+}
+
 p {
     margin: 0;
     padding: 0;
 }
 
 .shop-name {
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 .status-badge {
@@ -33,6 +36,10 @@ p {
     border-radius: 4px;
 }
 
+.status-badge small {
+    font-size: .7rem
+}
+
 .active-badge {
     background: #E86105;
 }
@@ -41,14 +48,10 @@ p {
     background: #F44336;
 }
 
-.shop-card img {
-    width: 100%;
-    object-fit: cover;
-    height: 200px;
+.product-count {
+    font-size: .8rem
 }
 
-@media (max-width: 768px) {
-    .shop-card img {
-        height: 150px;
-    }
+.created-on {
+    font-size: .6rem;
 }
