@@ -1,6 +1,6 @@
 <mat-dialog-content class="d-flex justify-content-center align-items-center p-2" style="height:fit-content">
     <div class="dropzone">
-        <input type="file" #fileDropRef multiple (change)="showImage($event)">
+        <input type="file" accept="image/*" #fileDropRef multiple (change)="showImage($event)">
         <div>
             <div>
                 <mat-icon id="upload_icon">cloud_upload</mat-icon>
