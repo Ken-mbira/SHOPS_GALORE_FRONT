@@ -19,9 +19,6 @@ export class SingleShopProductComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private productService:ProductService) { }
 
-  hasVariation = false;
-
-
   ngOnInit(): void {
     this.productService.currentProduct.subscribe(product => this.product = product)
     this.routeSub = this.route.params.subscribe(params => {

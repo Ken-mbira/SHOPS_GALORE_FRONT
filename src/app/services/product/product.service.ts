@@ -102,7 +102,7 @@ export class ProductService {
     volume:"",
     weight:"",
     sku:"",
-    hasVariation:false,
+    hasVariations:false,
     brand:{
       id:0,
       name:"",
