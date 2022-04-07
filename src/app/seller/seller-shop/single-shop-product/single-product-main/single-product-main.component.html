@@ -1,20 +1,49 @@
-<div>
+<form>
+    <mat-form-field appearance="fill">
+        <mat-label>Product Name</mat-label>
+        <input matInput name="product-name" [(ngModel)]="product.name" type="text">
+    </mat-form-field>
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Category</mat-label>
+            <input matInput [disabled]="true" [value]="product.category.name" name="product-category">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Brand</mat-label>
+            <mat-select [(ngModel)]="product.brand.id" name="brand">
+                <mat-option *ngFor="let brand of brands" [value]="brand.id">{{brand.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="product.description" name="product-description" required></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="product.type.id" name="product-type">
+            <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="row" *ngIf="!product.hasVariations">
+        <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Weight (kg)</mat-label>
+            <input matInput name="product-weight" [(ngModel)]="product.weight" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Volume (m<sup>3</sup>)</mat-label>
+            <input matInput name="product-volume" [(ngModel)]="product.volume" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Discount Price (Ksh)</mat-label>
+            <input matInput name="product-discount-price" [(ngModel)]="product.discount_price" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Price (Ksh)</mat-label>
+            <input matInput name="product-price" [(ngModel)]="product.price" type="number">
+        </mat-form-field>
+    </div>
     <div>
-        <label for="name" class="form-label">Product Name</label>
-        <input id="name" value={{product.name}} class="form-control" type="text">
+        <button mat-raised-button id="update-button">Update</button>
     </div>
-    <div class="row mt-2">
-        <div class="col-6">
-            <label for="category" class="form-label">Category</label>
-            <input id="category" value="{{product.category.name}}" class="form-control" type="text">
-        </div>
-        <div class="col-6">
-            <label for="brand" class="form-label">Brand</label>
-            <input id="brand" value="{{product.brand.name}}" class="form-control" type="text">
-        </div>
-    </div>
-    <div class="mt-2">
-        <label for="description" class="form-label">Description</label>
-        <textarea id="description" rows="6" class="form-control" type="text">{{product.description}}</textarea>
-    </div>
-</div>
+</form>

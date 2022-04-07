@@ -1,6 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder,FormGroup,Validators} from '@angular/forms'
 
 import { Product } from 'src/app/interfaces/product/product';
+import { Brand } from 'src/app/interfaces/brand/brand';
+import { TreeData } from 'mat-tree-select-input';
+import { ListService } from 'src/app/services/lists/list.service';
+import { Type } from 'src/app/interfaces/type/type';
 
 @Component({
   selector: 'app-single-product-main',
@@ -8,12 +13,22 @@ import { Product } from 'src/app/interfaces/product/product';
   styleUrls: ['./single-product-main.component.css']
 })
 export class SingleProductMainComponent implements OnInit {
+  brands:Brand[];
+  categories:TreeData[];
+  types:Type[];
+  myValue:String = ""
 
   @Input() product:Product;
 
-  constructor() { }
+  constructor(private listService:ListService,private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.listService.currentBrands.subscribe(brands => this.brands = brands)
+    this.listService.currentCategories.subscribe(categories => this.categories = categories)
+    this.listService.currentTypes.subscribe(types => this.types = types)
+    this.listService.getTypes()
+    this.listService.getCategories()
+    this.listService.getBrands()
   }
 
 }
