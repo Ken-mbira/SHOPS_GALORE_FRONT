@@ -44,6 +44,7 @@ export class NoVariationFormComponent implements OnInit {
     volume:[0,[Validators.required]],
     weight:['',Validators.required],
     owner:[localStorage.getItem("shop_id")],
+    hasVariations:[false],
     attribute_value:[[]]
   })
 

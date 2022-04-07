@@ -34,6 +34,7 @@ export class HasVariationFormComponent implements OnInit {
     type:['',Validators.required],
     description:['',Validators.required],
     owner:[parseInt(localStorage.getItem("shop_id")),Validators.required],
+    hasVariations:[true],
     attribute_value:[[]]
   })
 
