@@ -93,6 +93,17 @@ export class ListService {
     })
   }
 
+  private simpleCategories = new BehaviorSubject<Category[]>([]);
+  currentSimpleCategories = this.simpleCategories.asObservable();
+
+  getSimpleCategories(){
+    this.http.get(`${environment.BASE_URL}store/simple_category/`).subscribe((response:Category[])=>{
+      this.simpleCategories.next(response)
+    },error=>{
+      console.log(error)
+    })
+  }
+
 
   private types = new BehaviorSubject<Type[]>([]);
   currentTypes =this.types.asObservable();

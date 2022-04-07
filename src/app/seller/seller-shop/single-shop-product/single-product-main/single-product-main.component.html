@@ -6,7 +6,9 @@
     <div class="row">
         <mat-form-field appearance="fill" class="col-6">
             <mat-label>Category</mat-label>
-            <input matInput [disabled]="true" [value]="product.category.name" name="product-category">
+            <mat-select [(ngModel)]="product.category.id" name="product-category">
+                <mat-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill" class="col-6">
             <mat-label>Brand</mat-label>
