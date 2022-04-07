@@ -1,7 +1,7 @@
-<form>
+<form #editProductForm="ngForm">
     <mat-form-field appearance="fill">
         <mat-label>Product Name</mat-label>
-        <input matInput name="product-name" [(ngModel)]="product.name" type="text">
+        <input matInput name="product-name" [(ngModel)]="product.name" type="text" required>
     </mat-form-field>
     <div class="row">
         <mat-form-field appearance="fill" class="col-6">
@@ -46,6 +46,6 @@
         </mat-form-field>
     </div>
     <div>
-        <button mat-raised-button id="update-button">Update</button>
+        <button type="submit" [disabled]="editProductForm.pristine && !editProductForm.valid" mat-raised-button id="update-button">Update</button>
     </div>
 </form>
