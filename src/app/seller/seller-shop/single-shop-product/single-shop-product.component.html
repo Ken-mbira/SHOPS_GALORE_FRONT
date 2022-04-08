@@ -1,6 +1,7 @@
-<div class="main row p-3" style="width:80vw;">
-    <app-single-product-main [product]="product" class="col-md-6"></app-single-product-main>
-    <hr class="d-md-none mt-3 mb-3">
-    <app-single-product-variations [product]="product" class="col-md-6" *ngIf="product.hasVariations"></app-single-product-variations>
-    <app-single-product-details [product]="product" class="col-md-6" *ngIf="!product.hasVariations"></app-single-product-details>
+<div class="p-3">
+    <div class="row">
+        <app-single-product-main [product]="product" class="col-md-6"></app-single-product-main>
+        <app-single-product-variations [product]="product" class="col-md-6" *ngIf="product.hasVariations"></app-single-product-variations>
+        <app-single-product-details [product]="product" class="col-md-6" *ngIf="!product.hasVariations"></app-single-product-details>
+    </div>
 </div>

@@ -73,7 +73,8 @@
 }
 
 .example-viewport {
-    height: 80vh;
+    max-height: 80vh;
+    min-height: 30vh
 }
 
 .example-viewport::-webkit-scrollbar {
