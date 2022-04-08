@@ -22,5 +22,6 @@ export interface Product {
     children?:Product[];
     product_images:Image[];
     featured_image?:Image;
-    hasVariations:boolean
+    hasVariations:boolean;
+    active:boolean;
 }

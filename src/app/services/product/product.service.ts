@@ -20,56 +20,6 @@ export class ProductService {
   private productList = new BehaviorSubject<Product[]>([]);
   currentProducts = this.productList.asObservable();
 
-  constructProductData(data){
-    return data.map(
-      (item)=>{
-        let o = {
-          id:item.id,
-          name:item.name,
-          added_on:item.added_on,
-          description:item.description,
-          price:item.price,
-          discount_price:item.discount_price,
-          volume:item.volume,
-          weight:item.weight,
-          sku:item.sku,
-          brand:this.listService.constructSingleBrandData(item.brand),
-          category:this.listService.constructSingleCategoryData(item.category),
-          type:this.listService.constructSingleTypeData(item.type),
-          owner:this.shopService.constructSingleShopData(item.owner),
-          parent:item.parent ? item.parent : null,
-          children:item.children.length ? this.constructProductData(item.children) : [],
-          product_images:this.listService.constructImageData(item.product_images),
-          featured_image:item.featured_image ? this.listService.constructSingleImageData(item.featured_image): null,
-        }
-        return o
-      }
-    )
-  }
-
-  constructSingleProductData(item){
-    let o = {
-      id:item.id,
-      name:item.name,
-      added_on:item.added_on,
-      description:item.description,
-      price:item.price,
-      discount_price:item.discount_price,
-      volume:item.volume,
-      weight:item.weight,
-      sku:item.sku,
-      brand:this.listService.constructSingleBrandData(item.brand),
-      category:this.listService.constructSingleCategoryData(item.category),
-      type:this.listService.constructSingleTypeData(item.type),
-      owner:this.shopService.constructSingleShopData(item.owner),
-      parent:item.parent ? item.parent : null,
-      children:item.children.length ? this.constructProductData(item.children) : [],
-      product_images:this.listService.constructImageData(item.product_images),
-      featured_image:item.featured_image ? this.listService.constructSingleImageData(item.featured_image): null,
-    }
-    return o
-  }
-
   getShopProducts(parameters?:SearchParams[]){
     let params = new HttpParams().set("owner__id",localStorage.getItem("shop_id"));
     if(parameters && parameters.length > 0){
@@ -133,6 +83,7 @@ export class ProductService {
     children:[],
     product_images:[],
     featured_image:null,
+    active:false
   })
 
   currentProduct = this.product.asObservable();
@@ -147,6 +98,10 @@ export class ProductService {
 
   deleteImage(image_id){
     return this.http.delete(`${environment.BASE_URL}shop/product/image/delete/${image_id}`)
+  }
+
+  updateProduct(productForm:FormGroup,sku:string){
+    return this.http.put(`${environment.BASE_URL}store/product/${sku}`,productForm.value)
   }
 
   constructor(private http:HttpClient,private listService:ListService,private shopService:ShopService) { }
