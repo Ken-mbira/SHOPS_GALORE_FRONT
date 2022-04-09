@@ -6,16 +6,8 @@
                 <small *ngIf="!default()">You don't seem to have chosen a default image... please do so by clicking one of your images</small>
             </div>
             <div class="col-12 row mt-3 mt-md-0">
-                <div *ngFor="let image of product.product_images;let i = index" class="col-6 holder d-flex justify-content-center align-items-center" style="height: fit-content;">
-                    <img src="{{image.image}}" class="img-fluid rounded-2 m-1 image">
-                    <div class="middle">
-                        <div class="d-flex justify-content-center">
-                            <button mat-raised-button class="set-default-button" (click)="changeDefault(i)">Set default</button>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <mat-icon [ngStyle]="{'color':'red'}" style="cursor:pointer" (click)="delete_image(i)">delete</mat-icon>
-                        </div>
-                    </div>
+                <div *ngFor="let image of product.product_images;let i = index" class="col-6">
+                    <img src="{{image.image}}" class="image">
                 </div>
                 <div *ngIf="product.product_images.length < 4" class="col-12 col-md-6">
                     <div class="new-image p-1">
