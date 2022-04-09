@@ -89,7 +89,7 @@ export class ProductService {
   currentProduct = this.product.asObservable();
 
   createImage(product_id:number,image:FormData){
-    return this.http.post(`${environment.BASE_URL}shop/product/${product_id}`,image)
+    return this.http.post(`${environment.BASE_URL}store/images/${product_id}`,image)
   }
 
   changeDefaultImage(product_id:number,image:FormGroup){
