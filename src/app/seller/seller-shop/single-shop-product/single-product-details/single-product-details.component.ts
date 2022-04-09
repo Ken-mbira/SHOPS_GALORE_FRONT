@@ -2,6 +2,7 @@ import { Component, OnInit, Input,ViewChild } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
 
 
 import { Product } from 'src/app/interfaces/product/product';
@@ -9,6 +10,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { ListService } from 'src/app/services/lists/list.service';
 import { Image } from 'src/app/interfaces/image/image';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
+import { Stock } from 'src/app/interfaces/stock/stock';
 
 @Component({
   selector: 'app-single-product-details',
@@ -23,7 +25,18 @@ export class SingleProductDetailsComponent implements OnInit {
     image:['',Validators.required]
   })
 
-  constructor(private productService:ProductService,private listService:ListService,private matSnackBar:MatSnackBar,private fb:FormBuilder,private dialog:MatDialog) { }
+  myDatePipe!:any
+  maxDate:Date;
+
+  stockForm = this.fb.group({
+    count:['',Validators.required],
+    last_stock_check_date:['',Validators.required],
+    product:['',Validators.required]
+  })
+
+  constructor(private productService:ProductService,private listService:ListService,private matSnackBar:MatSnackBar,private fb:FormBuilder,private dialog:MatDialog,private datePipe:DatePipe) {
+    this.myDatePipe = datePipe
+  }
 
   checkoutImage(image:Image){
     const dialogRef = this.dialog.open(ImageModalComponent,{
@@ -91,7 +104,26 @@ export class SingleProductDetailsComponent implements OnInit {
     })
   }
 
+  updateStockCheckDate = event => this.product.stock.last_stock_check_date = this.myDatePipe.transform(event,'yyyy-MM-dd')
+
+  updateStock(){
+    this.stockForm.setValue({
+      "count":this.product.stock.count,
+      "last_stock_check_date":this.product.stock.last_stock_check_date,
+      "product":this.product.id
+    })
+
+    this.productService.updateProductStock(this.stockForm,this.product.id).subscribe((response:Stock) => {
+      this.product.stock = response;
+      this.matSnackBar.open("Product Stock was successfully updated","Congrats",{duration:3000})
+    },error =>{
+      this.matSnackBar.open("There was a problem updating your product stock","Sorry",{duration:3000})
+      console.log(error)
+    })
+  }
+
   ngOnInit(): void {
+    this.maxDate = new Date()
   }
 
 }

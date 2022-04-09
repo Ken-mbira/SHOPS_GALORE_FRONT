@@ -3,6 +3,7 @@ import { Shop } from "../shop/shop";
 import { Type } from "../type/type";
 import { Category } from "../category/category";
 import { Image } from "../image/image";
+import { Stock } from "../stock/stock";
 
 export interface Product {
     id:number;
@@ -24,4 +25,5 @@ export interface Product {
     featured_image?:Image;
     hasVariations:boolean;
     active:boolean;
+    stock:Stock;
 }

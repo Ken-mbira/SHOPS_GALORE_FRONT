@@ -10,6 +10,7 @@ import { ListService } from '../lists/list.service';
 import { ShopService } from 'src/app/seller/services/shop.service';
 import { Image } from 'src/app/interfaces/image/image';
 import { SearchParams } from 'src/app/interfaces/searchParams/search-params';
+import { __values } from 'tslib';
 
 
 @Injectable({
@@ -42,51 +43,54 @@ export class ProductService {
     })
   }
 
-  private product = new BehaviorSubject<Product>(null)
-
-  // private product = new BehaviorSubject<Product>({
-  //   id:0,
-  //   name:"",
-  //   added_on:new Date(),
-  //   description:"",
-  //   price:"",
-  //   discount_price:"",
-  //   volume:"",
-  //   weight:"",
-  //   sku:"",
-  //   hasVariations:false,
-  //   brand:{
-  //     id:0,
-  //     name:"",
-  //     logo:""
-  //   },
-  //   category:{
-  //     id:0,
-  //     name:"",
-  //   },
-  //   type:{
-  //     id:0,
-  //     name:"",
-  //     description:"",
-  //   },
-  //   owner:{
-  //     name:"",
-  //     id:0,
-  //     bio:"",
-  //     created_on:new Date(),
-  //     logo:"",
-  //     email_contact:"",
-  //     phone_contact:"",
-  //     active:false,
-  //     owner:0,
-  //     product_count:0
-  //   },
-  //   parent:null,
-  //   children:[],
-  //   product_images:[],
-  //   featured_image:null,
-  //   active:false
-  // })
+  private product = new BehaviorSubject<Product>({
+    id:0,
+    name:"",
+    added_on:new Date(),
+    description:"",
+    price:"",
+    discount_price:"",
+    volume:"",
+    weight:"",
+    sku:"",
+    hasVariations:false,
+    brand:{
+      id:0,
+      name:"",
+      logo:""
+    },
+    category:{
+      id:0,
+      name:"",
+    },
+    type:{
+      id:0,
+      name:"",
+      description:"",
+    },
+    owner:{
+      name:"",
+      id:0,
+      bio:"",
+      created_on:new Date(),
+      logo:"",
+      email_contact:"",
+      phone_contact:"",
+      active:false,
+      owner:0,
+      product_count:0
+    },
+    parent:null,
+    children:[],
+    product_images:[],
+    featured_image:null,
+    active:false,
+    stock:{
+      product:0,
+      count:0,
+      last_stock_check_date:new Date()
+    }
+  })
 
   currentProduct = this.product.asObservable();
 
@@ -104,6 +108,10 @@ export class ProductService {
 
   updateProduct(productForm:FormGroup,sku:string){
     return this.http.put(`${environment.BASE_URL}store/product/${sku}`,productForm.value)
+  }
+
+  updateProductStock(stockForm:FormGroup,product_id:number){
+    return this.http.put(`${environment.BASE_URL}store/product_stock/${product_id}`,stockForm.value)
   }
 
   constructor(private http:HttpClient,private listService:ListService,private shopService:ShopService) { }

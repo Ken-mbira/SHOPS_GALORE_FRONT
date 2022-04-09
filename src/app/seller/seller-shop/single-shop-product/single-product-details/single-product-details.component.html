@@ -23,19 +23,19 @@
     </cdk-virtual-scroll-viewport>
     <hr class="d-md-none mt-3 mb-3">
     <div class="mt-3">
-        <form class="d-flex flex-column mt-3">
+        <form #stockForm="ngForm" (ngSubmit)="updateStock()" class="d-flex flex-column mt-3">
             <h5>Stock Details</h5>
             <mat-form-field>
                 <mat-label>Remaining Stock</mat-label>
-                <input matInput type="number" value="23">
+                <input matInput type="number" name="product-stock-count" [(ngModel)]="product.stock.count">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Last Stock Check Date</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" [(ngModel)]="product.stock.last_stock_check_date" (dateChange)="updateStockCheckDate($event.value)" [max]="maxDate" name="last-stock-check-date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            <button mat-raised-button class="submit-stock">Submit</button>
+            <button mat-raised-button type="submit" [disabled]="!stockForm.touched" class="submit-stock">Submit</button>
         </form>
     </div>
     <hr class="mt-3 mb-3">
