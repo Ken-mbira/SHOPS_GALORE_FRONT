@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
-  /* background-color: rgba(43, 42, 56, 0.5); */
-  background-color: #e6e6e6;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    /* background-color: rgba(43, 42, 56, 0.5); */
+    background-color: #e6e6e6;
+}
+
+.app-full-bleed-dialog .mat-dialog-container {
+    padding: 0;
 }

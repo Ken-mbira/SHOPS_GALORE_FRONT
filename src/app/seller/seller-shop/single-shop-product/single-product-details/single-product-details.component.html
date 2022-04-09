@@ -7,7 +7,9 @@
             </div>
             <div class="col-12 row mt-3 mt-md-0">
                 <div *ngFor="let image of product.product_images;let i = index" class="col-6">
-                    <img src="{{image.image}}" class="image">
+                    <div (click)="checkoutImage(image)">
+                        <img src="{{image.image}}" class="image">
+                    </div>
                 </div>
                 <div *ngIf="product.product_images.length < 4" class="col-12 col-md-6">
                     <div class="new-image p-1">

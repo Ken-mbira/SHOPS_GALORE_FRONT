@@ -42,49 +42,51 @@ export class ProductService {
     })
   }
 
-  private product = new BehaviorSubject<Product>({
-    id:0,
-    name:"",
-    added_on:new Date(),
-    description:"",
-    price:"",
-    discount_price:"",
-    volume:"",
-    weight:"",
-    sku:"",
-    hasVariations:false,
-    brand:{
-      id:0,
-      name:"",
-      logo:""
-    },
-    category:{
-      id:0,
-      name:"",
-    },
-    type:{
-      id:0,
-      name:"",
-      description:"",
-    },
-    owner:{
-      name:"",
-      id:0,
-      bio:"",
-      created_on:new Date(),
-      logo:"",
-      email_contact:"",
-      phone_contact:"",
-      active:false,
-      owner:0,
-      product_count:0
-    },
-    parent:null,
-    children:[],
-    product_images:[],
-    featured_image:null,
-    active:false
-  })
+  private product = new BehaviorSubject<Product>(null)
+
+  // private product = new BehaviorSubject<Product>({
+  //   id:0,
+  //   name:"",
+  //   added_on:new Date(),
+  //   description:"",
+  //   price:"",
+  //   discount_price:"",
+  //   volume:"",
+  //   weight:"",
+  //   sku:"",
+  //   hasVariations:false,
+  //   brand:{
+  //     id:0,
+  //     name:"",
+  //     logo:""
+  //   },
+  //   category:{
+  //     id:0,
+  //     name:"",
+  //   },
+  //   type:{
+  //     id:0,
+  //     name:"",
+  //     description:"",
+  //   },
+  //   owner:{
+  //     name:"",
+  //     id:0,
+  //     bio:"",
+  //     created_on:new Date(),
+  //     logo:"",
+  //     email_contact:"",
+  //     phone_contact:"",
+  //     active:false,
+  //     owner:0,
+  //     product_count:0
+  //   },
+  //   parent:null,
+  //   children:[],
+  //   product_images:[],
+  //   featured_image:null,
+  //   active:false
+  // })
 
   currentProduct = this.product.asObservable();
 

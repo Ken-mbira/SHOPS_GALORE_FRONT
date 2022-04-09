@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="d-flex justify-content-end mb-3">
+        <mat-icon>close</mat-icon>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <img *ngIf="image" [src]="image.image['image']" id="image">
+    </div>
+    <div class="d-flex justify-content-around mt-3">
+        <button mat-raised-button id="delete-image">Delete</button>
+        <button mat-raised-button id="make-default">Make Default</button>
+    </div>
+</div>

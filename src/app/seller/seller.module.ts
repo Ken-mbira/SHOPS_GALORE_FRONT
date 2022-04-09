@@ -40,6 +40,7 @@ import { SuccessComponent } from './seller-shop/new-shop-product/success/success
 import { ListService } from '../services/lists/list.service';
 import { ProductService } from '../services/product/product.service';
 import { ProductListComponent } from './seller-shop/product-list/product-list.component';
+import { ImageModalComponent } from './seller-shop/single-shop-product/image-modal/image-modal.component';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { ProductListComponent } from './seller-shop/product-list/product-list.co
     HasVariationFormComponent,
     NoVariationFormComponent,
     SuccessComponent,
-    ProductListComponent
+    ProductListComponent,
+    ImageModalComponent
   ],
   imports: [
     CommonModule,

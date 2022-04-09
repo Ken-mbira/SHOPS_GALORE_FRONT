@@ -1,12 +1,14 @@
 import { Component, OnInit, Input,ViewChild } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 import { Product } from 'src/app/interfaces/product/product';
 import { ProductService } from 'src/app/services/product/product.service';
 import { ListService } from 'src/app/services/lists/list.service';
 import { Image } from 'src/app/interfaces/image/image';
+import { ImageModalComponent } from '../image-modal/image-modal.component';
 
 @Component({
   selector: 'app-single-product-details',
@@ -21,7 +23,20 @@ export class SingleProductDetailsComponent implements OnInit {
     image:['',Validators.required]
   })
 
-  constructor(private productService:ProductService,private listService:ListService,private matSnackBar:MatSnackBar,private fb:FormBuilder) { }
+  constructor(private productService:ProductService,private listService:ListService,private matSnackBar:MatSnackBar,private fb:FormBuilder,private dialog:MatDialog) { }
+
+  checkoutImage(image:Image){
+    const dialogRef = this.dialog.open(ImageModalComponent,{
+      maxWidth:'95vw',
+      maxHeight:'95vh',
+      height:'100%',
+      width:'100%',
+      data:{
+        image:image
+      },
+      panelClass: 'app-full-bleed-dialog', 
+    })
+  }
 
   default():Image {
     let image:Image;
